@@ -30,6 +30,7 @@ gulp 를 통해 dist/로 보냅니다.
 
 - 전체를 .wrap 이라는 div 로 감싸고 있습니다.
 - 각 section 은 .section 과 고유 이름 클래스를 갖습니다.
+- 각 팝업은 .popup 과 .popup-\* 클래스를 갖습니다.
 
 ## Style Guide
 
