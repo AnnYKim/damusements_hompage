@@ -55,7 +55,7 @@ gulp.task("compile-scss", function() {
 // =============================
 // 폰트 카피
 gulp.task("copy-font", function() {
-  return gulp.src(src + "/font/**/*").pipe(gulp.dest(dist + "/font"));
+  return gulp.src(src + "/fonts/**/*").pipe(gulp.dest(dist + "/fonts"));
 });
 // =============================
 

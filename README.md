@@ -6,9 +6,6 @@ _UI developed by nykim_
 
 ## Tree Structure
 
-모든 작업은 src/ 폴더 내에서 이뤄지며,
-gulp 를 통해 dist/로 보냅니다.
-
 - css/
   - scss/
     - base/
@@ -34,13 +31,14 @@ gulp 를 통해 dist/로 보냅니다.
 
 ## Style Guide
 
-- 폰트는 \*를 사용하며, /\_font.scss 에서 정의합니다.
+- 폰트는 '나눔스퀘어체'를 사용하며, /\_font.scss 에서 정의합니다.
   - 300: Light
   - 400: Regular
   - 600: Bold
   - 800: ExtraBold
 - 최소 브라우저 너비는 다음과 같으며, 반응형은 지원하지 않습니다.
   - 1400px ~
+- ## z-index 설정은 다음과 같습니다.
 
 ## Cross Browse
 
@@ -49,4 +47,5 @@ gulp 를 통해 dist/로 보냅니다.
 
 ## Maintenance
 
--
+- 모든 작업은 src/ 폴더 내에서 이뤄지며, gulp 를 통해 dist/로 보냅니다.
+- gulp task 는 gulpfile.js 에서 즹이하고 있습니다.

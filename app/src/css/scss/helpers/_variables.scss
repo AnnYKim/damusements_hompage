@@ -1,8 +1,16 @@
 @charset "utf-8";
 
-// **** VARIABLES **** //
+// **** VARIABLES ****
 
 // COLOR PALLETE
-
-// color for each works (Last Modified: 2018-05-09)
 $colorList: ();
+
+// z-index
+$zindex-top: 500;
+$zindex-important: 300;
+$zindex-fixed: 100;
+$zindex-normal: 10;
+
+// path
+$path-image: "../images/";
+$path-font: "../fonts/";
