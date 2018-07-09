@@ -29,6 +29,7 @@ gulp 를 통해 dist/로 보냅니다.
 ## Markup Contents
 
 - 전체를 .wrap 이라는 div 로 감싸고 있습니다.
+- 각 section 은 .section 과 고유 이름 클래스를 갖습니다.
 
 ## Style Guide
 
@@ -38,12 +39,12 @@ gulp 를 통해 dist/로 보냅니다.
   - 600: Bold
   - 800: ExtraBold
 - 최소 브라우저 너비는 다음과 같으며, 반응형은 지원하지 않습니다.
-  - 1200px ~
+  - 1400px ~
 
 ## Cross Browse
 
-- 브라우저 대응은 Edge 이상의 모던 브라우저를 대상으로 한다.
-- 최소한의 브라우저 대응은 IE 10 으로 한다. (html5, flexbox 를 대응할 것)
+- 브라우저 대응은 Edge 이상의 모던 브라우저를 대상으로 합니다.
+- 최소한의 브라우저 대응은 IE 10 입니다.(html5, flexbox 를 대응할 것)
 
 ## Maintenance
 

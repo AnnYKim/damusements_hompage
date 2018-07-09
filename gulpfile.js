@@ -12,7 +12,7 @@ var concat = require("gulp-concat"),
   webserver = require("gulp-webserver"),
   browserSync = require("browser-sync").create();
 
-// 경로 변수 
+// 경로 변수
 var src = "app/src";
 var dist = "app/dist";
 var paths = {
@@ -54,20 +54,18 @@ gulp.task("compile-scss", function() {
 
 // =============================
 // 폰트 카피
-gulp.task('copy-font',function(){
-  return gulp
-    .src(src+'/font/**/*')
-    .pipe(gulp.dest(dist+'/font'));
+gulp.task("copy-font", function() {
+  return gulp.src(src + "/font/**/*").pipe(gulp.dest(dist + "/font"));
 });
 // =============================
 
 // =============================
 // 이미지 압축
-gulp.task('minify-image',function(){
+gulp.task("minify-image", function() {
   return gulp
     .src(paths.image)
     .pipe(imagemin())
-    .pipe(gulp.dest(dist+'/images'));
+    .pipe(gulp.dest(dist + "/images"));
 });
 // =============================
 
@@ -75,7 +73,7 @@ gulp.task('minify-image',function(){
 // browserSync 업무 정의
 gulp.task("browserSync", function() {
   return browserSync.init({
-    port : 3232,
+    port: 3232,
     server: {
       baseDir: "app/dist"
     }
@@ -86,19 +84,18 @@ gulp.task("browserSync", function() {
 // =============================
 // watch 업무 정의
 gulp.task("watch", function() {
-  gulp
-    .watch(paths.html, { interval: 1000 }, ["minify-html"])
-    .watch(paths.scss, { interval: 1000 }, ["compile-scss"]);
+  gulp.watch(paths.html, { interval: 1000 }, ["minify-html"]);
+  gulp.watch(paths.scss, ["compile-scss"]);
 });
 // =============================
 
 // =============================
 // default 정의
 gulp.task("default", [
-  "minify-html", 
-  "compile-scss", 
-  "copy-font", 
-  "browserSync", 
+  "minify-html",
+  "compile-scss",
+  "copy-font",
+  "browserSync",
   "watch"
 ]);
 // =============================
