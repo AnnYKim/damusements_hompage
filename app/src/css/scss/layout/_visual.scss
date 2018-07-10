@@ -2,7 +2,7 @@
 
 // Visual
 
-.visual {
+.section.visual {
   position: relative;
   @include flexbox;
   @include justify-content(center);

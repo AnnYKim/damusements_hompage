@@ -31,14 +31,19 @@ _UI developed by nykim_
 
 ## Style Guide
 
-- 폰트는 '나눔스퀘어체'를 사용하며, /\_font.scss 에서 정의합니다.
+- 기본 폰트는 '나눔스퀘어체'를 사용하며, /\_font.scss 에서 정의합니다.
   - 300: Light
   - 400: Regular
   - 600: Bold
   - 800: ExtraBold
+- 보조 폰트는 '고담체'를 사용하며, /\_font.scss 에서 정의합니다.
+  - 300: Light
+  - 800: Bold
 - 최소 브라우저 너비는 다음과 같으며, 반응형은 지원하지 않습니다.
-  - 1400px ~
-- ## z-index 설정은 다음과 같습니다.
+  - 1480px ~
+- \_variables.scss 에서 정의하고 있는 변수는 다음과 같습니다.
+  - z-idnex : z-index 값이 필요한 요소 별로 z-index 변수를 개별 생성합니다. 이는 z-index 를 사용하고 있는 요소가 무엇인지 한눈에 파악하고 일괄 관리하기 위함입니다.
+  - path : 상대경로를 사용하는 경우 여기에 정의한 path 변수를 사용합니다.
 
 ## Cross Browse
 
@@ -48,4 +53,4 @@ _UI developed by nykim_
 ## Maintenance
 
 - 모든 작업은 src/ 폴더 내에서 이뤄지며, gulp 를 통해 dist/로 보냅니다.
-- gulp task 는 gulpfile.js 에서 즹이하고 있습니다.
+- gulp task 는 gulpfile.js 에서 정의하고 있습니다.

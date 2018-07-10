@@ -1,26 +1,25 @@
 @charset "utf-8";
 /*!
   nykim@nykim.net
-  18-07-09 13:40
+  18-07-10 14:00
 */
 
-// 웹폰트
-
-// 변수, 믹스인
+//[1] 변수, 믹스인
 @import "helpers/variables";
 @import "helpers/mixins";
 @import "helpers/mediaQueries";
 @import "helpers/animations";
 
-// 기본 스타일
+//[2] 기본 스타일
 @import "base/reset";
 @import "base/common";
 @import "base/font";
 
-// 모듈
+//[3] 모듈
 @import "modules/header";
 
-// 레이아웃
-@import "layout/visual";
+//[4] 레이아웃
+@import "layout/visual"; //비주얼
+@import "layout/about"; //어바웃
 
-//벤더
+//[5] 벤더

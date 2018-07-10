@@ -9,7 +9,7 @@
   font-weight: $weight;
 }
 @mixin font-sub($weight: 300) {
-  font-family: "Gotham", AppleGothic, sans-serif, Helvetica;
+  font-family: #{$font-gotham}, AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }
 
@@ -227,4 +227,13 @@
   -moz-align-self: $align;
   -ms-align-self: $align;
   align-self: $align;
+}
+
+// pointer-events:none 처리
+@mixin pointer-none {
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  -o-pointer-events: none;
+  -ms-pointer-events: none;
+  pointer-events: none;
 }

@@ -18,6 +18,10 @@ body {
   overflow-x: hidden;
 }
 
+.section {
+  min-width: 1480px;
+}
+
 .text-hidden {
   overflow-x: hidden;
   text-indent: -9999px;

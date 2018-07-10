@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 // **** VARIABLES ****
+$ly-max-width: 1480px;
 
 // COLOR PALLETE
 $colorList: ();
@@ -9,7 +10,13 @@ $colorList: ();
 $z-header: 10; //헤더
 $z-visual-title: 1; //비주얼 타이틀
 $z-visual-text: 5; //비주얼 오버랩 텍스트
+$z-about-story-title: 1;
+$z-about-all-title: 1;
 
 // path
 $path-image: "../images/";
 $path-font: "../fonts/";
+
+// font-weight
+$fw-b: 600;
+$fw-eb: 800;

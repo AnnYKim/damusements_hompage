@@ -16,14 +16,14 @@ $NanumSquareEB: "NanumSquareEB";
     url(#{$path-font}#{$NanumSquareR}.woff) format("woff"),
     url(#{$path-font}#{$NanumSquareR}.ttf) format("truetype");
 }
-@font-face {
-  font-family: "NanumSquare";
-  font-weight: 300;
-  src: url(#{$path-font}#{$NanumSquareL}.eot);
-  src: url(#{$path-font}#{$NanumSquareL}.eot?#iefix) format("embedded-opentype"),
-    url(#{$path-font}#{$NanumSquareL}.woff) format("woff"),
-    url(#{$path-font}#{$NanumSquareL}.ttf) format("truetype");
-}
+// @font-face {
+//   font-family: "NanumSquare";
+//   font-weight: 300;
+//   src: url(#{$path-font}#{$NanumSquareL}.eot);
+//   src: url(#{$path-font}#{$NanumSquareL}.eot?#iefix) format("embedded-opentype"),
+//     url(#{$path-font}#{$NanumSquareL}.woff) format("woff"),
+//     url(#{$path-font}#{$NanumSquareL}.ttf) format("truetype");
+// }
 @font-face {
   font-family: "NanumSquare";
   font-weight: 600;
@@ -43,12 +43,13 @@ $NanumSquareEB: "NanumSquareEB";
 }
 
 // 고담
+$font-gotham: "Gotham-webfont";
 $GothamLight: "GothamLight";
 $GothamMedium: "GothamMedium";
 $GothamBold: "GothamBold";
 
 @font-face {
-  font-family: "Gotham";
+  font-family: $font-gotham;
   font-weight: 400;
   src: url(#{$path-font}#{$GothamMedium}.eot);
   src: url(#{$path-font}#{$GothamMedium}.eot?#iefix) format("embedded-opentype"),
@@ -57,7 +58,7 @@ $GothamBold: "GothamBold";
 }
 
 @font-face {
-  font-family: "Gotham";
+  font-family: $font-gotham;
   font-weight: 300;
   src: url(#{$path-font}#{$GothamLight}.eot);
   src: url(#{$path-font}#{$GothamLight}.eot?#iefix) format("embedded-opentype"),
@@ -66,7 +67,7 @@ $GothamBold: "GothamBold";
 }
 
 @font-face {
-  font-family: "Gotham";
+  font-family: $font-gotham;
   font-weight: 800;
   src: url(#{$path-font}#{$GothamBold}.eot);
   src: url(#{$path-font}#{$GothamBold}.eot?#iefix) format("embedded-opentype"),
