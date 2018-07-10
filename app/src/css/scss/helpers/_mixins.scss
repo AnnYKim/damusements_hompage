@@ -8,7 +8,7 @@
   font-family: "NanumSquare", AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }
-@mixin font-sub($weight: 400) {
+@mixin font-sub($weight: 300) {
   font-family: "Gotham", AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }

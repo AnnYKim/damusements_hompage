@@ -3,10 +3,72 @@
 // Visual
 
 .visual {
+  position: relative;
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
   width: 100%;
   height: 980px;
   background: lightpink;
+
+  .visual-title {
+    // diversify your taste
+    //TODO: 이미지로 처리할지 여부
+    z-index: $z-visual-title;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #fff;
+    @include font-sub(800);
+    font-size: 50px;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+  }
+
+  .visual-dim {
+    //비주얼 전체 dim
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  .visual-slide {
+    //슬라이드 영역
+  }
+
+  .visual-text-container {
+    //오버랩되는 텍스트 영역
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    z-index: $z-visual-text;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+
+    p {
+      color: #fff;
+      text-align: center;
+
+      &:first-child {
+        margin-bottom: 60px;
+      }
+    }
+
+    .text-kor {
+      font-size: 28px;
+      line-height: 1.9;
+    }
+
+    .text-eng {
+      font-size: 15px;
+      line-height: 1.8;
+      @include font-sub;
+    }
+  }
 }

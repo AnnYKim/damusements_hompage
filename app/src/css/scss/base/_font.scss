@@ -43,6 +43,7 @@ $NanumSquareEB: "NanumSquareEB";
 }
 
 // 고담
+$GothamLight: "GothamLight";
 $GothamMedium: "GothamMedium";
 $GothamBold: "GothamBold";
 
@@ -53,6 +54,15 @@ $GothamBold: "GothamBold";
   src: url(#{$path-font}#{$GothamMedium}.eot?#iefix) format("embedded-opentype"),
     url(#{$path-font}#{$GothamMedium}.woff) format("woff"),
     url(#{$path-font}#{$GothamMedium}.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham";
+  font-weight: 300;
+  src: url(#{$path-font}#{$GothamLight}.eot);
+  src: url(#{$path-font}#{$GothamLight}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$GothamLight}.woff) format("woff"),
+    url(#{$path-font}#{$GothamLight}.ttf) format("truetype");
 }
 
 @font-face {

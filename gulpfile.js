@@ -23,7 +23,8 @@ var paths = {
 
 // SASS 옵션
 var sassOptions = {
-  outputStyle: "compressed",
+  outputStyle: "compact",
+  // outputStyle: "compressed",
   indentType: "tab"
 };
 
@@ -44,7 +45,7 @@ gulp.task("compile-scss", function() {
   return gulp
     .src(paths.scss)
     .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(sass(sassOptions))
+    .pipe(sass(sassOptions).on("error", sass.logError))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(src + "/css"))
     .pipe(gulp.dest(dist + "/css"))

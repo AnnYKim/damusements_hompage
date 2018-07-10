@@ -6,10 +6,9 @@
 $colorList: ();
 
 // z-index
-$zindex-top: 500;
-$zindex-important: 300;
-$zindex-fixed: 100;
-$zindex-normal: 10;
+$z-header: 10; //헤더
+$z-visual-title: 1; //비주얼 타이틀
+$z-visual-text: 5; //비주얼 오버랩 텍스트
 
 // path
 $path-image: "../images/";
