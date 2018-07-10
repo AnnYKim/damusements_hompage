@@ -1,36 +1,65 @@
 @charset "utf-8";
 
-// Font
+// **** Font
+
+// 나눔스퀘어
+$NanumSquareR: "NanumSquareR";
+$NanumSquareL: "NanumSquareL";
+$NanumSquareB: "NanumSquareB";
+$NanumSquareEB: "NanumSquareEB";
 
 @font-face {
   font-family: "NanumSquare";
   font-weight: 400;
-  src: url(#{$path-font}NanumSquareR.eot);
-  src: url(#{$path-font}NanumSquareR.eot?#iefix) format("embedded-opentype"),
-    url(#{$path-font}NanumSquareR.woff) format("woff"),
-    url(#{$path-font}NanumSquareR.ttf) format("truetype");
+  src: url(#{$path-font}#{$NanumSquareR}.eot);
+  src: url(#{$path-font}#{$NanumSquareR}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$NanumSquareR}.woff) format("woff"),
+    url(#{$path-font}#{$NanumSquareR}.ttf) format("truetype");
 }
 @font-face {
   font-family: "NanumSquare";
   font-weight: 300;
-  src: url(#{$path-font}NanumSquareL.eot);
-  src: url(#{$path-font}NanumSquareL.eot?#iefix) format("embedded-opentype"),
-    url(#{$path-font}NanumSquareL.woff) format("woff"),
-    url(#{$path-font}NanumSquareL.ttf) format("truetype");
+  src: url(#{$path-font}#{$NanumSquareL}.eot);
+  src: url(#{$path-font}#{$NanumSquareL}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$NanumSquareL}.woff) format("woff"),
+    url(#{$path-font}#{$NanumSquareL}.ttf) format("truetype");
 }
 @font-face {
   font-family: "NanumSquare";
   font-weight: 600;
-  src: url(#{$path-font}NanumSquareB.eot);
-  src: url(#{$path-font}NanumSquareB.eot?#iefix) format("embedded-opentype"),
-    url(#{$path-font}NanumSquareB.woff) format("woff"),
-    url(#{$path-font}NanumSquareB.ttf) format("truetype");
+  src: url(#{$path-font}#{$NanumSquareB}.eot);
+  src: url(#{$path-font}#{$NanumSquareB}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$NanumSquareB}.woff) format("woff"),
+    url(#{$path-font}#{$NanumSquareB}.ttf) format("truetype");
 }
 @font-face {
   font-family: "NanumSquare";
   font-weight: 800;
-  src: url(#{$path-font}NanumSquareEB.eot);
-  src: url(#{$path-font}NanumSquareEB.eot?#iefix) format("embedded-opentype"),
-    url(#{$path-font}NanumSquareEB.woff) format("woff"),
-    url(#{$path-font}NanumSquareEB.ttf) format("truetype");
+  src: url(#{$path-font}#{$NanumSquareEB}.eot);
+  src: url(#{$path-font}#{$NanumSquareEB}.eot?#iefix)
+      format("embedded-opentype"),
+    url(#{$path-font}#{$NanumSquareEB}.woff) format("woff"),
+    url(#{$path-font}#{$NanumSquareEB}.ttf) format("truetype");
+}
+
+// 고담
+$GothamMedium: "GothamMedium";
+$GothamBold: "GothamBold";
+
+@font-face {
+  font-family: "Gotham";
+  font-weight: 400;
+  src: url(#{$path-font}#{$GothamMedium}.eot);
+  src: url(#{$path-font}#{$GothamMedium}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$GothamMedium}.woff) format("woff"),
+    url(#{$path-font}#{$GothamMedium}.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham";
+  font-weight: 800;
+  src: url(#{$path-font}#{$GothamBold}.eot);
+  src: url(#{$path-font}#{$GothamBold}.eot?#iefix) format("embedded-opentype"),
+    url(#{$path-font}#{$GothamBold}.woff) format("woff"),
+    url(#{$path-font}#{$GothamBold}.ttf) format("truetype");
 }

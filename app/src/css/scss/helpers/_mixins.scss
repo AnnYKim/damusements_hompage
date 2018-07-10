@@ -8,6 +8,10 @@
   font-family: "NanumSquare", AppleGothic, sans-serif, Helvetica;
   font-weight: $weight;
 }
+@mixin font-sub($weight: 400) {
+  font-family: "Gotham", AppleGothic, sans-serif, Helvetica;
+  font-weight: $weight;
+}
 
 // 글자 줄임 표시
 @mixin ellipsis($lines: 1) {
