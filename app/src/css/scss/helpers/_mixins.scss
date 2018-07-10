@@ -237,3 +237,11 @@
   -ms-pointer-events: none;
   pointer-events: none;
 }
+
+// backface-visibility:hidden 처리
+@mixin backface-hide {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
