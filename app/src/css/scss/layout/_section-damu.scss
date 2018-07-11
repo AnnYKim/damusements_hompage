@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+// Section for D'AMUSEMentS
+
+.section-damu {
+  padding: 190px 0;
+  box-sizing: border-box;
+
+  .section-damu-title {
+    width: 310px; //TODO: 임시
+    height: 60px; //TODO: 임시
+    margin: 0 auto;
+    outline: 3px solid #000;
+    text-indent: -9999px;
+    overflow-x: hidden;
+  }
+
+  .damu-intro {
+    margin-bottom: 100px;
+    text-align: center;
+
+    .text-kor {
+      margin: 40px 0;
+      font-size: 28px;
+      line-height: 1.92;
+    }
+    .text-eng {
+      @include font-sub;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+  } //end of .damu-intro
+
+  .damu-works {
+    ///////////////////
+    // 지역변수 선언
+    $damu-works-size: 330px;
+    $damu-works-margin: 100px;
+    ///////////////////
+
+    @include flexbox;
+    @include flex-wrap(wrap);
+    width: ($damu-works-size * 3) + ($damu-works-margin * 2);
+    margin: 0 auto;
+
+    .damu-works-item {
+      width: $damu-works-size;
+      height: $damu-works-size;
+      margin-top: 100px;
+      @include flex-grow(0);
+      outline: 2px solid #000;
+
+      &:nth-child(3n + 2) {
+        //2, 5, 8, 11, 14...
+        margin-left: $damu-works-margin;
+        margin-right: $damu-works-margin;
+      }
+
+      &:nth-child(-n + 3) {
+        margin-top: 0;
+      }
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  } //end of .damu-works
+
+  .damu-btn-more {
+    overflow: hidden;
+    width: 288px;
+    height: 72px;
+    margin-top: 108px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #7f7f7f;
+    border-radius: 40px;
+
+    .more-text {
+      @include font-sub(800);
+      height: 100%;
+      line-height: 72px;
+      text-align: center;
+      text-transform: uppercase;
+
+      &.eng {
+        display: block;
+        font-size: 20px;
+        transition: margin-top 0.3s;
+      }
+
+      &.kor {
+        display: block;
+        color: #fff;
+        font-size: 24px;
+        @include font-main;
+      }
+    }
+
+    &:hover {
+      //버튼 호버 효과
+      background-color: #3949a7;
+      border-color: #3949a7;
+      //transition: background-color 0.3s;
+
+      .eng {
+        margin-top: -72px;
+        transition: margin-top 0.3s;
+      }
+    }
+  } //end of .damu-btn-more
+}
