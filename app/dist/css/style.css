@@ -1,6 +1,6 @@
 /*!
   nykim@nykim.net
-  18-07-10 19:20
+  18-07-10 14:00
 */
 html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, small article, aside, footer, header, nav, address, section, main, time, ol, ul, li, hr, strong, figure, tr, th, td, dl, dt, dd, fieldset { margin: 0; padding: 0; border: 0; vertical-align: baseline; -webkit-text-size-adjust: none; font-style: normal; }
 
@@ -39,6 +39,8 @@ body { overflow-y: scroll; font-family: "NanumSquare", AppleGothic, sans-serif, 
 html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%; font-family: "NanumSquare", AppleGothic, sans-serif, Helvetica; font-weight: 400; line-height: 1.3; width: 100%; }
 
 .wrap { width: 100%; overflow-x: hidden; }
+
+.section { min-width: 1480px; }
 
 .text-hidden { overflow-x: hidden; text-indent: -9999px; }
 
@@ -175,35 +177,5 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 .about-all .about-all-pic .sign.sign-equal:after { left: 2px; background-color: #5ba71d; }
 
 .about-all .about-all-pic .sign .sign-text { display: block; text-indent: -9999px; overflow-x: hidden; }
-
-.section.service { position: relative; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; height: 980px; background: sandybrown; }
-
-.section.service .service-slide-item { color: #fff; width: 902px; }
-
-.section.service .service-slide-item .slide-title { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 800; font-size: 30px; }
-
-.section.service .service-slide-item .text-kor { margin-top: 70px; margin-bottom: 44px; font-size: 18px; line-height: 1.9; }
-
-.section.service .service-slide-item .text-eng { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 300; font-size: 13px; line-height: 2; }
-
-.section.service .service-slide-bottom { margin-top: 86px; outline: 2px solid red; }
-
-.section.service .service-slide-bottom .service-slide-utils { width: 902px; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-justify-content: space-between; -moz-justify-content: space-between; -ms-justify-content: space-between; justify-content: space-between; -ms-flex-pack: space-between; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; }
-
-.section.service .service-slide-bottom .utils-pagination { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-
-.section.service .service-slide-bottom .utils-pagination p:first-child { position: relative; margin-right: 44px; }
-
-.section.service .service-slide-bottom .utils-pagination p:first-child:after { position: absolute; top: 8px; left: 26px; width: 6px; height: 3px; display: block; background-color: #575757; content: ""; }
-
-.section.service .service-slide-bottom em { display: block; visibility: hidden; width: 0; height: 0; opacity: 0; }
-
-.section.service .service-slide-bottom .pagination-text { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 800; color: #fff; font-size: 16px; }
-
-.section.service .service-slide-bottom .utils-buttons { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; }
-
-.section.service .service-slide-bottom .utils-buttons button { display: block; overflow-x: hidden; width: 20px; height: 20px; margin-left: 2px; text-indent: -9999px; background-color: #6f6c6a; }
-
-.section.service .service-slide-bottom .utils-buttons button:first-child { margin-left: 2px; }
 
 /*# sourceMappingURL=style.css.map */
