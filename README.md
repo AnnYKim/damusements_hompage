@@ -28,6 +28,15 @@ _UI developed by nykim_
 - 전체를 .wrap 이라는 div 로 감싸고 있습니다.
 - 각 section 은 .section 과 고유 이름 클래스를 갖습니다.
 - 각 팝업은 .popup 과 .popup-\* 클래스를 갖습니다.
+- 팝업의 마크업은 다음과 같습니다.
+- .popup/
+  - .popup-dim/
+    - article.popup-contents/
+      - div.popup-slide
+      - a.popup-button-close
+      - div.popup-buttons/
+        - button.popup-button-prev
+        - button.popup-button-next
 
 ## Style Guide
 

@@ -41,15 +41,39 @@
     }
   } //end of .popup-button-close
 
+  .popup-dim {
+    z-index: $z-popup-dim;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    background-color: rgba(0, 0, 0, 0.77);
+  } //end of .popup-dim
+
+  .popup-contents {
+    width: 1190px;
+    height: 760px;
+    background-color: #fff;
+  }
+
+  .popup-contents.popup-type-2 {
+  }
+
   .popup-buttons {
     [class^="popup-button-"] {
       position: absolute;
+      top: 50%;
       width: 60px;
       height: 60px;
       background-color: #000;
       box-sizing: border-box;
       border-radius: 50%;
       @include text-hidden;
+      transform: translateY(-50%);
 
       .text-alt {
         visibility: hidden;
@@ -82,11 +106,11 @@
     }
 
     .popup-button-prev {
-      left: 0;
+      left: -90px;
     }
 
     .popup-button-next {
-      right: 0;
+      right: -90px;
     }
   } //end of .popup-buttons
 }
