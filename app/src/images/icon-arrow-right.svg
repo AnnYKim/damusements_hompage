@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f7f7f7;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="화살표" class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"/>
+</svg>

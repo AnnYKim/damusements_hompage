@@ -3,9 +3,12 @@
 // Service
 
 .section.service {
+  //////////////
   //지역변수
   $ly-service-width: 910px;
+  /////////////
 
+  overflow: hidden;
   position: relative;
   @include flexbox;
   @include flex-direction(column);

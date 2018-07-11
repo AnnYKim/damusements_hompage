@@ -61,10 +61,17 @@ gulp.task("copy-font", function() {
 // =============================
 
 // =============================
+// 이미지 카피
+gulp.task("copy-image", function() {
+  return gulp.src(paths.image).pipe(gulp.dest(dist + "/images"));
+});
+// =============================
+
+// =============================
 // 이미지 압축
 gulp.task("minify-image", function() {
   return gulp
-    .src(paths.image)
+    .src([paths.image, "!app/src/images/**/*.svg"])
     .pipe(imagemin())
     .pipe(gulp.dest(dist + "/images"));
 });
@@ -87,6 +94,7 @@ gulp.task("browserSync", function() {
 gulp.task("watch", function() {
   gulp.watch(paths.html, { interval: 1000 }, ["minify-html"]);
   gulp.watch(paths.scss, ["compile-scss"]);
+  gulp.watch(paths.image, { interval: 1000 }, ["copy-image"]);
 });
 // =============================
 
@@ -94,6 +102,7 @@ gulp.task("watch", function() {
 // default 정의
 gulp.task("default", [
   "minify-html",
+  "copy-image",
   "compile-scss",
   "copy-font",
   "browserSync",

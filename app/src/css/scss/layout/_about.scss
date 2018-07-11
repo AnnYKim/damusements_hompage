@@ -49,6 +49,9 @@
     width: 120px;
     height: 120px;
     background-color: #000;
+    background-image: url(#{$path-image}icon-arrow-right.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
     border-radius: 50%;
     @include text-hidden;
 
@@ -64,12 +67,15 @@
 
   .logo {
     position: relative;
+    overflow: hidden;
     display: block;
-    outline: 4px solid #333;
-    width: 350px; //TODO: 임시
-    height: 60px;
+    width: 340px;
+    height: 55px;
     margin-top: 45px;
     margin-bottom: 110px;
+    text-indent: -999px;
+    background-image: url(#{$path-image}logo-shadow.png);
+    background-size: 100% 100%;
 
     &:before,
     &:after {
@@ -148,6 +154,7 @@
 
 //하단 설명 영역
 .about-all {
+  position: relative;
   width: 820px;
   margin: 0 auto;
   @include flexbox;
@@ -162,6 +169,22 @@
     font-weight: $fw-b;
     line-height: 1.9;
     margin-bottom: 60px;
+
+    .accent {
+      position: relative;
+      font-weight: 600;
+
+      &:before {
+        z-index: -1;
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        width: 178px;
+        height: 8px;
+        background-color: #ffd0d0;
+        content: "";
+      }
+    }
   }
 
   .text-eng {
@@ -228,11 +251,27 @@
       &:after {
         //라인 이미지
         position: absolute;
-        top: -180px;
-        width: 190px; //TODO: 임시
-        height: 180px; //TODO: 임시
-        outline: 2px solid brown;
+        background-repeat: no-repeat;
         content: "";
+      }
+
+      &.title-diversity:after {
+        // diversity의 라인 이미지
+        width: 160px;
+        height: 138px;
+        top: -160px;
+        left: 14px;
+        background-image: url(#{$path-image}deco-diversity.svg);
+      }
+
+      &.title-collaboration:after {
+        // collaboration 라인 이미지
+        width: 184px;
+        height: 184px;
+        top: -174px;
+        left: 14px;
+        background-image: url(#{$path-image}deco-collaboration.png);
+        //svg export시 선이 깨지는 문제 때문에 png로 대체
       }
 
       &:last-child {
@@ -249,13 +288,15 @@
 
         &:after {
           position: absolute;
-          top: -80px;
-          left: 20px;
+          top: -76px;
+          left: 24px;
           display: block;
-          width: 160px; //TODO: 임시
-          height: 30px; //TODO: 임시
+          width: 156px;
+          height: 25px;
           content: "";
-          background-color: orange; //TODO: 여기에 로고 이미지 추가
+          background-image: url(#{$path-image}logo-shadow.png);
+          background-size: 100%;
+          background-repeat: no-repeat;
         }
       } //end of .title-logo
     } //end of .title
@@ -272,16 +313,19 @@
         display: block;
         width: 22px;
         height: 22px;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
         content: "";
       }
 
       &.sign-plus:after {
-        background-color: rgb(0, 255, 242); //TODO: 여기에 + 이미지 추가
+        background-image: url(#{$path-image}icon-sign-plus.png);
       }
 
       &.sign-equal:after {
         left: 2px;
-        background-color: rgb(91, 167, 29); //TODO: 여기에 = 이미지 추가
+        background-image: url(#{$path-image}icon-sign-equal.svg);
       }
 
       .sign-text {
@@ -291,4 +335,24 @@
       }
     }
   } //end of .about-all-pic
+
+  .deco-icon-diversity {
+    position: absolute;
+    top: -12px;
+    left: -343px;
+    outline: 4px solid gold;
+    width: 251px;
+    height: 216px;
+    background-image: url(#{$path-image}deco-diversity-big.png);
+  }
+
+  .deco-icon-collaboration {
+    position: absolute;
+    top: 86px;
+    left: 1064px;
+    outline: 4px solid red;
+    width: 291px;
+    height: 291px;
+    background-image: url(#{$path-image}deco-collaboration-big.png);
+  }
 } //end of .about-all
