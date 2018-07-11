@@ -148,11 +148,15 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .about-story .about-story-container { position: relative; max-width: 1480px; padding-left: 324px; box-sizing: border-box; overflow: hidden; margin: 0 auto; }
 
-.about-story .about-story-button { position: absolute; top: 0; left: 0; width: 120px; height: 120px; background-color: #000; background-image: url(../images/icon-arrow-right.svg); background-position: 50% 50%; background-repeat: no-repeat; border-radius: 50%; text-indent: -999px; overflow: hidden; }
+.about-story .about-story-button { position: absolute; top: 0; left: 0; width: 120px; height: 120px; background-color: #000; box-sizing: border-box; border-radius: 50%; text-indent: -999px; overflow: hidden; }
 
-.about-story .about-story-button:focus { outline: 0; }
+.about-story .about-story-button .text-alt { visibility: hidden; width: 0px; height: 0px; opacity: 0; position: absolute; left: -999px; }
 
-.about-story .about-story-button:focus, .about-story .about-story-button:hover { opacity: 0.8; }
+.about-story .about-story-button .svg { display: block; width: 50px; height: 14px; margin: 0 auto; }
+
+.about-story .about-story-button:focus, .about-story .about-story-button:hover { outline: 0; background-color: #fff; border: 4px solid #323232; }
+
+.about-story .about-story-button:focus .svg .cls-1, .about-story .about-story-button:hover .svg .cls-1 { fill: #323232; }
 
 .about-story .logo { position: relative; overflow: hidden; display: block; width: 340px; height: 55px; margin-top: 45px; margin-bottom: 110px; text-indent: -999px; background-image: url(../images/logo-damu.png); background-size: 100% 100%; }
 
@@ -358,6 +362,30 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .section.notice .notice-container { width: 1200px; height: 580px; background-color: #fff; }
 
-.popup { display: none; position: absolute; outline: 4px solid gold; }
+.popup { background-color: violet; }
+
+.popup .popup-contents { position: relative; }
+
+.popup .popup-button-close { position: absolute; top: 0; right: 0; display: block; width: 61px; height: 61px; text-indent: -999px; overflow: hidden; background-color: #000; background-image: url(../images/icon-popup-close.png); background-repeat: no-repeat; background-position: 50% 50%; background-size: 29px 29px; }
+
+.popup .popup-button-close:hover { opacity: 0.7; }
+
+.popup .popup-button-close:focus { outline: 0; opacity: 0.7; }
+
+.popup .popup-button-close.close-type-2 { width: 80px; height: 80px; background-color: #d0d0d0; background-size: 36px 36px; }
+
+.popup .popup-buttons [class^="popup-button-"] { position: absolute; width: 60px; height: 60px; background-color: #000; box-sizing: border-box; border-radius: 50%; text-indent: -999px; overflow: hidden; }
+
+.popup .popup-buttons [class^="popup-button-"] .text-alt { visibility: hidden; width: 0px; height: 0px; opacity: 0; position: absolute; left: -999px; }
+
+.popup .popup-buttons [class^="popup-button-"] .svg { display: block; width: 26px; height: 8px; margin: 0 auto; }
+
+.popup .popup-buttons [class^="popup-button-"]:focus, .popup .popup-buttons [class^="popup-button-"]:hover { outline: 0; background-color: #fff; border: 4px solid #323232; }
+
+.popup .popup-buttons [class^="popup-button-"]:focus .svg .cls-1, .popup .popup-buttons [class^="popup-button-"]:hover .svg .cls-1 { fill: #323232; }
+
+.popup .popup-buttons .popup-button-prev { left: 0; }
+
+.popup .popup-buttons .popup-button-next { right: 0; }
 
 /*# sourceMappingURL=style.css.map */
