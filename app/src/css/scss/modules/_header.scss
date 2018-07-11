@@ -6,7 +6,7 @@
   z-index: $z-header;
   position: absolute;
   top: 70px;
-  left: 50%;
+  // left: 50%;
   width: 100%;
   min-width: $ly-min-width;
   max-width: $ly-max-width;
@@ -15,7 +15,7 @@
   @include justify-content(space-between);
   @include align-items(center);
   box-sizing: border-box;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
 
   .header-container {
     // 로고 + 네비게이션 묶는 용도
@@ -29,7 +29,7 @@
     height: 30px;
     margin-right: 50px;
     text-indent: -999px;
-    background-image: url(#{$path-image}logo-shadow.png);
+    background-image: url(#{$path-image}logo-damu.png);
     background-size: 180px 29px;
     background-repeat: no-repeat;
 

@@ -8,14 +8,40 @@
   @include align-items(center);
   padding: 142px 0 136px;
   background-color: #000;
+  @include bgi("bg-notice");
+  background-repeat: repeat-y;
+  background-position: 50% 50%;
 
   .notice-title {
+    position: relative;
     display: block;
-    margin-bottom: 60px;
+    margin-bottom: 70px;
     color: #fff;
-    @include font-sub(800); //TODO: 임시
-    text-transform: uppercase; //TODO: 임시
-    font-size: 59px; //TODO: 임시
+    @include font-sub(800);
+    text-transform: uppercase;
+    font-size: 59px;
+
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 320px;
+      height: 9px;
+      background-color: #f9fafa;
+      content: "";
+    }
+
+    &:after {
+      position: absolute;
+      display: block;
+      bottom: 10px;
+      right: -114px;
+      width: 19px;
+      height: 27px;
+      @include bgi("icon-quotes");
+      content: "";
+    }
   }
 
   .notice-container {

@@ -4,14 +4,17 @@
 .section-proz {
   padding: 296px 0 286px;
   background-color: #040404;
+  @include bgi("bg-proz");
+  background-position: 50% 50%;
 
   .section-proz-title {
-    width: 222px; //TODO: 임시
-    height: 74px; //TODO: 임시
+    width: 270px;
+    height: 72px;
     margin: 0 auto;
-    outline: 3px solid #999;
     text-indent: -9999px;
     overflow-x: hidden;
+    background-size: 100%;
+    @include bgi("logo-proz");
   }
 
   .proz-intro {

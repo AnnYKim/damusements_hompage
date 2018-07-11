@@ -3,6 +3,7 @@
 // About
 
 .section.about {
+  min-width: 1480px;
   position: relative;
 }
 
@@ -74,7 +75,7 @@
     margin-top: 45px;
     margin-bottom: 110px;
     text-indent: -999px;
-    background-image: url(#{$path-image}logo-shadow.png);
+    background-image: url(#{$path-image}logo-damu.png);
     background-size: 100% 100%;
 
     &:before,
@@ -294,7 +295,7 @@
           width: 156px;
           height: 25px;
           content: "";
-          background-image: url(#{$path-image}logo-shadow.png);
+          background-image: url(#{$path-image}logo-damu.png);
           background-size: 100%;
           background-repeat: no-repeat;
         }
@@ -340,7 +341,6 @@
     position: absolute;
     top: -12px;
     left: -343px;
-    outline: 4px solid gold;
     width: 251px;
     height: 216px;
     background-image: url(#{$path-image}deco-diversity-big.png);
@@ -349,8 +349,7 @@
   .deco-icon-collaboration {
     position: absolute;
     top: 86px;
-    left: 1064px;
-    outline: 4px solid red;
+    left: 770px;
     width: 291px;
     height: 291px;
     background-image: url(#{$path-image}deco-collaboration-big.png);

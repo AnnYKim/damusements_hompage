@@ -11,9 +11,11 @@
   border-top: 1px solid #242424;
 
   .footer-logo {
-    width: 183px; //TODO: 임시
-    height: 36px; //TODO: 임시
-    outline: 2px solid #ddd;
+    width: 180px;
+    height: 29px;
+    @include text-hidden;
+    @include bgi("logo-damu");
+    background-size: 100%;
   }
 
   .footer-info {
