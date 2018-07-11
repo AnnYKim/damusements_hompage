@@ -248,7 +248,7 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .section-damu .damu-btn-more:hover .eng { margin-top: -72px; transition: margin-top 0.3s; }
 
-.section-dsc { padding: 152px 0 540px; background-color: #f8f8f8; box-sizing: border-box; }
+.section-dsc { position: relative; padding: 152px 0 540px; background-color: #f8f8f8; box-sizing: border-box; }
 
 .section-dsc .section-dsc-title { width: 220px; height: 85px; margin: 0 auto; outline: 3px solid #000; text-indent: -9999px; overflow-x: hidden; }
 
@@ -257,5 +257,29 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 .section-dsc .dsc-intro .text-kor { margin-top: 44px; margin-bottom: 36px; font-size: 26px; line-height: 1.5; }
 
 .section-dsc .dsc-intro .text-eng { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 300; font-size: 16px; line-height: 1.5; }
+
+.section-dsc .dsc-works { position: absolute; left: 0; bottom: 0; outline: 4px solid blueviolet; }
+
+.section-proz { padding: 296px 0 286px; background-color: #040404; }
+
+.section-proz .section-proz-title { width: 222px; height: 74px; margin: 0 auto; outline: 3px solid #999; text-indent: -9999px; overflow-x: hidden; }
+
+.section-proz .proz-intro { text-align: center; color: #fff; }
+
+.section-proz .proz-intro .text-kor { margin-top: 54px; margin-bottom: 24px; font-size: 24px; line-height: 1.6; }
+
+.section-proz .proz-intro .text-eng { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 300; font-size: 13px; line-height: 2; }
+
+.section-proz .proz-btn-more { overflow: hidden; width: 200px; height: 64px; margin-top: 54px; margin-left: auto; margin-right: auto; border: 1px solid #d0d5dc; border-radius: 40px; }
+
+.section-proz .proz-btn-more .more-text { font-family: Gotham-webfont, AppleGothic, sans-serif, Helvetica; font-weight: 800; height: 100%; line-height: 64px; text-align: center; text-transform: uppercase; }
+
+.section-proz .proz-btn-more .more-text.eng { color: #fff; display: block; font-size: 16px; transition: margin-top 0.3s; }
+
+.section-proz .proz-btn-more .more-text.kor { display: block; font-size: 18px; font-family: "NanumSquare", AppleGothic, sans-serif, Helvetica; font-weight: 400; }
+
+.section-proz .proz-btn-more:hover { background-color: #fff; border-color: #fff; }
+
+.section-proz .proz-btn-more:hover .eng { margin-top: -64px; transition: margin-top 0.3s; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+// Section for Prozeters
+.section-proz {
+  padding: 296px 0 286px;
+  background-color: #040404;
+
+  .section-proz-title {
+    width: 222px; //TODO: 임시
+    height: 74px; //TODO: 임시
+    margin: 0 auto;
+    outline: 3px solid #999;
+    text-indent: -9999px;
+    overflow-x: hidden;
+  }
+
+  .proz-intro {
+    text-align: center;
+    color: #fff;
+
+    .text-kor {
+      margin-top: 54px;
+      margin-bottom: 24px;
+      font-size: 24px;
+      line-height: 1.6;
+    }
+    .text-eng {
+      @include font-sub;
+      font-size: 13px;
+      line-height: 2;
+    }
+  } //end of .proz-intro
+
+  .proz-btn-more {
+    overflow: hidden;
+    width: 200px;
+    height: 64px;
+    margin-top: 54px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #d0d5dc;
+    border-radius: 40px;
+
+    .more-text {
+      @include font-sub(800);
+      height: 100%;
+      line-height: 64px;
+      text-align: center;
+      text-transform: uppercase;
+
+      &.eng {
+        color: #fff;
+        display: block;
+        font-size: 16px;
+        transition: margin-top 0.3s;
+      }
+
+      &.kor {
+        display: block;
+        font-size: 18px;
+        @include font-main;
+      }
+    }
+
+    &:hover {
+      //버튼 호버 효과
+      background-color: #fff;
+      border-color: #fff;
+      //transition: background-color 0.3s;
+
+      .eng {
+        margin-top: -64px;
+        transition: margin-top 0.3s;
+      }
+    }
+  } //end of .proz-btn-more
+}
