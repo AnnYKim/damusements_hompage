@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+// Notice
+.section.notice {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-items(center);
+  padding: 142px 0 136px;
+  background-color: #000;
+
+  .notice-title {
+    display: block;
+    margin-bottom: 60px;
+    color: #fff;
+    @include font-sub(800); //TODO: 임시
+    text-transform: uppercase; //TODO: 임시
+    font-size: 59px; //TODO: 임시
+  }
+
+  .notice-container {
+    //그누보드 영역
+    width: 1200px;
+    height: 580px;
+    background-color: #fff;
+  } //end of .notice-container
+}

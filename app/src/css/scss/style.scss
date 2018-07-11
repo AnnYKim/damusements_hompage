@@ -17,6 +17,7 @@
 
 //[3] 모듈
 @import "modules/header";
+@import "modules/footer";
 
 //[4] 레이아웃
 @import "layout/visual"; //비주얼
@@ -25,5 +26,6 @@
 @import "layout/section-damu"; //디어뮤즈먼츠 섹션
 @import "layout/section-dsc"; //닥터심슨 섹션
 @import "layout/section-proz"; //프로제터스 섹션
+@import "layout/notice"; //공지사항
 
 //[5] 벤더

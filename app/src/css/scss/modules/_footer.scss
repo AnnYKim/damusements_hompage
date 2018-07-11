@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+// Footer
+
+.footer {
+  @include flexbox;
+  @include align-items(center);
+  height: 194px;
+  padding: 0 70px;
+  background-color: #000;
+  border-top: 1px solid #242424;
+
+  .footer-logo {
+    width: 183px; //TODO: 임시
+    height: 36px; //TODO: 임시
+    outline: 2px solid #ddd;
+  }
+
+  .footer-info {
+    margin-left: 106px;
+    font-size: 13px;
+    color: #8c8c8c;
+
+    dl {
+      @include flexbox;
+      margin-bottom: 10px;
+
+      dt {
+        margin-left: 15px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:after {
+          display: inline-block;
+          margin: 0 2px;
+          content: ":";
+        }
+      }
+
+      a {
+        color: #8c8c8c;
+
+        &:hover,
+        &:focus {
+          outline: 0;
+          text-decoration: underline;
+        }
+      }
+    } //end of .dl
+  } //end of .footer-info
+}
