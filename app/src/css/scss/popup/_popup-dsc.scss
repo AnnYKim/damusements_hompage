@@ -1,8 +1,16 @@
 @charset "utf-8";
 
-// **** popup_type_1 (DSC용 팝업)
+// **** popup-dsc (DSC용 팝업)
 
 .popup-dsc {
+  .popup-contents {
+    width: 1190px;
+    height: 760px;
+    padding: 80px 90px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
   .popup-slide {
     position: relative;
     @include flexbox;
@@ -47,7 +55,6 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        width: auto;
         width: 582px;
         height: 414px;
       }

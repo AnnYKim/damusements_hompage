@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+// **** popup-damu (DAMUSEMentS용 팝업)
+
+.popup-damu {
+  .popup-contents {
+    width: 1190px;
+    height: 760px;
+    padding: 80px 70px;
+    background-color: #f9fafa;
+    box-sizing: border-box;
+  }
+
+  .popup-slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &.slide-jaebumJoo {
+      //예외처리할 슬라이드
+      .popup-damu-title {
+        visibility: hidden;
+      }
+
+      .popup-damu-profile {
+        .title {
+          margin-top: 25px;
+          margin-bottom: 18px;
+
+          span.position {
+            display: block;
+            font-size: 40px;
+            letter-spacing: -1px;
+          }
+          span.name {
+            display: block;
+            font-size: 36px;
+            font-weight: $fw-b;
+            margin-top: -10px;
+          }
+        }
+      }
+    }
+  }
+
+  .popup-damu-title {
+    display: block;
+    font-size: 48px;
+    color: #211545;
+  }
+
+  .popup-damu-bottom {
+    width: 100%;
+    width: 340px;
+    .type {
+      margin-bottom: 18px;
+      font-weight: $fw-eb;
+      letter-spacing: -1px;
+      color: #004d95;
+    }
+
+    .desc {
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      border-color: #004d95;
+      padding: 8px 0;
+      font-size: 13px;
+      line-height: 1.6;
+
+      .desc-eng {
+        margin-bottom: 20px;
+      }
+    }
+  } //end of .popup-damu-left
+
+  .popup-damu-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+
+    .img-position {
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      max-height: 520px;
+      transform: translateY(-50%);
+    }
+
+    img {
+      display: block;
+    }
+  } //end of .popup-damu-right
+}

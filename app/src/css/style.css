@@ -390,7 +390,35 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .popup .popup-buttons .popup-button-next { right: -90px; }
 
-.popup .popup-contents { width: 1190px; height: 760px; padding: 80px 90px; background-color: #fff; box-sizing: border-box; }
+.popup-damu .popup-contents { width: 1190px; height: 760px; padding: 80px 70px; background-color: #f9fafa; box-sizing: border-box; }
+
+.popup-damu .popup-slide { position: relative; width: 100%; height: 100%; display: flex; justify-content: space-between; flex-direction: column; }
+
+.popup-damu .popup-slide.slide-jaebumJoo .popup-damu-title { visibility: hidden; }
+
+.popup-damu .popup-slide.slide-jaebumJoo .popup-damu-profile .title { margin-top: 25px; margin-bottom: 18px; }
+
+.popup-damu .popup-slide.slide-jaebumJoo .popup-damu-profile .title span.position { display: block; font-size: 40px; letter-spacing: -1px; }
+
+.popup-damu .popup-slide.slide-jaebumJoo .popup-damu-profile .title span.name { display: block; font-size: 36px; font-weight: 600; margin-top: -10px; }
+
+.popup-damu .popup-damu-title { display: block; font-size: 48px; color: #211545; }
+
+.popup-damu .popup-damu-bottom { width: 100%; width: 340px; }
+
+.popup-damu .popup-damu-bottom .type { margin-bottom: 18px; font-weight: 800; letter-spacing: -1px; color: #004d95; }
+
+.popup-damu .popup-damu-bottom .desc { border-top: 1px solid; border-bottom: 1px solid; border-color: #004d95; padding: 8px 0; font-size: 13px; line-height: 1.6; }
+
+.popup-damu .popup-damu-bottom .desc .desc-eng { margin-bottom: 20px; }
+
+.popup-damu .popup-damu-image { position: absolute; top: 0; right: 0; width: 50%; height: 100%; }
+
+.popup-damu .popup-damu-image .img-position { overflow: hidden; position: absolute; right: 0; top: 50%; max-height: 520px; transform: translateY(-50%); }
+
+.popup-damu .popup-damu-image img { display: block; }
+
+.popup-dsc .popup-contents { width: 1190px; height: 760px; padding: 80px 90px; background-color: #fff; box-sizing: border-box; }
 
 .popup-dsc .popup-slide { position: relative; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: space-between; -moz-justify-content: space-between; -ms-justify-content: space-between; justify-content: space-between; -ms-flex-pack: space-between; width: 100%; height: 100%; }
 
@@ -406,7 +434,7 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .popup-dsc .popup-dsc-bottom .image-container { width: 582px; margin-right: 40px; }
 
-.popup-dsc .popup-dsc-bottom .image-container .img-position { overflow: hidden; position: absolute; left: 0; bottom: 0; width: auto; width: 582px; height: 414px; }
+.popup-dsc .popup-dsc-bottom .image-container .img-position { overflow: hidden; position: absolute; left: 0; bottom: 0; width: 582px; height: 414px; }
 
 .popup-dsc .popup-dsc-bottom .image-container img { display: block; width: auto; height: 100%; }
 
@@ -428,6 +456,18 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .popup-dsc .popup-dsc-bottom .discography .discography-container li .date { color: #181459; font-weight: 600; }
 
-.popup-contents { width: 1190px; height: 760px; background-color: #fff; }
+.popup-proz .popup-contents { height: 760px; padding: 81px 0px; background-color: #fff; box-sizing: border-box; }
+
+.popup-proz .popup-proz-list { height: calc(760px - 162px); padding: 0 85px; overflow-y: auto; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; position: relative; -webkit-flex-wrap: wrap; -moz-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap; width: 1205px; margin: 0 auto; }
+
+.popup-proz .popup-proz-item { overflow: hidden; width: 320px; height: 180px; -webkit-flex-grow: 0; -moz-flex-grow: 0; -ms-flex-grow: 0; flex-grow: 0; margin-top: 30px; }
+
+.popup-proz .popup-proz-item:nth-child(3n + 2) { margin-left: 30px; margin-right: 30px; }
+
+.popup-proz .popup-proz-item:nth-child(-n + 3) { margin-top: 0; }
+
+.popup-proz .popup-proz-item a { display: block; width: 100%; height: 100%; }
+
+.popup-proz .popup-proz-item img { display: block; width: 100%; height: 100%; }
 
 /*# sourceMappingURL=style.css.map */
