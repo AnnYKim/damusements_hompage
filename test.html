@@ -13,10 +13,6 @@
 
   <title>디어뮤즈 작업 중</title>
   <!-- TODO: 타이틀 변경 필요 -->
-  <!--[if lt IE 9]>
-  <script type='text/javascript' src='https://studio-jt.co.kr/skin/js/vendors/html5shiv.min.js?ver=3.7.3'></script>
-  <![endif]-->
-
   <link rel="stylesheet" href="css/style.css?ver=0712">
 </head>
 
@@ -61,19 +57,31 @@
       <span>your</span>
       <span>taste</span>
     </h2>
-    <div class="visual-slide swiper-container">
-      <div class="swiper-wrapper visual-slide-wrapper">
-        <div class="swiper-slide visual-slide-item" data-order="1" data-index="0">슬라이드1</div>
-        <div class="swiper-slide visual-slide-item" data-order="2" data-index="1">2</div>
-        <div class="swiper-slide visual-slide-item" data-order="3" data-index="2">3</div>
-        <div class="swiper-slide visual-slide-item" data-order="4" data-index="3">444444</div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
     <div class="visual-dim"></div>
+    <div class="visual-slide">
+      슬라이드 영역
+    </div>
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
 
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
     <!-- TODO: 스크롤 시 오버랩되도록 처리 -->
-    <div class="visual-text-container" style="display:none">
+    <div class="visual-text-container">
       <p class="text-kor">
         “디어뮤즈먼츠는 ‘다양성’을 기반으로 음악, 미술, 영상
         <br/> 그리고 ‘전에 없던 것’을 만들어내는
@@ -594,32 +602,6 @@
   </section>
   <!-- //end of .section.notice -->
 
-  <style>
-    .swiper-container {
-      width: 600px;
-      height: 300px;
-    }
-  </style>
-
-  <div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide">Slide 2</div>
-      <div class="swiper-slide">Slide 3</div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      ...
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-
   <footer class="footer">
     <div class="footer-logo">푸터로고</div>
     <div class="footer-info">
@@ -643,9 +625,7 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/vendors.js"></script>
-  <script src="js/script.min.js"></script>
 </body>
 
 </html>

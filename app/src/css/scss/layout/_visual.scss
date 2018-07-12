@@ -9,12 +9,11 @@
   @include align-items(center);
   width: 100%;
   height: 980px;
-  overflow-y: hidden;
-  background: lightpink;
+  overflow: hidden;
+  min-width: 1480px;
 
   .visual-title {
     // diversify your taste
-    //TODO: 이미지로 처리할지 여부
     z-index: $z-visual-title;
     position: absolute;
     top: 50%;
@@ -69,19 +68,77 @@
     }
   }
 
-  .visual-dim {
-    //비주얼 전체 dim
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.65);
-  }
+  // .visual-dim {
+  //   //비주얼 전체 dim
+  //   z-index: $z-visual-dim;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: rgba(0, 0, 0, 0.65);
+  //   @include pointer-none;
+  //   @include select-none;
+  // }
 
   .visual-slide {
     //슬라이드 영역
-  }
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    &:after {
+      //비주얼 전체 dim
+      z-index: $z-visual-dim;
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.65);
+      @include pointer-none;
+      @include select-none;
+    }
+
+    .visual-slide-item {
+      @for $i from 1 through 4 {
+        //background image
+        &[data-order="#{$i}"] {
+          background-image: url(#{$path-image}visual/bg-visual-#{$i}.png);
+        }
+      }
+    } //end of .visual-slide-item
+
+    // .visual-slide-pagination {
+    //   @include flexbox;
+    //   z-index: $z-visual-slide-pagination;
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   outline: 1px solid orange;
+
+    //   .swiper-pagination-bullet {
+    //     display: block;
+    //     width: 14px;
+    //     height: 14px;
+    //     background-color: #fff;
+    //     opacity: 0.25;
+    //     border-radius: 50%;
+    //     cursor: pointer;
+
+    //     &:hover {
+    //       opacity: 0.5;
+    //     }
+    //   }
+
+    //   .swiper-pagination-bullet-active {
+    //     outline: 1px solid lightgreen;
+    //     opacity: 1 !important;
+    //   }
+    // }
+  } //end of .visual-slide
 
   .visual-text-container {
     //오버랩되는 텍스트 영역
