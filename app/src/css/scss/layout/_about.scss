@@ -3,6 +3,7 @@
 // About
 
 .section.about {
+  padding-top: 94px;
   min-width: 1480px;
   position: relative;
 
@@ -17,7 +18,6 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  margin-top: 94px;
 
   &:before,
   &:after {

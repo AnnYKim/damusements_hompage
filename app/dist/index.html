@@ -1,21 +1,665 @@
-<!DOCTYPE html><html lang=ko><head><meta charset=UTF-8><meta http-equiv=Content-Script-Type content=text/javascript><meta http-equiv=Content-Style-Type content=text/css><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1.0"><title>디어뮤즈 작업 중</title><link rel=stylesheet href="css/style.css?ver=0712"></head><body><header class=header><div class=header-container><h1 class=header-logo><a href=#>D'AMUSEMentS</a></h1><ul class=header-navigation><li><a href=#>About</a></li><li><a href=#>D’AMUSEMentS</a></li><li><a href=#>DSC</a></li><li><a href=#>PROZETERS</a></li><li><a href=#>NOTICE</a></li><li><a href=#>blog</a></li></ul></div><div class=header-download><a href=# class=download-introduction>회사소개서 다운로드</a></div></header><section class="section visual"><h2 class=visual-title><span>Diversify</span> <span>your</span> <span>taste</span></h2><div class="visual-slide swiper-container"><div class="swiper-wrapper visual-slide-wrapper"><div class="swiper-slide visual-slide-item" data-order=1 data-index=0>슬라이드1</div><div class="swiper-slide visual-slide-item" data-order=2 data-index=1>2</div><div class="swiper-slide visual-slide-item" data-order=3 data-index=2>3</div><div class="swiper-slide visual-slide-item" data-order=4 data-index=3>444444</div></div><div class="swiper-pagination visual-slide-pagination"></div></div><div class=visual-dim></div><div class=visual-text-container style=display:none><p class=text-kor>“디어뮤즈먼츠는 ‘다양성’을 기반으로 음악, 미술, 영상<br>그리고 ‘전에 없던 것’을 만들어내는<br>아트컨설팅 컴퍼니입니다.”</p><p class=text-eng>D’AMUSEMents is an art consulting firm that creates music, arts, videos and<br>things hitherto inexistent based on diversity.</p></div></section><section class="section about"><h2 class=text-hidden>About D'AMUSEMentS</h2><article class=about-story><div class=about-story-container><button class=about-story-button><span class=text-alt>다음</span><svg class=svg xmlns=http://www.w3.org/2000/svg width=50 height=14 viewbox="0 0 50 14"><defs><style>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TODO: 파비콘 추가 필요 -->
+  <!-- TODO: 메타태그 추가 필요 -->
+
+  <title>디어뮤즈 작업 중</title>
+  <!-- TODO: 타이틀 변경 필요 -->
+  <!--[if lt IE 9]>
+  <script type='text/javascript' src='https://studio-jt.co.kr/skin/js/vendors/html5shiv.min.js?ver=3.7.3'></script>
+  <![endif]-->
+
+  <link rel="stylesheet" href="css/style.css?ver=0712">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-grid">
+      <div class="header-container">
+        <h1 class="header-logo">
+          <a href="#">D'AMUSEMentS</a>
+        </h1>
+        <ul class="header-navigation">
+          <li>
+            <a href="#" class="nav-menu">About</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">D’AMUSEMentS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">DSC</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">PROZETERS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">NOTICE</a>
+          </li>
+          </li>
+          <li>
+            <a href="#" class="nav-link">blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-download">
+        <a href="#" class="download-introduction">회사소개서 다운로드</a>
+      </div>
+    </div>
+  </header>
+  <!--//end of .header-->
+
+  <section class="section visual" data-_box-0="background:yellow" data-_box-980="background:green">
+
+    <div class="box" data-100p="outline: 4px solid red;" data-_box-100p="outline: 6px dashed black;"></div>
+
+    <h2 class="visual-title">
+      <span>Diversify</span>
+      <span>your</span>
+      <span>taste</span>
+    </h2>
+    <div class="visual-slide swiper-container">
+      <div class="swiper-wrapper visual-slide-wrapper">
+        <!-- <div class="swiper-slide visual-slide-item" data-order="1" data-index="0"></div>
+        <div class="swiper-slide visual-slide-item" data-order="2" data-index="1"></div>
+        <div class="swiper-slide visual-slide-item" data-order="3" data-index="2"></div>
+        <div class="swiper-slide visual-slide-item" data-order="4" data-index="3"></div> -->
+      </div>
+      <div class="swiper-pagination visual-slide-pagination"></div>
+    </div>
+  </section>
+  <!--//end of .section.visual-->
+
+  <div class="test" data-0="transform:translate(0,0%);" data-100p="transform:translate(0,-100%);"></div>
+
+  <div class="test" data-0="transform:translate(0,100%);" data-100p="transform:translate(0,0%)" data-_box-100p="" data-_box-200p="transform:translate(0,-100%)">
+    <div class="box" data-100p="width:0%;" data-_box-100p="width:100%"></div>
+  </div>
+
+  <div class="test" data-_box-100p="transform:translate(0,100%);" data-_box-200p="transform:translate(0,0%);"></div>
+
+  <style>
+    test {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent center no-repeat;
+      background-size: cover;
+    }
+
+    .box {
+      position: absolute;
+      width: 400px;
+      left: 0;
+      height: 400px;
+      border-radius: 50%;
+      background: violet;
+    }
+  </style>
+
+  <!-- TODO: 스크롤 시 오버랩되도록 처리 -->
+  <div class="visual-sub" data-0="background:red;" data-980="background:blue">
+    <div class="visual-text-container">
+      <p class="text-kor">
+        “디어뮤즈먼츠는 ‘다양성’을 기반으로 음악, 미술, 영상
+        <br/> 그리고 ‘전에 없던 것’을 만들어내는
+        <br/> 아트컨설팅 컴퍼니입니다.”
+      </p>
+      <p class="text-eng">
+        D’AMUSEMents is an art consulting firm that creates music, arts, videos and
+        <br/> things hitherto inexistent based on diversity.
+      </p>
+    </div>
+  </div>
+
+  <section class="section about">
+    <h2 class="text-hidden">About D'AMUSEMentS</h2>
+    <article class="about-story">
+      <div class="about-story-container">
+        <button class="about-story-button">
+          <span class="text-alt">다음</span>
+          <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+            <defs>
+              <style>
                 .cls-1 {
                   fill: #f7f7f7;
                 }
-              </style></defs><path class=cls-1 d=M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z transform="translate(-253 -1128)"></path></svg></button> <strong class=logo>D'AMUSEMentS 로고</strong><ol class=story-text-list><li data-order=01><strong>Don't Panic Seoul 월간지 발행</strong><p>- 17년 09월 30호 이후 휴간중<br>- 18년 6월 중순 재발행 예정</p></li><li data-order=02><strong>일러스트레이션 배포<br>및 큐레이션</strong><p>가나다라</p></li><li data-order=03><strong>3번째 내용</strong></li><li data-order=04><strong>ㅎㅎㅎ</strong><p>- 17년 09월 30호 이후 휴간중<br>- 18년 6월 중순 재발행 예정<br>- 17년 09월 30호 이후 휴간중<br>- 18년 6월 중순 재발행 예정<br>- 17년 09월 30호 이후 휴간중<br>- 18년 6월 중순 재발행 예정</p></li></ol></div></article><article class=about-all><p class=text-kor>우리는 아이디어를 내고,<br>아티스트들과 소통하여 작품을 널리 알립니다.<br>우리의 작업은 <strong class=accent>‘다양성’과 ‘협업’</strong>이라는<br>디어뮤즈먼츠의 핵심 철학 위에 이루어집니다.</p><p class=text-eng>We create ideas,<br>Communicate with artists to spread their works.<br>And all the work is done on the core philosophy of D’AMUSEMentS:<br>'diversity' and 'collaboration'.</p><div class=about-all-pic><strong class="title title-diversity"><em class=title-text>Diversity <i></i></em></strong> <strong class="sign sign-plus"><em class=sign-text>+</em></strong> <strong class="title title-collaboration"><em class=title-text>collaboration <i></i></em></strong> <strong class="sign sign-equal"><em class=sign-text>=</em></strong> <strong class=title><em class=title-logo>D'amusements</em></strong></div><div class=deco-icon-diversity></div><div class=deco-icon-collaboration></div></article></section><section class="section service"><h2 class=text-hidden>Our Service</h2><div class=service-slide><div class=service-slide-item data-order=1><div class=slide-container><strong class=slide-title>Art Consulting &amp; On-Offline Linked Promotion</strong><p class=text-kor>우리는 예술과 관련한 모든 컨설팅을 진행하며, 그와 함께 온-오프라인 연계 프로모션 서비스를 제공합니다.<br>자체적으로 확보하고 있는 아티스트 및 아트워크 DB와 프로모션 채널을 통해 클라이언트의 예술 관련 니즈를 구체화시킵니다.<br>그리고 그것을 충족하기 위한 종합적이고 전문적인 서비스 및 어드바이스가 준비되어 있습니다.</p><p class=text-eng>We conduct all artistic consulting and provide on-line and off-line promotional services.<br>Through the artist and artwork DB and promotional channels that are secured by our own company,<br>we provide clients with comprehensive and professional services and advices to satisfy their artistic needs.</p></div></div></div><div class=service-slide-bottom><div class=service-slide-progress><div class=line></div></div><div class=service-slide-utils><div class=utils-pagination><p><em>Current Page:</em> <span class="pagination-text current">1</span></p><p><em>Entire Page:</em> <span class="pagination-text entire">6</span></p></div><div class=utils-buttons><button>이전 슬라이드</button> <button>다음 슬라이드</button></div></div></div></section><section class="section section-damu"><h2 class=section-damu-title>D’AMUSEMentS 소개</h2><div class=damu-intro><p class=text-kor>디어뮤즈먼츠는 '다양한' 회사들과 함께<br>소비자에게 '즐거운 문화 체험'을 선물하고 있습니다.</p><p class=text-eng>D'AMUSEMentS presents exciting cultural experience<br>to consumers along with diverse companies.</p></div><ul class=damu-works><li class=damu-works-item><a href=#><img alt="D’AMUSEMentS Portfolio"></a></li><li class=damu-works-item><img alt="D’AMUSEMentS Portfolio"></li><li class=damu-works-item><img alt="D’AMUSEMentS Portfolio"></li><li class=damu-works-item><img alt="D’AMUSEMentS Portfolio"></li><li class=damu-works-item><img alt="D’AMUSEMentS Portfolio"></li><li class=damu-works-item><img alt="D’AMUSEMentS Portfolio"></li></ul><button type=button class=damu-btn-more>More</button></section><div class="popup popup-damu" style=display:none><div class=popup-dim><article class="popup-contents popup-type-2"><div class="popup-slide slide-jaebumJoo"><h3 class=popup-damu-title>Wework</h3><div class=popup-damu-bottom><div class=popup-damu-profile><div class=pic><img src=images/damu/damu-profile-jaebum.png alt="JaeBum Joo's Profile"></div><h3 class=title><span class=position>Pixel Artist</span> <span class=name>JaeBum Joo</span></h3></div><div class=desc><p class=desc-eng>Joo Jae-bum implements a 4-dimensional image in an 8-bit two-dimensional space. He is an artist who presents 'memories' and 'time' to us as a delicate pixel artwork. He is widely known not only in Korea but also overseas.</p><p class=desc-k>서울을 기반으로 글로벌하게 활동하는 픽셀 아티스트로, 국내 뿐 아니라 해외에서도 큰 반향을 얻고 있습니다. 8비트의 2차원 공간 속 에서 4차원의 이미지를 구현하며, 한땀한땀 빚어내는 픽셀 아트워크로 ‘추억’과 ‘시간‘을 우리에게 선물하는 작가입니다.</p></div></div><div class=popup-damu-image><div class=img-position><img src=images/damu/damu-image-1.png alt=Portfolio></div></div></div><a href=# class="popup-button-close close-type-2">팝업 닫기</a><div class=popup-buttons><button type=button class=popup-button-prev><span class=text-alt>이전 작품</span><svg class=svg xmlns=http://www.w3.org/2000/svg width=50 height=14 viewbox="0 0 50 14"><defs><style>
+              </style>
+            </defs>
+            <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"
+            />
+          </svg>
+        </button>
+        <strong class="logo">D'AMUSEMentS 로고</strong>
+        <ol class="story-text-list">
+          <li data-order="01">
+            <strong>Don't Panic Seoul 월간지 발행</strong>
+            <p>
+              - 17년 09월 30호 이후 휴간중
+              <br/> - 18년 6월 중순 재발행 예정
+            </p>
+          </li>
+          <li data-order="02">
+            <strong>일러스트레이션 배포
+              <br/>및 큐레이션</strong>
+            <p>
+              가나다라
+            </p>
+          </li>
+          <li data-order="03">
+            <strong>3번째 내용</strong>
+          </li>
+          <li data-order="04">
+            <strong>ㅎㅎㅎ</strong>
+            <p>
+              - 17년 09월 30호 이후 휴간중
+              <br/> - 18년 6월 중순 재발행 예정
+              <br/>- 17년 09월 30호 이후 휴간중
+              <br/> - 18년 6월 중순 재발행 예정
+              <br/>- 17년 09월 30호 이후 휴간중
+              <br/> - 18년 6월 중순 재발행 예정</p>
+          </li>
+        </ol>
+      </div>
+    </article>
+    <article class="about-all">
+      <p class="text-kor">
+        우리는 아이디어를 내고,
+        <br/> 아티스트들과 소통하여 작품을 널리 알립니다.
+        <br/> 우리의 작업은
+        <strong class="accent">‘다양성’과 ‘협업’</strong>이라는
+        <br/> 디어뮤즈먼츠의 핵심 철학 위에 이루어집니다.
+      </p>
+      <p class="text-eng">
+        We create ideas,
+        <br/> Communicate with artists to spread their works.
+        <br/> And all the work is done on the core philosophy of D’AMUSEMentS:
+        <br/> 'diversity' and 'collaboration'.
+      </p>
+      <div class="about-all-pic">
+        <strong class="title title-diversity">
+          <em class="title-text">Diversity
+            <i></i>
+          </em>
+        </strong>
+        <strong class="sign sign-plus">
+          <em class="sign-text">+</em>
+        </strong>
+        <strong class="title title-collaboration">
+          <em class="title-text">collaboration
+            <i></i>
+          </em>
+        </strong>
+        <strong class="sign sign-equal">
+          <em class="sign-text">=</em>
+        </strong>
+        <strong class="title">
+          <em class="title-logo">D'amusements</em>
+        </strong>
+      </div>
+      <div class="deco-icon-diversity"></div>
+      <div class="deco-icon-collaboration"></div>
+    </article>
+  </section>
+  <!--//end of .section.about-->
+
+  <section class="section service">
+    <h2 class="text-hidden">Our Service</h2>
+    <div class="service-slide">
+      <div class="service-slide-item" data-order="1">
+        <div class="slide-container">
+          <strong class="slide-title">Art Consulting &amp; On-Offline Linked Promotion</strong>
+          <p class="text-kor">
+            우리는 예술과 관련한 모든 컨설팅을 진행하며, 그와 함께 온-오프라인 연계 프로모션 서비스를 제공합니다.
+            <br/>자체적으로 확보하고 있는 아티스트 및 아트워크 DB와 프로모션 채널을 통해 클라이언트의 예술 관련 니즈를 구체화시킵니다.
+            <br/> 그리고 그것을 충족하기 위한 종합적이고 전문적인 서비스 및 어드바이스가 준비되어 있습니다.
+          </p>
+          <p class="text-eng">
+            We conduct all artistic consulting and provide on-line and off-line promotional services.
+            <br/> Through the artist and artwork DB and promotional channels that are secured by our own company,
+            <br/>we provide clients with comprehensive and professional services and advices to satisfy their artistic needs.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--//end of .service-slide-->
+    <div class="service-slide-bottom">
+      <div class="service-slide-progress">
+        <div class="line"></div>
+      </div>
+      <div class="service-slide-utils">
+        <div class="utils-pagination">
+          <p>
+            <em>Current Page:</em>
+            <span class="pagination-text current">1</span>
+          </p>
+          <p>
+            <em>Entire Page:</em>
+            <span class="pagination-text entire">6</span>
+          </p>
+        </div>
+        <div class="utils-buttons">
+          <button>이전 슬라이드</button>
+          <button>다음 슬라이드</button>
+        </div>
+      </div>
+    </div>
+    <!--//end of .service-slide-bottom-->
+  </section>
+  <!--//end of .section.service-->
+
+  <section class="section section-damu">
+    <h2 class="section-damu-title item-fade">D’AMUSEMentS 소개</h2>
+    <div class="damu-intro item-fade">
+      <p class="text-kor">디어뮤즈먼츠는 '다양한' 회사들과 함께
+        <br/> 소비자에게 '즐거운 문화 체험'을 선물하고 있습니다.</p>
+      <p class="text-eng">
+        D'AMUSEMentS presents exciting cultural experience
+        <br/> to consumers along with diverse companies.
+      </p>
+    </div>
+    <ul class="damu-works">
+      <li class="damu-works-item">
+        <a href="#">
+          <img src="" alt="D’AMUSEMentS Portfolio">
+        </a>
+      </li>
+      <li class="damu-works-item">
+        <img src="" alt="D’AMUSEMentS Portfolio">
+      </li>
+      <li class="damu-works-item">
+        <img src="" alt="D’AMUSEMentS Portfolio">
+      </li>
+      <li class="damu-works-item">
+        <img src="" alt="D’AMUSEMentS Portfolio">
+      </li>
+      <li class="damu-works-item">
+        <img src="" alt="D’AMUSEMentS Portfolio">
+      </li>
+      <li class="damu-works-item">
+        <img src="" alt="D’AMUSEMentS Portfolio">
+      </li>
+    </ul>
+    <button type="button" class="damu-btn-more">More
+    </button>
+  </section>
+  <!-- //end of .section.section-damu -->
+
+  <div class="popup popup-damu" style="display:none">
+    <div class="popup-dim">
+      <article class="popup-contents popup-type-2">
+        <div class="popup-slide slide-jaebumJoo">
+
+          <h3 class="popup-damu-title">Wework</h3>
+          <div class="popup-damu-bottom">
+
+            <!-- TODO: 이 아래 부분은 특정 item에서만 보이게끔 -->
+            <div class="popup-damu-profile">
+              <div class="pic">
+                <img src="images/damu/damu-profile-jaebum.png" alt="JaeBum Joo's Profile">
+              </div>
+              <h3 class="title">
+                <span class="position">Pixel Artist</span>
+                <span class="name">JaeBum Joo</span>
+              </h3>
+            </div>
+            <!-- end of .popup-damu-profile -->
+
+            <!-- <div class="type">
+              <p>Direction, Production,
+                <br/> Collaboration, Artwork</p>
+            </div> -->
+
+            <div class="desc">
+              <p class="desc-eng">
+                Joo Jae-bum implements a 4-dimensional image in an 8-bit two-dimensional space. He is an artist who presents 'memories' and
+                'time' to us as a delicate pixel artwork. He is widely known not only in Korea but also overseas.
+              </p>
+              <p class="desc-k">
+                서울을 기반으로 글로벌하게 활동하는 픽셀 아티스트로, 국내 뿐 아니라 해외에서도 큰 반향을 얻고 있습니다. 8비트의 2차원 공간 속 에서 4차원의 이미지를 구현하며, 한땀한땀 빚어내는 픽셀 아트워크로 ‘추억’과 ‘시간‘을
+                우리에게 선물하는 작가입니다.
+              </p>
+            </div>
+          </div>
+          <div class="popup-damu-image">
+            <div class="img-position">
+              <img src="images/damu/damu-image-1.png" alt="Portfolio">
+            </div>
+          </div>
+        </div>
+        <a href="#" class="popup-button-close close-type-2">팝업 닫기</a>
+        <div class="popup-buttons">
+          <button type="button" class="popup-button-prev">
+            <span class="text-alt">이전 작품</span>
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+              <defs>
+                <style>
                   .cls-1 {
                     fill: #f7f7f7;
                   }
-                </style></defs><path class=cls-1 d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z"></path></svg></button> <button type=button class=popup-button-next><span class=text-alt>다음 작품</span><svg class=svg xmlns=http://www.w3.org/2000/svg width=50 height=14 viewbox="0 0 50 14"><defs><style>
+                </style>
+              </defs>
+              <path class="cls-1" d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z" />
+            </svg>
+          </button>
+          <button type="button" class="popup-button-next">
+            <span class="text-alt">다음 작품</span>
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+              <defs>
+                <style>
                   .cls-1 {
                     fill: #f7f7f7;
                   }
-                </style></defs><path class=cls-1 d=M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z transform="translate(-253 -1128)"></path></svg></button></div></article></div></div><section class="section section-dsc"><h2 class=section-dsc-title>Dr. Simpson Company 소개</h2><div class=dsc-intro><p class=text-kor>디어뮤즈먼츠는 '다양한' 아티스트들과 함께 예술을 이끌어가고 있습니다.<br>DSC는 다양한 음악으로 세상을 즐겁게 만들고 있는 인디 뮤지션 레이블입니다.</p><p class=text-eng>We leading the arts with 'Diversified' artists.<br>DSC is a independent music label that makes the world fun with a variety of music</p></div><div class=dsc-works>여기에 슬라이드 도입~~~~</div></section><div class="popup popup-dsc" style=display:none><div class=popup-dim><article class=popup-contents><div class=popup-slide><div class=popup-dsc-top><div class=title><small class=title-eng>Dr.Simpson</small><h3 class=title-kor>닥터심슨</h3></div><div class=desc><p>2011년 7월 데뷔하여 지금까지 꾸준히 왕성한 활동을 보여준,<br>감성 힙합으로 널리 알려진 래퍼 겸 싱어송라이터입니다.</p></div></div><div class=popup-dsc-bottom><div class=image-container><div class=img-position><img src=images/dsc/dsc-profile-1.png alt="닥터심슨 사진"></div></div><div class=discography><strong class=discography-title>Essential Discography</strong><div class=discography-container><strong>앨범</strong><ul><li><em class=date>2013.11</em> 싱글 [Lean On Me] 발매</li><li><em class=date>2013.11</em> 정규 [Comma Part.1, 2] 발매</li><li><em class=date>2015.07~08</em><br>닥터심슨x그_냥 EP [#DearMuse #201507_08 #PinkRibbon] 발매</li><li><em class=date>2016.05</em> 싱글[Gentle Fidelity #1] 발매</li><li><em class=date>2018.02</em> 싱글 [1988_2018] 발매</li></ul></div><div class=discography-container><strong>공연</strong><ul><li><em class=date>2015.08</em> 단독 콘서트 [홍대 V홀]</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li></ul></div><div class=discography-container><strong>강연</strong><ul><li><em class=date>2015.08</em> 단독 콘서트 [홍대 V홀]</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li><li><em class=date>2000.00</em> 여기에 내용이 들어가요</li></ul></div></div></div></div><a href=# class=popup-button-close>팝업 닫기</a><div class=popup-buttons><button type=button class=popup-button-prev><span class=text-alt>이전 작품</span><svg class=svg xmlns=http://www.w3.org/2000/svg width=50 height=14 viewbox="0 0 50 14"><defs><style>
+                </style>
+              </defs>
+              <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"
+              />
+            </svg>
+          </button>
+        </div>
+      </article>
+
+    </div>
+    <!-- //end of .popup-slide -->
+  </div>
+  </div>
+  <!-- //end of .popup-damu -->
+
+  <section class="section section-dsc">
+    <h2 class="section-dsc-title">Dr. Simpson Company 소개</h2>
+    <div class="dsc-intro">
+      <p class="text-kor">디어뮤즈먼츠는 '다양한' 아티스트들과 함께 예술을 이끌어가고 있습니다.
+        <br/> DSC는 다양한 음악으로 세상을 즐겁게 만들고 있는 인디 뮤지션 레이블입니다.</p>
+      <p class="text-eng">
+        We leading the arts with 'Diversified' artists.
+        <br/> DSC is a independent music label that makes the world fun with a variety of music
+      </p>
+    </div>
+    <div class="dsc-works">
+      여기에 슬라이드 도입~~~~
+    </div>
+  </section>
+  <!-- //end of .section.section-dsc -->
+
+  <div class="popup popup-dsc" style="display:none">
+    <div class="popup-dim">
+      <article class="popup-contents">
+        <div class="popup-slide">
+          <div class="popup-dsc-top">
+            <div class="title">
+              <small class="title-eng">Dr.Simpson</small>
+              <h3 class="title-kor">닥터심슨</h3>
+            </div>
+            <div class="desc">
+              <p>2011년 7월 데뷔하여 지금까지 꾸준히 왕성한 활동을 보여준,
+                <br/>감성 힙합으로 널리 알려진 래퍼 겸 싱어송라이터입니다.</p>
+            </div>
+          </div>
+          <div class="popup-dsc-bottom">
+            <div class="image-container">
+              <div class="img-position">
+                <img src="images/dsc/dsc-profile-1.png" alt="닥터심슨 사진">
+              </div>
+            </div>
+            <div class="discography">
+              <strong class="discography-title">Essential Discography</strong>
+              <div class="discography-container">
+                <strong>앨범</strong>
+                <ul>
+                  <li>
+                    <em class="date">2013.11</em> 싱글 [Lean On Me] 발매
+                  </li>
+                  <li>
+                    <em class="date">2013.11</em>
+                    정규 [Comma Part.1, 2] 발매
+                  </li>
+                  <li>
+                    <em class="date">2015.07~08</em>
+                    <br/> 닥터심슨x그_냥 EP [#DearMuse #201507_08 #PinkRibbon] 발매
+                  </li>
+                  <li>
+                    <em class="date">2016.05</em> 싱글[Gentle Fidelity #1] 발매
+                  </li>
+                  <li>
+                    <em class="date">2018.02</em>
+                    싱글 [1988_2018] 발매
+                  </li>
+                </ul>
+              </div>
+              <div class="discography-container">
+                <strong>공연</strong>
+                <ul>
+                  <li>
+                    <em class="date">2015.08</em> 단독 콘서트 [홍대 V홀]
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                </ul>
+              </div>
+              <div class="discography-container">
+                <strong>강연</strong>
+                <ul>
+                  <li>
+                    <em class="date">2015.08</em> 단독 콘서트 [홍대 V홀]
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                  <li>
+                    <em class="date">2000.00</em>
+                    여기에 내용이 들어가요
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="popup-button-close">팝업 닫기</a>
+        <div class="popup-buttons">
+          <button type="button" class="popup-button-prev">
+            <span class="text-alt">이전 작품</span>
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+              <defs>
+                <style>
                   .cls-1 {
                     fill: #f7f7f7;
                   }
-                </style></defs><path class=cls-1 d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z"></path></svg></button> <button type=button class=popup-button-next><span class=text-alt>다음 작품</span><svg class=svg xmlns=http://www.w3.org/2000/svg width=50 height=14 viewbox="0 0 50 14"><defs><style>
+                </style>
+              </defs>
+              <path class="cls-1" d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z" />
+            </svg>
+          </button>
+          <button type="button" class="popup-button-next">
+            <span class="text-alt">다음 작품</span>
+            <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
+              <defs>
+                <style>
                   .cls-1 {
                     fill: #f7f7f7;
                   }
-                </style></defs><path class=cls-1 d=M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z transform="translate(-253 -1128)"></path></svg></button></div></article></div></div><section class="section section-proz"><h2 class=section-proz-title>Prozeters 소개</h2><div class=proz-intro><p class=text-kor>탄탄한 기획력과 연출을 바탕으로 비주얼 모션 그래픽을 활용한 창의적 감성을 표현하며,<br>다량의 아이디어와 섬세한 디테일로 승부하는 영상 프로덕션입니다.</p><p class=text-eng>Based on solid planning and production, express creative sensibility using visual motion graphics,<br>We are a video production that competes with a lot of ideas and details.</p></div><button type=button class=proz-btn-more>Portfolio</button></section><div class="popup popup-proz" style=display:none><div class=popup-dim><article class=popup-contents><div class=popup-proz-list><div class=popup-proz-item><a href=https://youtu.be/nYh-n7EOtMA target=_blank><img src=http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/k2qgadSvNyU target=_blank><img src=http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/PT2_F-1esPk target=_blank><img src=http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/nYh-n7EOtMA target=_blank><img src=http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/k2qgadSvNyU target=_blank><img src=http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/PT2_F-1esPk target=_blank><img src=http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/nYh-n7EOtMA target=_blank><img src=http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/k2qgadSvNyU target=_blank><img src=http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/PT2_F-1esPk target=_blank><img src=http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/nYh-n7EOtMA target=_blank><img src=http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/k2qgadSvNyU target=_blank><img src=http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div><div class=popup-proz-item><a href=https://youtu.be/PT2_F-1esPk target=_blank><img src=http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg alt="PROZETERS 포트폴리오"></a></div></div><a href=# aria-role=button class=popup-button-close>팝업 닫기</a></article></div></div><section class="section notice"><h2 class=notice-title>Notice</h2><div class=notice-container>여기에 그누보드~~!!</div></section><footer class=footer><div class=footer-logo>푸터로고</div><div class=footer-info><dl><dt>회사명</dt><dd>디어뮤즈먼츠</dd><dt>대표</dt><dd>최찬영</dd><dt>주소</dt><dd>서울특별시 중구 한강대로 416, 서울스퀘어 14층</dd><dt>사업자 등록번호</dt><dd>107-36-69629</dd></dl><dl><dt>Contact</dt><dd><a href=mailto:chairman.damusements@d-amusements.com>chairman.damusements@d-amusements.com</a></dd></dl><p>Copyright © 디어뮤즈먼츠. All Rights Reserved.</p></div></footer><script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js></script><script src=js/vendors.js></script><script src=js/script.min.js></script></body></html>
+                </style>
+              </defs>
+              <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"
+              />
+            </svg>
+          </button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+  </div>
+  <!-- //end of .popup-dsc -->
+
+  <section class="section section-proz">
+    <h2 class="section-proz-title">Prozeters 소개</h2>
+    <div class="proz-intro">
+      <p class="text-kor">탄탄한 기획력과 연출을 바탕으로 비주얼 모션 그래픽을 활용한 창의적 감성을 표현하며,
+        <br/> 다량의 아이디어와 섬세한 디테일로 승부하는 영상 프로덕션입니다.</p>
+      <p class="text-eng">
+        Based on solid planning and production, express creative sensibility using visual motion graphics,
+        <br/> We are a video production that competes with a lot of ideas and details.
+      </p>
+    </div>
+    <button type="button" class="proz-btn-more">Portfolio
+    </button>
+  </section>
+  <!-- //end of .section-proz -->
+
+
+  <div class="popup popup-proz" style="display:none">
+    <div class="popup-dim">
+      <article class="popup-contents">
+        <div class="popup-proz-list">
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/nYh-n7EOtMA" target="_blank">
+              <img src="http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/k2qgadSvNyU" target="_blank">
+              <img src="http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/PT2_F-1esPk" target="_blank">
+              <img src="http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/nYh-n7EOtMA" target="_blank">
+              <img src="http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/k2qgadSvNyU" target="_blank">
+              <img src="http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/PT2_F-1esPk" target="_blank">
+              <img src="http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/nYh-n7EOtMA" target="_blank">
+              <img src="http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/k2qgadSvNyU" target="_blank">
+              <img src="http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/PT2_F-1esPk" target="_blank">
+              <img src="http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/nYh-n7EOtMA" target="_blank">
+              <img src="http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/k2qgadSvNyU" target="_blank">
+              <img src="http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+          <div class="popup-proz-item">
+            <a href="https://youtu.be/PT2_F-1esPk" target="_blank">
+              <img src="http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg" alt="PROZETERS 포트폴리오">
+            </a>
+          </div>
+        </div>
+        <a href="#" aria-role="button" class="popup-button-close">팝업 닫기</a>
+      </article>
+    </div>
+
+  </div>
+  <!-- //end of .popup-proz -->
+
+
+  <section class="section notice">
+    <h2 class="notice-title">Notice</h2>
+    <div class="notice-container">
+      여기에 그누보드~~!!
+    </div>
+  </section>
+  <!-- //end of .section.notice -->
+
+  <footer class="footer">
+    <div class="footer-logo">푸터로고</div>
+    <div class="footer-info">
+      <dl>
+        <dt>회사명</dt>
+        <dd>디어뮤즈먼츠</dd>
+        <dt>대표</dt>
+        <dd>최찬영</dd>
+        <dt>주소</dt>
+        <dd>서울특별시 중구 한강대로 416, 서울스퀘어 14층</dd>
+        <dt>사업자 등록번호</dt>
+        <dd>107-36-69629</dd>
+      </dl>
+      <dl>
+        <dt>Contact</dt>
+        <dd>
+          <a href="mailto:chairman.damusements@d-amusements.com">chairman.damusements@d-amusements.com</a>
+        </dd>
+      </dl>
+      <p>Copyright © 디어뮤즈먼츠. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/vendors.js"></script>
+  <script src="js/script.min.js"></script>
+  <script>
+    var s = skrollr.init({
+      constants: {
+        //fill the box for a "duration" of 150% of the viewport (pause for 150%)
+        //adjust for shorter/longer pause
+        box: '150p'
+      }
+    });
+  </script>
+</body>
+
+</html>

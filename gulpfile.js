@@ -85,6 +85,16 @@ gulp.task("compile-scss", function() {
 // =============================
 
 // =============================
+// html 카피
+gulp.task("copy-html", function() {
+  return gulp
+    .src(paths.html)
+    .pipe(gulp.dest(dist))
+    .pipe(browserSync.stream());
+});
+// =============================
+
+// =============================
 // 폰트 카피
 gulp.task("copy-font", function() {
   return gulp.src(src + "/fonts/**/*").pipe(gulp.dest(dist + "/fonts"));
@@ -151,7 +161,8 @@ gulp.task("browserSync", function() {
 // =============================
 // watch 업무 정의
 gulp.task("watch", function() {
-  gulp.watch(paths.html, { interval: 1000 }, ["minify-html"]);
+  // gulp.watch(paths.html, { interval: 1000 }, ["minify-html"]);
+  gulp.watch(paths.html, { interval: 1000 }, ["copy-html"]);
   gulp.watch(paths.scss, ["compile-scss"]);
   gulp.watch(paths.image, { interval: 1000 }, ["copy-image"]);
   gulp.watch(paths.jsMine, { interval: 1000 }, ["minify-myJS"]);
@@ -161,7 +172,8 @@ gulp.task("watch", function() {
 // =============================
 // default 정의
 gulp.task("default", [
-  "minify-html",
+  // "minify-html",
+  "copy-html",
   "copy-image",
   "compile-scss",
   "copy-font",

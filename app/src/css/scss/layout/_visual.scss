@@ -130,6 +130,15 @@
       }
     }
   } //end of .visual-slide
+}
+
+.visual-sub {
+  // position: absolute;
+  // position: relative;
+  width: 100%;
+  height: 980px;
+  overflow: hidden;
+  min-width: 1480px;
 
   .visual-text-container {
     //오버랩되는 텍스트 영역
@@ -137,12 +146,11 @@
     @include flex-direction(column);
     @include align-items(center);
     @include justify-content(center);
-    z-index: $z-visual-text;
-    position: absolute;
+    // z-index: $z-visual-text;
+    // position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
-    transform: translateY(50%);
 
     p {
       color: #fff;

@@ -18,44 +18,50 @@
   <![endif]-->
 
   <link rel="stylesheet" href="css/style.css?ver=0712">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
 
   <header class="header">
-    <div class="header-container">
-      <h1 class="header-logo">
-        <a href="#">D'AMUSEMentS</a>
-      </h1>
-      <ul class="header-navigation">
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">D’AMUSEMentS</a>
-        </li>
-        <li>
-          <a href="#">DSC</a>
-        </li>
-        <li>
-          <a href="#">PROZETERS</a>
-        </li>
-        <li>
-          <a href="#">NOTICE</a>
-        </li>
-        </li>
-        <li>
-          <a href="#">blog</a>
-        </li>
-      </ul>
-    </div>
-    <div class="header-download">
-      <a href="#" class="download-introduction">회사소개서 다운로드</a>
+    <div class="header-grid">
+      <div class="header-container">
+        <h1 class="header-logo">
+          <a href="#">D'AMUSEMentS</a>
+        </h1>
+        <ul class="header-navigation">
+          <li>
+            <a href="#" class="nav-menu">About</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">D’AMUSEMentS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">DSC</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">PROZETERS</a>
+          </li>
+          <li>
+            <a href="#" class="nav-menu">NOTICE</a>
+          </li>
+          </li>
+          <li>
+            <a href="#" class="nav-link">blog</a>
+          </li>
+        </ul>
+      </div>
+      <div class="header-download">
+        <a href="#" class="download-introduction">회사소개서 다운로드</a>
+      </div>
     </div>
   </header>
   <!--//end of .header-->
 
-  <section class="section visual">
+  <section class="section visual" data-_box-0="background:yellow" data-_box-980="background:green">
+
+    <div class="box" data-100p="outline: 4px solid red;" data-_box-100p="outline: 6px dashed black;"></div>
+
     <h2 class="visual-title">
       <span>Diversify</span>
       <span>your</span>
@@ -63,17 +69,48 @@
     </h2>
     <div class="visual-slide swiper-container">
       <div class="swiper-wrapper visual-slide-wrapper">
-        <div class="swiper-slide visual-slide-item" data-order="1" data-index="0">슬라이드1</div>
-        <div class="swiper-slide visual-slide-item" data-order="2" data-index="1">2</div>
-        <div class="swiper-slide visual-slide-item" data-order="3" data-index="2">3</div>
-        <div class="swiper-slide visual-slide-item" data-order="4" data-index="3">444444</div>
+        <!-- <div class="swiper-slide visual-slide-item" data-order="1" data-index="0"></div>
+        <div class="swiper-slide visual-slide-item" data-order="2" data-index="1"></div>
+        <div class="swiper-slide visual-slide-item" data-order="3" data-index="2"></div>
+        <div class="swiper-slide visual-slide-item" data-order="4" data-index="3"></div> -->
       </div>
       <div class="swiper-pagination visual-slide-pagination"></div>
     </div>
-    <div class="visual-dim"></div>
+  </section>
+  <!--//end of .section.visual-->
 
-    <!-- TODO: 스크롤 시 오버랩되도록 처리 -->
-    <div class="visual-text-container" style="display:none">
+  <div class="test" data-0="transform:translate(0,0%);" data-100p="transform:translate(0,-100%);"></div>
+
+  <div class="test" data-0="transform:translate(0,100%);" data-100p="transform:translate(0,0%)" data-_box-100p="" data-_box-200p="transform:translate(0,-100%)">
+    <div class="box" data-100p="width:0%;" data-_box-100p="width:100%"></div>
+  </div>
+
+  <div class="test" data-_box-100p="transform:translate(0,100%);" data-_box-200p="transform:translate(0,0%);"></div>
+
+  <style>
+    test {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent center no-repeat;
+      background-size: cover;
+    }
+
+    .box {
+      position: absolute;
+      width: 400px;
+      left: 0;
+      height: 400px;
+      border-radius: 50%;
+      background: violet;
+    }
+  </style>
+
+  <!-- TODO: 스크롤 시 오버랩되도록 처리 -->
+  <div class="visual-sub" data-0="background:red;" data-980="background:blue">
+    <div class="visual-text-container">
       <p class="text-kor">
         “디어뮤즈먼츠는 ‘다양성’을 기반으로 음악, 미술, 영상
         <br/> 그리고 ‘전에 없던 것’을 만들어내는
@@ -84,8 +121,7 @@
         <br/> things hitherto inexistent based on diversity.
       </p>
     </div>
-  </section>
-  <!--//end of .section.visual-->
+  </div>
 
   <section class="section about">
     <h2 class="text-hidden">About D'AMUSEMentS</h2>
@@ -224,8 +260,8 @@
   <!--//end of .section.service-->
 
   <section class="section section-damu">
-    <h2 class="section-damu-title">D’AMUSEMentS 소개</h2>
-    <div class="damu-intro">
+    <h2 class="section-damu-title item-fade">D’AMUSEMentS 소개</h2>
+    <div class="damu-intro item-fade">
       <p class="text-kor">디어뮤즈먼츠는 '다양한' 회사들과 함께
         <br/> 소비자에게 '즐거운 문화 체험'을 선물하고 있습니다.</p>
       <p class="text-eng">
@@ -613,9 +649,17 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/vendors.js"></script>
   <script src="js/script.min.js"></script>
+  <script>
+    var s = skrollr.init({
+      constants: {
+        //fill the box for a "duration" of 150% of the viewport (pause for 150%)
+        //adjust for shorter/longer pause
+        box: '150p'
+      }
+    });
+  </script>
 </body>
 
 </html>
