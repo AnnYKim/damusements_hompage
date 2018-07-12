@@ -376,8 +376,6 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 
 .popup .popup-dim { z-index: 100; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -ms-flex-pack: center; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center; background-color: rgba(0, 0, 0, 0.77); }
 
-.popup .popup-contents { width: 1190px; height: 760px; background-color: #fff; }
-
 .popup .popup-buttons [class^="popup-button-"] { position: absolute; top: 50%; width: 60px; height: 60px; background-color: #000; box-sizing: border-box; border-radius: 50%; text-indent: -999px; overflow: hidden; transform: translateY(-50%); }
 
 .popup .popup-buttons [class^="popup-button-"] .text-alt { visibility: hidden; width: 0px; height: 0px; opacity: 0; position: absolute; left: -999px; }
@@ -391,5 +389,45 @@ html, body { position: relative; min-height: 100%; height: 100%; font-size: 100%
 .popup .popup-buttons .popup-button-prev { left: -90px; }
 
 .popup .popup-buttons .popup-button-next { right: -90px; }
+
+.popup .popup-contents { width: 1190px; height: 760px; padding: 80px 90px; background-color: #fff; box-sizing: border-box; }
+
+.popup-dsc .popup-slide { position: relative; display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: space-between; -moz-justify-content: space-between; -ms-justify-content: space-between; justify-content: space-between; -ms-flex-pack: space-between; width: 100%; height: 100%; }
+
+.popup-dsc .popup-dsc-top .title { margin-bottom: 30px; }
+
+.popup-dsc .popup-dsc-top .title-eng { font-size: 16px; }
+
+.popup-dsc .popup-dsc-top .title-kor { font-size: 48px; }
+
+.popup-dsc .popup-dsc-top .desc { font-size: 13px; line-height: 1.5; }
+
+.popup-dsc .popup-dsc-bottom { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; position: absolute; bottom: 0; left: 0; overflow: hidden; }
+
+.popup-dsc .popup-dsc-bottom .image-container { width: 582px; margin-right: 40px; }
+
+.popup-dsc .popup-dsc-bottom .image-container .img-position { overflow: hidden; position: absolute; left: 0; bottom: 0; width: auto; width: 582px; height: 414px; }
+
+.popup-dsc .popup-dsc-bottom .image-container img { display: block; width: auto; height: 100%; }
+
+.popup-dsc .popup-dsc-bottom .discography { display: -webkit-box; display: -moz-box; display: -ms-flexbox; display: -webkit-flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: flex-end; -moz-justify-content: flex-end; -ms-justify-content: flex-end; justify-content: flex-end; -ms-flex-pack: flex-end; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-title { position: relative; display: block; margin-top: 4px; font-size: 17px; color: #181459; letter-spacing: -1px; font-weight: 800; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-title:before { position: absolute; top: -4px; left: 0; display: block; width: 10px; height: 3px; content: ""; background-color: #181459; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-title + .discography-container { margin-top: 34; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-container { margin-top: 22px; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-container > strong { display: block; color: #181459; font-size: 14px; margin-bottom: 10px; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-container li { margin-top: 3px; font-size: 12px; color: #3f3f41; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-container li:first-child { margin-top: 0; }
+
+.popup-dsc .popup-dsc-bottom .discography .discography-container li .date { color: #181459; font-weight: 600; }
+
+.popup-contents { width: 1190px; height: 760px; background-color: #fff; }
 
 /*# sourceMappingURL=style.css.map */

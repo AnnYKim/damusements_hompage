@@ -54,15 +54,6 @@
     background-color: rgba(0, 0, 0, 0.77);
   } //end of .popup-dim
 
-  .popup-contents {
-    width: 1190px;
-    height: 760px;
-    background-color: #fff;
-  }
-
-  .popup-contents.popup-type-2 {
-  }
-
   .popup-buttons {
     [class^="popup-button-"] {
       position: absolute;
@@ -113,4 +104,12 @@
       right: -90px;
     }
   } //end of .popup-buttons
+
+  .popup-contents {
+    width: 1190px;
+    height: 760px;
+    padding: 80px 90px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
 }
