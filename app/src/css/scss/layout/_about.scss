@@ -5,6 +5,11 @@
 .section.about {
   min-width: 1480px;
   position: relative;
+
+  h2 {
+    position: absolute;
+    left: -999px;
+  }
 }
 
 //상단 화살표로 넘겨보기 영역
@@ -12,6 +17,7 @@
   position: relative;
   max-width: 100%;
   overflow: hidden;
+  margin-top: 94px;
 
   &:before,
   &:after {
@@ -119,6 +125,7 @@
   .story-text-list {
     position: relative;
     @include flexbox;
+    transition-delay: 0.8s;
 
     li {
       position: relative;

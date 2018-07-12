@@ -43,38 +43,19 @@
     margin-right: auto;
     border: 1px solid #d0d5dc;
     border-radius: 40px;
-
-    .more-text {
-      @include font-sub(800);
-      height: 100%;
-      line-height: 64px;
-      text-align: center;
-      text-transform: uppercase;
-
-      &.eng {
-        color: #fff;
-        display: block;
-        font-size: 16px;
-        transition: margin-top 0.3s;
-      }
-
-      &.kor {
-        display: block;
-        font-size: 18px;
-        @include font-main;
-      }
-    }
+    @include font-sub(800);
+    height: 100%;
+    line-height: 64px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    display: block;
+    font-size: 16px;
 
     &:hover {
       //버튼 호버 효과
-      background-color: #fff;
-      border-color: #fff;
-      //transition: background-color 0.3s;
-
-      .eng {
-        margin-top: -64px;
-        transition: margin-top 0.3s;
-      }
+      background-color: rgba(64, 64, 64, 0.71);
+      border-color: transparent;
     }
   } //end of .proz-btn-more
 }

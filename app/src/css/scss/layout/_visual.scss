@@ -68,19 +68,6 @@
     }
   }
 
-  // .visual-dim {
-  //   //비주얼 전체 dim
-  //   z-index: $z-visual-dim;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: rgba(0, 0, 0, 0.65);
-  //   @include pointer-none;
-  //   @include select-none;
-  // }
-
   .visual-slide {
     //슬라이드 영역
     position: relative;
@@ -107,37 +94,41 @@
         //background image
         &[data-order="#{$i}"] {
           background-image: url(#{$path-image}visual/bg-visual-#{$i}.png);
+          background-position: 50% 50%;
+          background-repeat: no-repeat;
+          background-size: cover;
         }
       }
     } //end of .visual-slide-item
 
-    // .visual-slide-pagination {
-    //   @include flexbox;
-    //   z-index: $z-visual-slide-pagination;
-    //   position: absolute;
-    //   bottom: 0;
-    //   left: 0;
-    //   outline: 1px solid orange;
+    .visual-slide-pagination {
+      z-index: $z-visual-slide-pagination;
+      @include flexbox;
+      @include justify-content(center);
+      position: absolute;
+      bottom: 80px;
+      left: 0;
 
-    //   .swiper-pagination-bullet {
-    //     display: block;
-    //     width: 14px;
-    //     height: 14px;
-    //     background-color: #fff;
-    //     opacity: 0.25;
-    //     border-radius: 50%;
-    //     cursor: pointer;
+      .swiper-pagination-bullet {
+        display: block;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        opacity: 0.25;
+        border-radius: 50%;
+        cursor: pointer;
 
-    //     &:hover {
-    //       opacity: 0.5;
-    //     }
-    //   }
+        &:focus,
+        &:hover {
+          outline: 0;
+          opacity: 0.5;
+        }
+      }
 
-    //   .swiper-pagination-bullet-active {
-    //     outline: 1px solid lightgreen;
-    //     opacity: 1 !important;
-    //   }
-    // }
+      .swiper-pagination-bullet-active {
+        opacity: 1 !important;
+      }
+    }
   } //end of .visual-slide
 
   .visual-text-container {

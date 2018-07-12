@@ -4,11 +4,11 @@
 $ly-min-width: 1480px;
 $ly-max-width: 1920px;
 
-// COLOR PALLETE
+// **** COLOR PALLETE ****
 $color-sub: #181459; //짙은 남색
 $color-damu: #211545; //짙은 보라색
 
-// z-index
+// **** z-index ****
 $z-header: 50; //헤더
 
 $z-visual-dim: 5; //비주얼 딤
@@ -21,10 +21,10 @@ $z-about-all-title: 1;
 $z-service-slide-container: 1; //서비스 슬라이드 영역 텍스트
 $z-popup-dim: 100;
 
-// path
+// **** path ****
 $path-image: "../images/";
 $path-font: "../fonts/";
 
-// font-weight
+// **** font-weight ****
 $fw-b: 600;
 $fw-eb: 800;

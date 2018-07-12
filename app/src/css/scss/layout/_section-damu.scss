@@ -84,38 +84,19 @@
     margin-right: auto;
     border: 2px solid #7f7f7f;
     border-radius: 40px;
-
-    .more-text {
-      @include font-sub(800);
-      height: 100%;
-      line-height: 72px;
-      text-align: center;
-      text-transform: uppercase;
-
-      &.eng {
-        display: block;
-        font-size: 20px;
-        transition: margin-top 0.3s;
-      }
-
-      &.kor {
-        display: block;
-        color: #fff;
-        font-size: 24px;
-        @include font-main;
-      }
-    }
+    @include font-sub(800);
+    height: 100%;
+    line-height: 72px;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-size: 20px;
 
     &:hover {
       //버튼 호버 효과
-      background-color: #3949a7;
-      border-color: #3949a7;
-      //transition: background-color 0.3s;
-
-      .eng {
-        margin-top: -72px;
-        transition: margin-top 0.3s;
-      }
+      color: #fff;
+      background-color: #404040;
+      border-color: #404040;
     }
   } //end of .damu-btn-more
 }

@@ -1,3 +1,21 @@
 @charset "utf-8";
 
 // **** Animations
+
+// **** fadein animation ****
+
+.animation-fade,
+.animation-hide {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.5s, opacity 0.8s;
+  transition-timing-function: easeInBack;
+}
+
+.animation-fade.animation-show,
+.animation-hide.animation-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.5s, opacity 0.8s;
+  transition-timing-function: easeInBack;
+}
