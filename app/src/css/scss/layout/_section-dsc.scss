@@ -4,7 +4,7 @@
 .section-dsc {
   min-width: $ly-min-width;
   position: relative;
-  padding: 152px 0 540px;
+  padding: 152px 0 640px;
   background-color: #f8f8f8;
   box-sizing: border-box;
 
@@ -38,7 +38,73 @@
   .dsc-works {
     position: absolute;
     left: 0;
-    bottom: 0;
-    outline: 4px solid blueviolet;
+    top: 500px;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    .dsc-slide {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      width: 4000px;
+      transform: translateX(-50%);
+
+      &.load {
+        position: absolute;
+        float: none;
+        left: 0;
+        top: 0;
+        width: 152px;
+        height: 152px;
+      }
+    }
+
+    .btn_link {
+      cursor: default;
+      display: block;
+      width: 150px;
+      height: 150px;
+      position: relative;
+      float: left;
+      margin-right: 50px;
+      margin-bottom: 260px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      // .img-container {
+      //   position: relative;
+      // }
+
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: auto;
+        transform: translate(-50%, -50%);
+        display: block;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -ms-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+      }
+
+      &.active {
+        left: 0px;
+        top: -94px;
+        width: 340px;
+        height: 340px;
+        box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        -webkit-transform: rotate(720deg);
+        -moz-transform: rotate(720deg);
+        -ms-transform: rotate(720deg);
+        -o-transform: rotate(720deg);
+        transform: rotate(720deg);
+        img {
+        }
+      }
+    }
   }
 }
