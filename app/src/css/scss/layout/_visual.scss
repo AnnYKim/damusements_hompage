@@ -3,15 +3,26 @@
 // Visual
 
 .section.visual {
-  // position: relative;
-  position: fixed;
-  @include flexbox;
-  @include justify-content(center);
-  @include align-items(center);
-  width: 100%;
-  height: 980px;
-  overflow: hidden;
-  min-width: 1480px;
+  .visual-container {
+    // position: relative;
+    position: fixed;
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    width: 100%;
+    height: 980px;
+    overflow: hidden;
+    min-width: 1480px;
+  }
+
+  .visual-title-container {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    min-width: 1140px;
+  }
 
   .visual-title {
     // diversify your taste

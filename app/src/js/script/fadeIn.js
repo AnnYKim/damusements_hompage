@@ -69,17 +69,17 @@ $(function() {
     scrollTop = $(window).scrollTop();
     windowHeight = $(window).height();
     ////////////////////
-    if (scrollTop > 0) {
-      $("body").css({
-        "overflow-x": "hidden"
-      });
-    }
+    // if (scrollTop > 0) {
+    //   $("body").css({
+    //     "overflow-x": "hidden"
+    //   });
+    // }
 
-    if (scrollTop > 980) {
-      $("body").css({
-        "overflow-x": "auto"
-      });
-    }
+    // if (scrollTop > 980) {
+    //   $("body").css({
+    //     "overflow-x": "auto"
+    //   });
+    // }
 
     itemFadeIn();
   });

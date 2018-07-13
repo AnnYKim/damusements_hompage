@@ -19,27 +19,6 @@
   max-width: 100%;
   overflow: hidden;
 
-  &:before,
-  &:after {
-    z-index: 100;
-    position: absolute;
-    top: 151px;
-    left: 50%;
-    margin-left: -416px;
-    height: 4px;
-    content: "";
-  }
-
-  &:before {
-    width: 100vw;
-    background-color: #f1f1f1;
-  }
-
-  &:after {
-    width: 356px;
-    background-color: #000;
-  }
-
   .about-story-container {
     position: relative;
     max-width: 1480px;
@@ -90,35 +69,57 @@
     }
   } //end of .about-story-button
 
+  .about-slide-line {
+    position: absolute;
+    top: 151px;
+    left: 324px;
+    width: 1400px;
+    height: 4px;
+    content: "";
+    background-color: #f1f1f1;
+
+    .line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 356px; //js로 제어 예정
+      height: 4px;
+      background-color: #000;
+    }
+  } //end of .about-slide-line
+
+  .about-slide {
+    &.about-slide-dsc,
+    &.about-slide-proz {
+      display: none;
+    }
+  }
+
   .logo {
     position: relative;
     overflow: hidden;
     display: block;
-    width: 340px;
-    height: 55px;
     margin-top: 45px;
     margin-bottom: 110px;
     text-indent: -999px;
-    background-image: url(#{$path-image}logo-damu.png);
     background-size: 100% 100%;
 
-    &:before,
-    &:after {
-      position: absolute;
-      bottom: -50px;
-      left: 0;
-      height: 4px;
-      content: "";
+    &.about-logo-damu {
+      width: 340px;
+      height: 55px;
+      @include bgi("logo-damu");
     }
 
-    &:before {
-      width: 100vw;
-      background-color: #f1f1f1;
+    &.about-logo-dsc {
+      width: 191px;
+      height: 68px;
+      @include bgi("logo-dsc");
     }
 
-    &:after {
-      width: 356px;
-      background-color: #000;
+    &.about-logo-proz {
+      width: 293px;
+      height: 78px;
+      @include bgi("logo-proz-dark");
     }
   } //end of logo
 

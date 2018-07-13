@@ -1,5 +1,3 @@
-console.log("마이스크립트 - 슬라이드JS");
-
 // *** 비주얼 슬라이드
 var visualSwiper = new Swiper(".visual-slide", {
   // Optional parameters
@@ -17,4 +15,19 @@ var visualSwiper = new Swiper(".visual-slide", {
     delay: 3000,
     disableOnInteraction: false
   }
+});
+
+// ** 어바웃 슬라이드
+var aboutSlide = function() {
+  var $aboutSlideButton = $("button.about-story-button");
+
+  var aboutSlideIdx = 0;
+
+  $aboutSlideButton.on("click", function() {
+    console.log("버튼클릭");
+  });
+};
+
+$(window).on("load", function() {
+  aboutSlide();
 });
