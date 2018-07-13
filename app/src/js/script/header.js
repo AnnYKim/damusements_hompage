@@ -189,7 +189,5 @@ $(function() {
 
   $(window).on("load", function() {
     initEvent();
-
-    var s = skrollr.init();
   });
 });

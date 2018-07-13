@@ -3,7 +3,8 @@
 // Visual
 
 .section.visual {
-  position: relative;
+  // position: relative;
+  position: fixed;
   @include flexbox;
   @include justify-content(center);
   @include align-items(center);
@@ -134,11 +135,13 @@
 
 .visual-sub {
   // position: absolute;
-  // position: relative;
+  z-index: 100;
+  position: relative;
   width: 100%;
   height: 980px;
   overflow: hidden;
   min-width: 1480px;
+  transform: translateY(100%);
 
   .visual-text-container {
     //오버랩되는 텍스트 영역
@@ -172,4 +175,10 @@
       @include font-sub;
     }
   }
+}
+
+.main {
+  position: relative;
+  top: 980px;
+  background-color: #fff;
 }
