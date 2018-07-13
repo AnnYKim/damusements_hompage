@@ -15,7 +15,7 @@
   .popup-contents {
     position: relative;
     opacity: 0;
-    transition: opacity 0.65s 0.15s;
+    transition: opacity 1s 0.4s;
   }
 
   .popup-button-close {
@@ -60,13 +60,15 @@
     @include justify-content(center);
     @include align-items(center);
     background-color: rgba(0, 0, 0, 0.77);
+    transition: opacity 0.5s;
 
     &.popup-show {
       opacity: 1;
+      transition: opacity 0.5s;
 
       .popup-contents {
         opacity: 1;
-        transition: opacity 0.65s 0.15s;
+        transition: opacity 1s 0.4s;
       }
     }
   } //end of .popup-dim

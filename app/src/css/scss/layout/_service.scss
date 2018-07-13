@@ -5,7 +5,8 @@
 .section.service {
   //////////////
   //지역변수
-  $ly-service-width: 910px;
+  $ly-service-width: 1040px;
+  $ly-service-margin: 130px;
   /////////////
 
   overflow: hidden;
@@ -17,6 +18,8 @@
   .service-slide {
     width: 100%;
     height: 100%;
+    @include pointer-none;
+    @include select-none;
   }
 
   .service-slide-item {
@@ -43,6 +46,7 @@
       z-index: $z-service-slide-container;
       color: #fff;
       width: $ly-service-width;
+      margin-left: $ly-service-margin;
       margin-bottom: 64px;
     }
 
@@ -64,33 +68,42 @@
 
     @for $i from 1 through 6 {
       //background image
-      &[data-order="#{$i}"] {
+      &[data-backgroundImage="#{$i}"] {
         background-image: url(#{$path-image}bg-service-#{$i}.png);
       }
     }
   }
 
   .service-slide-bottom {
+    z-index: $z-service-slide-navigation;
     position: absolute;
     bottom: 210px;
     left: 50%;
+    width: 910px;
     transform: translateX(-50%);
 
     .service-slide-progress {
       position: absolute;
+      @include flexbox;
       width: 1420px;
       height: 1px;
       background-color: #484848;
 
       .line {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 1px;
-        transform: scaleX(0.1);
+        // transform: scaleX(0.1);
         transform-origin: 0 0;
         background-color: rgba(255, 255, 255, 0.8);
+      }
+
+      .line-2 {
+        display: none;
+        width: 0%;
+        height: 1px;
+        // transform: scaleX(0.1);
+        transform-origin: 0 0;
+        background-color: red;
       }
     }
 
@@ -99,13 +112,17 @@
       @include flexbox;
       @include justify-content(space-between);
       @include align-items(center);
-      margin-top: 30px;
+      margin-top: 26px;
     }
 
     .utils-pagination {
       @include flexbox;
 
       p {
+        position: relative;
+        width: 10px;
+        height: 17px;
+
         &:first-child {
           position: relative;
           margin-right: 44px;
@@ -133,6 +150,8 @@
     }
 
     .pagination-text {
+      position: absolute;
+      display: block;
       @include font-sub(800);
       color: #fff;
       font-size: 16px;
@@ -166,7 +185,6 @@
           outline: 0;
         }
 
-        &:focus,
         &:hover {
           opacity: 1;
         }
