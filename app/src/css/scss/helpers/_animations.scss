@@ -19,3 +19,13 @@
   transition: transform 0.5s, opacity 0.8s;
   transition-timing-function: easeInBack;
 }
+
+@mixin popupFadeIn($duration: 0.4s, $delay: 0.1s) {
+  opacity: 1;
+  transition: opacity #{$duration} #{$delay};
+}
+
+@mixin popupFadeOut($duration: 0.4s, $delay: 0.1s) {
+  opacity: 0;
+  transition: opacity #{$duration} #{$delay};
+}

@@ -4,11 +4,18 @@
 // 모든 팝업창이 공통적으로 사용하는 스타일을 정의합니다.
 
 .popup {
-  // position: absolute;
+  position: absolute;
+  display: none;
   background-color: violet;
+
+  &.popup-show {
+    display: block;
+  }
 
   .popup-contents {
     position: relative;
+    opacity: 0;
+    transition: opacity 0.65s 0.15s;
   }
 
   .popup-button-close {
@@ -25,12 +32,12 @@
     background-size: 29px 29px;
 
     &:hover {
-      opacity: 0.7; //TODO: 임시
+      // opacity: 0.7; //TODO: 임시
     }
 
     &:focus {
       outline: 0;
-      opacity: 0.7; //TODO: 임시
+      // opacity: 0.7; //TODO: 임시
     }
 
     &.close-type-2 {
@@ -42,6 +49,7 @@
   } //end of .popup-button-close
 
   .popup-dim {
+    opacity: 0;
     z-index: $z-popup-dim;
     position: fixed;
     top: 0;
@@ -52,6 +60,15 @@
     @include justify-content(center);
     @include align-items(center);
     background-color: rgba(0, 0, 0, 0.77);
+
+    &.popup-show {
+      opacity: 1;
+
+      .popup-contents {
+        opacity: 1;
+        transition: opacity 0.65s 0.15s;
+      }
+    }
   } //end of .popup-dim
 
   .popup-buttons {

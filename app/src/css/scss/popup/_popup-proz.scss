@@ -24,7 +24,7 @@
     @include flexbox;
     position: relative;
     @include flex-wrap(wrap);
-    width: ($proz-works-width * 3) + ($proz-works-margin * 2) + (85 * 2) + 15;
+    width: ($proz-works-width * 3) + ($proz-works-margin * 2) + (85 * 2) + 20;
     margin: 0 auto;
   }
 

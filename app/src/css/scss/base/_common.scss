@@ -146,3 +146,8 @@ body {
     transition: transform 0.7s, opacity 1s;
   }
 }
+
+.noScroll {
+  height: 100%;
+  overflow: hidden;
+}
