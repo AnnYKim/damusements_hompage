@@ -2,6 +2,7 @@
 
 // Section for Prozeters
 .section-proz {
+  min-width: $ly-min-width;
   padding: 296px 0 286px;
   background-color: #040404;
   @include bgi("bg-proz");

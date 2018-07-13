@@ -3,6 +3,7 @@
 // Footer
 
 .footer {
+  min-width: $ly-min-width;
   @include flexbox;
   @include align-items(center);
   height: 194px;

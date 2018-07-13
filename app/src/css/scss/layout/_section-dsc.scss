@@ -2,6 +2,7 @@
 
 // Section for DSC
 .section-dsc {
+  min-width: $ly-min-width;
   position: relative;
   padding: 152px 0 540px;
   background-color: #f8f8f8;

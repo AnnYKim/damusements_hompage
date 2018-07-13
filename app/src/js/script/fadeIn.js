@@ -37,32 +37,50 @@ $(function() {
   //
 
   var $header = $(".header");
-  var $section_visual = $(".section.visual");
+  var $section_visual = $("section.visual");
+  var $fadeInItem = $(".item-fade");
+  var $visualTitle = $section_visual.find("h2.visual-title");
 
   var scrollTop = null;
   var windowHeight = null;
+
+  function itemFadeIn() {
+    $fadeInItem.each(function(i) {
+      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+      var bottom_of_window = scrollTop + windowHeight;
+
+      if (bottom_of_window > bottom_of_object - 150) {
+        $(this).addClass("item-show");
+        $(".item-hide").addClass("item-show");
+      }
+    });
+  }
+
+  // $(window).on("load resize", function() {
+  //   var visualTitleOffsetLeft = $visualTitle.offset().left;
+  //   console.log("visualTitleOffsetLeft", visualTitleOffsetLeft);
+  //   $(".visual-text-grid").css({
+  //     left: visualTitleOffsetLeft - 100
+  //   });
+  // });
 
   $(window).on("load scroll", function() {
     ////////////////////
     scrollTop = $(window).scrollTop();
     windowHeight = $(window).height();
-    // console.log("scrollTop=", scrollTop);
-    // console.log("windowHeight=", windowHeight);
     ////////////////////
-
-    if (windowHeight < 980) {
-      console.log("!!!!!!너무 작아!!!!!!!!");
-    }
-
     if (scrollTop > 0) {
-      console.log(" ~~ 지금부터 비주얼 오버랩 시작 ~~");
+      $("body").css({
+        "overflow-x": "hidden"
+      });
     }
 
     if (scrollTop > 980) {
-      console.log(" ~~ 비주얼 넘엇따! ~~");
-      // $section_visual.css({
-      //   "z-index": "-100"
-      // });
+      $("body").css({
+        "overflow-x": "auto"
+      });
     }
+
+    itemFadeIn();
   });
 });

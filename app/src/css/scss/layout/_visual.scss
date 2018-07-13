@@ -139,6 +139,7 @@
   position: relative;
   width: 100%;
   height: 980px;
+  margin-bottom: 980px;
   overflow: hidden;
   min-width: 1480px;
   transform: translateY(100%);
@@ -154,6 +155,11 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
+
+    // .visual-text-grid {
+    //   position: absolute;
+    //   min-width: 620px;
+    // }
 
     p {
       color: #fff;
@@ -179,6 +185,5 @@
 
 .main {
   position: relative;
-  top: 980px;
   background-color: #fff;
 }
