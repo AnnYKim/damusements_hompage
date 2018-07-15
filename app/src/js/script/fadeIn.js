@@ -39,7 +39,7 @@ $(function() {
   var $header = $(".header");
   var $section_visual = $("section.visual");
   var $fadeInItem = $(".item-fade");
-  var $lineUpItem = $(".item-line");
+  var $lineUpItem = $(".item-line-label");
   var $visualTitle = $section_visual.find("h2.visual-title");
 
   var scrollTop = null;
@@ -63,7 +63,9 @@ $(function() {
       var bottom_of_window = scrollTop + windowHeight;
 
       if (bottom_of_window > bottom_of_object - 150) {
-        $(this).addClass("item-show");
+        $(this)
+          .find(".item-line")
+          .addClass("item-show");
       }
     });
   }
