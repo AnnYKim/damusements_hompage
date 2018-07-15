@@ -1,4 +1,5 @@
-// *** 비주얼 슬라이드
+// *****************
+// *** 비주얼 영역 슬라이드
 var visualSwiper = new Swiper(".visual-slide", {
   // Optional parameters
   loop: true,
@@ -16,8 +17,10 @@ var visualSwiper = new Swiper(".visual-slide", {
     disableOnInteraction: false
   }
 });
+// *****************
 
-// *** 비주얼 슬라이드
+// *****************
+// *** 서비스 영역 슬라이드
 var serviceSwiperDuration = 8000;
 var serviceSwiper = new Swiper(".service-slide", {
   // Optional parameters
@@ -43,7 +46,9 @@ var serviceSwiper = new Swiper(".service-slide", {
   // },
   watchSlidesProgress: true
 });
+// *****************
 
+// ------------------
 //서비스 영역 슬라이드 이벤트는 모두 여기에 정의
 var serviceSlideEvent = function() {
   //변수 선언
@@ -110,12 +115,153 @@ var serviceSlideEvent = function() {
     paginationUpdate();
     progressBar.restart();
   });
-};
+}; //end of serviceSlideEvent();
+// ------------------
 
+// *****************
+// *** 어바웃 영역 슬라이드 이벤트
+var aboutSlideEvent = function() {
+  //셀렉터 변수
+  var $aboutSlideButton = $("button.about-story-button");
+  var $aboutSlide = $(".about-slide");
+  var aboutSlideIndex = 0;
+  var aboutSlideLength = 2;
+
+  var $list1 = $(".story-list-1");
+  var $list2 = $(".story-list-2");
+  var $list3 = $(".story-list-3");
+  var $list4 = $(".story-list-4");
+  var $logo = $(".about-slide .logo");
+  var $logoLine = $(".about-slide-line");
+  var $listAll = $(".story-text-list");
+
+  //콘텐츠 내용 담을 변수
+  var aboutSlideConents = {
+    logo: ["damu", "dsc", "proz"],
+    list_1: {
+      title: [],
+      text: []
+    },
+    list_2: {
+      title: [],
+      text: []
+    },
+    list_3: {
+      title: [],
+      text: []
+    },
+    list_4: {
+      title: [],
+      text: []
+    }
+  };
+
+  //어바웃 영역 슬라이드의 내용을 배열로 만듦
+  var getAboutSlideContents = function() {
+    //[1] .story-list-1의 정보 가져오기
+    $list1.each(function(i) {
+      // 1) strong 가져오기
+      aboutSlideConents.list_1.title[i] = $(this)
+        .find("strong")
+        .html();
+
+      // 2) p 가져오기
+      aboutSlideConents.list_1.text[i] = $(this)
+        .find("p")
+        .html();
+    });
+
+    //[2] .story-list-2의 정보 가져오기
+    $list2.each(function(i) {
+      // 1) strong 가져오기
+      aboutSlideConents.list_2.title[i] = $(this)
+        .find("strong")
+        .html();
+
+      // 2) p 가져오기
+      aboutSlideConents.list_2.text[i] = $(this)
+        .find("p")
+        .html();
+    });
+
+    //[3] .story-list-3의 정보 가져오기
+    $list3.each(function(i) {
+      // 1) strong 가져오기
+      aboutSlideConents.list_3.title[i] = $(this)
+        .find("strong")
+        .html();
+
+      // 2) p 가져오기
+      aboutSlideConents.list_3.text[i] = $(this)
+        .find("p")
+        .html();
+    });
+
+    //[4] .story-list-4의 정보 가져오기
+    $list4.each(function(i) {
+      // 1) strong 가져오기
+      aboutSlideConents.list_4.title[i] = $(this)
+        .find("strong")
+        .html();
+
+      // 2) p 가져오기
+      aboutSlideConents.list_4.text[i] = $(this)
+        .find("p")
+        .html();
+    });
+  };
+
+  //슬라이드 업데이트 함수
+  var updateAboutSlide = function(index) {
+    index == 2 ? $list4.addClass("list-hide") : $list4.removeClass("list-hide");
+
+    $logo.removeClass("updated");
+    $listAll.removeClass("updated");
+    $logoLine.find("span").removeClass();
+
+    $list1.find("strong").html(aboutSlideConents.list_1.title[index]);
+    $list1.find("p").html(aboutSlideConents.list_1.text[index]);
+    $list2.find("strong").html(aboutSlideConents.list_2.title[index]);
+    $list2.find("p").html(aboutSlideConents.list_2.text[index]);
+    $list3.find("strong").html(aboutSlideConents.list_3.title[index]);
+    $list3.find("p").html(aboutSlideConents.list_3.text[index]);
+    $list4.find("strong").html(aboutSlideConents.list_4.title[index]);
+    $list4.find("p").html(aboutSlideConents.list_4.text[index]);
+
+    setTimeout(function() {
+      $logo
+        .attr("data-logo", aboutSlideConents.logo[index])
+        .addClass("updated");
+    }, 120);
+
+    setTimeout(function() {
+      $logoLine.find("span").addClass(aboutSlideConents.logo[index]);
+    }, 320);
+
+    setTimeout(function() {
+      $listAll.addClass("updated");
+    }, 800);
+  };
+
+  //슬라이드 정보 동적 삽입
+  getAboutSlideContents();
+
+  $aboutSlideButton.on("click", function() {
+    aboutSlideIndex < aboutSlideLength
+      ? aboutSlideIndex++
+      : (aboutSlideIndex = 0);
+    updateAboutSlide(aboutSlideIndex);
+  });
+};
+// *****************
+
+// ------------------
 // 윈도 로드 시 이벤트 정의
 $(window).on("load", function() {
+  aboutSlideEvent();
   serviceSlideEvent();
 });
+// ------------------
 
 /////삭제예정////
 var tl = new TimelineMax({

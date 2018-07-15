@@ -22,6 +22,7 @@
   .about-story-container {
     position: relative;
     max-width: 1480px;
+    height: 380px;
     padding-left: 324px;
     box-sizing: border-box;
     overflow: hidden;
@@ -55,9 +56,7 @@
       margin: 0 auto;
     }
 
-    &:focus,
     &:hover {
-      outline: 0;
       background-color: #fff;
       border: 4px solid #323232;
 
@@ -66,6 +65,10 @@
           fill: #323232;
         }
       }
+    }
+
+    &:focus {
+      outline: 0;
     }
   } //end of .about-story-button
 
@@ -78,13 +81,29 @@
     content: "";
     background-color: #f1f1f1;
 
-    .line {
+    & > span {
+      display: block;
       position: absolute;
       top: 0;
       left: 0;
-      width: 356px; //js로 제어 예정
       height: 4px;
+      width: 0;
       background-color: #000;
+
+      &.damu {
+        width: 346px;
+        transition: width 0.6s;
+      }
+
+      &.dsc {
+        width: 196px;
+        transition: width 0.6s;
+      }
+
+      &.proz {
+        width: 296px;
+        transition: width 0.6s;
+      }
     }
   } //end of .about-slide-line
 
@@ -96,37 +115,52 @@
   }
 
   .logo {
+    opacity: 0;
+    transform: translateX(-30px);
     position: relative;
     overflow: hidden;
     display: block;
+    height: 80px;
     margin-top: 45px;
     margin-bottom: 110px;
     text-indent: -999px;
     background-size: 100% 100%;
 
-    &.about-logo-damu {
-      width: 340px;
-      height: 55px;
+    &[data-logo="damu"] {
       @include bgi("logo-damu");
+      background-size: 340px 55px;
     }
 
-    &.about-logo-dsc {
-      width: 191px;
-      height: 68px;
+    &[data-logo="dsc"] {
       @include bgi("logo-dsc");
+      background-size: 191px 68px;
     }
 
-    &.about-logo-proz {
-      width: 293px;
-      height: 78px;
+    &[data-logo="proz"] {
       @include bgi("logo-proz-dark");
+      background-size: 293px 78px;
+    }
+
+    &.updated {
+      opacity: 1;
+      transform: translateX(0);
+      transition: opacity 0.5s, transform 0.5s;
     }
   } //end of logo
 
   .story-text-list {
-    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    position: absolute;
+    top: 240px;
+    left: 324px;
     @include flexbox;
-    transition-delay: 0.8s;
+
+    &.updated {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 0.5s, transform 0.5s;
+    }
 
     li {
       position: relative;
@@ -160,6 +194,11 @@
         font-size: 13px;
         letter-spacing: -1px;
         content: attr(data-order);
+      }
+
+      &.list-hide {
+        visibility: hidden;
+        opacity: 0;
       }
     }
 
