@@ -138,14 +138,41 @@ body {
 .item-hide {
   opacity: 0;
   transform: translateY(100px);
-  transition: transform 0.7s, opacity 1s;
+  transition: transform 0.6s, opacity 1s;
 
   &.item-show {
     opacity: 1;
     transform: translateY(0);
-    transition: transform 0.7s, opacity 1s;
+    transition: transform 0.6s, opacity 1s;
+  }
+
+  &.fade-no-move {
+    transform: translateY(0);
+  }
+
+  &.fade-delay-1 {
+    transition-delay: 0.5s;
+  }
+
+  &.fade-delay-2 {
+    transition-delay: 0.9s;
   }
 }
+
+// .item-fade-inner {
+//   //item-fade 영역 내 내부 아이템
+//   opacity: 0;
+//   transform: translateY(100px);
+//   transition: transform 0.6s, opacity 1s;
+// }
+
+// .item-show {
+//   .item-fade-inner {
+//     opacity: 1;
+//     transform: translateY(0);
+//     transition: transform 0.6s, opacity 1s;
+//   }
+// }
 
 .noScroll {
   height: 100%;

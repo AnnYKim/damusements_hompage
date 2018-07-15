@@ -120,6 +120,7 @@ var serviceSlideEvent = function() {
 
 // *****************
 // *** 어바웃 영역 슬라이드 이벤트
+// last updated: 18-07-15 (리팩토링 필요함!!!)
 var aboutSlideEvent = function() {
   //셀렉터 변수
   var $aboutSlideButton = $("button.about-story-button");
@@ -245,6 +246,8 @@ var aboutSlideEvent = function() {
 
   //슬라이드 정보 동적 삽입
   getAboutSlideContents();
+  //초기 슬라이드 정보 업데이트
+  updateAboutSlide(aboutSlideIndex);
 
   $aboutSlideButton.on("click", function() {
     aboutSlideIndex < aboutSlideLength
@@ -262,42 +265,3 @@ $(window).on("load", function() {
   serviceSlideEvent();
 });
 // ------------------
-
-/////삭제예정////
-var tl = new TimelineMax({
-  paused: true
-});
-
-tl.to(".card", 0.6, {
-  scaleX: 1,
-  transformOrigin: "50% 50%",
-  ease: Cubic.easeOut
-});
-
-$(".card").on("mouseenter", function() {
-  console.log("?");
-  tl.play();
-});
-
-$(".card").on("mouseleave", function() {
-  console.log("!");
-  tl.reverse();
-});
-/////삭제예정////
-
-// // ** 어바웃 슬라이드
-// var aboutSlide = function() {
-//   var $aboutSlideButton = $("button.about-story-button");
-
-//   var aboutSlideIdx = 0;
-
-//   var aboutSlide;
-
-//   $aboutSlideButton.on("click", function() {
-//     console.log("버튼클릭");
-//   });
-// };
-
-// $(window).on("load", function() {
-//   aboutSlide();
-// });

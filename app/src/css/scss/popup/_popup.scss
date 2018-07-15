@@ -5,7 +5,7 @@
 
 .popup {
   position: absolute;
-  display: none;
+  // display: none;
   background-color: violet;
 
   &.popup-show {
@@ -14,8 +14,8 @@
 
   .popup-contents {
     position: relative;
-    opacity: 0;
-    transition: opacity 1s 0.4s;
+    // opacity: 0;
+    // transition: opacity 1s 0.4s;
   }
 
   .popup-button-close {
@@ -49,7 +49,7 @@
   } //end of .popup-button-close
 
   .popup-dim {
-    opacity: 0;
+    // opacity: 0;
     z-index: $z-popup-dim;
     position: fixed;
     top: 0;
@@ -60,7 +60,11 @@
     @include justify-content(center);
     @include align-items(center);
     background-color: rgba(0, 0, 0, 0.77);
-    transition: opacity 0.5s;
+    // transition: opacity 0.5s;
+
+    &.hide {
+      display: none;
+    }
 
     &.popup-show {
       opacity: 1;

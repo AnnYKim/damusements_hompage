@@ -45,6 +45,19 @@
     width: ($damu-works-size * 3) + ($damu-works-margin * 2);
     margin: 0 auto;
 
+    // .damu-works-list {
+    //   //3개씩 묶음
+    //   @include flexbox;
+    //   @include flex-wrap(wrap);
+    //   width: 100%;
+
+    //   margin-top: $damu-works-margin;
+
+    //   &:first-child {
+    //     margin-top: 0;
+    //   }
+    // }
+
     .damu-works-item {
       width: $damu-works-size;
       height: $damu-works-size;
@@ -70,6 +83,7 @@
       img {
         display: block;
         width: 100%;
+        height: 100%;
       }
 
       &:hover {

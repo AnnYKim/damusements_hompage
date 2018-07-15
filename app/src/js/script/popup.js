@@ -11,22 +11,20 @@ var scrollBarWidth = function() {
 
 // [*] 스크롤 막는 함수
 var preventScroll = function() {
-  $("body")
-    .css({ "margin-right": scrollBarWidth() })
-    .addClass("noScroll");
+  $(".wrap").css({ "padding-right": scrollBarWidth() });
+
+  $("body").addClass("noScroll");
 };
 
 // [*] 스크롤 허용하는 함수
 var allowScroll = function() {
-  $("body")
-    .removeAttr("style")
-    .removeClass("noScroll");
+  $(".wrap").removeAttr("style");
+  $("body").removeClass("noScroll");
 };
 
 // [*] 팝업창 여는 함수
 var openPopup = function(target) {
   preventScroll();
-
   switch (target) {
     case "damu":
       var $popup = $(".popup-damu");
@@ -41,22 +39,56 @@ var openPopup = function(target) {
       break;
   }
 
-  $popup.addClass("popup-show");
-  setTimeout(function() {
-    $popup.children(".popup-dim").addClass("popup-show");
-  }, 50);
+  $popup.children(".popup-dim").removeClass("hide");
+  _tl_animatePopup.play();
 };
 
 // [*] 팝업창 닫는 함수
 var closePopup = function() {
-  var $popup = $(".popup:visible");
-  $popup.children(".popup-dim").removeClass("popup-show");
+  _tl_animatePopup.reverse();
   setTimeout(function() {
-    $popup.removeClass("popup-show");
-  }, 1000);
-
-  allowScroll();
+    allowScroll();
+  }, 400);
 };
+
+var invisible = function() {
+  $(".popup-dim").addClass("hide");
+  _tl_animatePopup.reverse();
+};
+
+var _tl_animatePopup = new TimelineMax({
+  paused: true,
+  onReverseComplete: invisible
+});
+
+// _tl_animatePopup.from(
+//   ".popup-contents", //대상
+//   0.4, //시간
+//   {
+//     opacity: 0,
+//     transform: "translateY(100px)",
+//     ease: TimelineMax.easeOut
+//   }, //0프레임일 때 사항
+//   0
+// );
+
+_tl_animatePopup
+  .add(
+    TweenMax.from(".popup-dim", 0.2, {
+      css: { opacity: 0 },
+      ease: TimelineMax.easeOut
+    })
+  )
+  .add(
+    TweenMax.from(".popup-contents", 0.4, {
+      css: {
+        opacity: 0,
+        transform: "translateY(100px)",
+        ease: TimelineMax.easeOut
+      },
+      ease: TimelineMax.easeOut
+    })
+  );
 
 var popupEvent = function() {
   var $popup = $(".popup");
@@ -90,6 +122,20 @@ var popupEvent = function() {
   });
 };
 
+var damuPopupEvent = function() {
+  //디어뮤 팝업 전용 이벤트
+
+  var $damuItem = $(".damu-works-item a");
+  $damuItem.on("click", function(e) {
+    e.preventDefault();
+    var idx = 0;
+
+    idx = $damuItem.index($(this));
+    console.log(idx);
+  });
+};
+
 $(window).on("load", function() {
   popupEvent();
+  damuPopupEvent();
 });

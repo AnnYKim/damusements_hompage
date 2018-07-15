@@ -39,6 +39,7 @@ $(function() {
   var $header = $(".header");
   var $section_visual = $("section.visual");
   var $fadeInItem = $(".item-fade");
+  var $lineUpItem = $(".item-line");
   var $visualTitle = $section_visual.find("h2.visual-title");
 
   var scrollTop = null;
@@ -52,6 +53,17 @@ $(function() {
       if (bottom_of_window > bottom_of_object - 150) {
         $(this).addClass("item-show");
         $(".item-hide").addClass("item-show");
+      }
+    });
+  }
+
+  function itemLineUp() {
+    $lineUpItem.each(function(i) {
+      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+      var bottom_of_window = scrollTop + windowHeight;
+
+      if (bottom_of_window > bottom_of_object - 150) {
+        $(this).addClass("item-show");
       }
     });
   }
@@ -82,5 +94,25 @@ $(function() {
     // }
 
     itemFadeIn();
+    itemLineUp();
   });
 });
+
+/////삭제예정////
+var scrollFade = new TimelineMax({});
+
+scrollFade.to(".scroll-fade", 0.6, {
+  scaleX: 3,
+  transformOrigin: "50% 50%",
+  ease: Cubic.easeOut
+});
+
+// $(".card").on("mouseenter", function() {
+//   console.log("?");
+//   tl.play();
+// });
+
+// $(".card").on("mouseleave", function() {
+//   console.log("!");
+//   tl.reverse();
+// });
