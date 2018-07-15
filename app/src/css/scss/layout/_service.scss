@@ -120,7 +120,7 @@
 
       p {
         position: relative;
-        width: 10px;
+        width: 4px;
         height: 17px;
 
         &:first-child {
@@ -130,7 +130,7 @@
           &:after {
             position: absolute;
             top: 8px;
-            left: 26px;
+            left: 28px;
             width: 6px;
             height: 3px;
             display: block;
@@ -155,6 +155,26 @@
       @include font-sub(800);
       color: #fff;
       font-size: 16px;
+    }
+
+    .service-slide-counter {
+      position: absolute;
+      top: 28px;
+      left: 20px;
+
+      span {
+        color: #fff;
+      }
+
+      .count,
+      .next {
+        position: absolute;
+      }
+
+      .next {
+        transform: translateY(-12px);
+        right: 10px;
+      }
     }
 
     .utils-buttons {
