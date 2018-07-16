@@ -258,10 +258,33 @@ var aboutSlideEvent = function() {
 };
 // *****************
 
+// *****************
+// *** 팝업 영역 슬라이드
+var popupDamuSwiper = new Swiper(".popup-slide-damu-container", {
+  // Optional parameters
+  loop: true,
+  touchRatio: 0,
+
+  // navigation
+  navigation: {
+    nextEl: ".popup-damu-button-next",
+    prevEl: ".popup-damu-button-prev"
+  }
+});
+// *****************
+
+var popupSlideEvent = function() {
+  console.log("~");
+  $(".popup-damu-button-next").on("click", function() {
+    console.log("next!");
+  });
+};
+
 // ------------------
 // 윈도 로드 시 이벤트 정의
 $(window).on("load", function() {
   aboutSlideEvent();
   serviceSlideEvent();
+  popupSlideEvent();
 });
 // ------------------

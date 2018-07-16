@@ -6,18 +6,23 @@
   .popup-contents {
     width: 1190px;
     height: 760px;
-    padding: 80px 70px;
     background-color: #f9fafa;
     box-sizing: border-box;
+  }
+
+  .popup-slide-damu-container {
+    width: 100%;
+    height: 100%;
   }
 
   .popup-slide {
     position: relative;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    padding: 80px 70px;
+    @include flexbox;
+    @include justify-content(space-between);
+    @include flex-direction(column);
 
     &.slide-jaebumJoo {
       //예외처리할 슬라이드
@@ -79,7 +84,7 @@
   .popup-damu-image {
     position: absolute;
     top: 0;
-    right: 0;
+    right: 80px;
     width: 50%;
     height: 100%;
 

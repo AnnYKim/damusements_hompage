@@ -1,49 +1,37 @@
-// // //////
-// // https://prinzhorn.github.io/skrollr/
-
-// var scrollTop = null;
-// var windowHeight = null;
-
-// function itemFadeIn() {
-//   $(".item-fade").each(function(i) {
-//     var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-//     var bottom_of_window = scrollTop + windowHeight;
-
-//     console.log("bottom_of_object", bottom_of_object);
-//     console.log("bottom_of_window", bottom_of_window);
-
-//     /* If the object is completely visible in the window, fade it it */
-//     if (bottom_of_window > bottom_of_object - 150) {
-//       $(this).addClass("item-show");
-//       $(".item-hide").addClass("item-show");
-//     }
-//   });
-// }
-
-// $(function() {
-//   $(window).on("load scroll", function() {
-//     //window on scroll 때 itemFadeIn을 호출해줘야 제대로 먹음ㅠㅠㅠㅠ!!!!
-//     scrollTop = $(window).scrollTop();
-//     windowHeight = $(window).height();
-
-//     itemFadeIn();
-//   });
-
-// });
-
 $(function() {
-  //
-  console.log("=== fadeIn.js 실행중 ===");
-  //
+  //스크롤 페이드 이벤트는 여기에 정의
 
-  var $header = $(".header");
-  var $section_visual = $("section.visual");
   var $fadeInItem = $(".item-fade");
   var $lineUpItem = $(".item-line-label");
-  var $visualTitle = $section_visual.find("h2.visual-title");
+  var $damuWorks = $(".damu-works");
 
   var scrollTop = null;
   var windowHeight = null;
+  var _tl_damuWorksFadeIn = new TimelineMax({ paused: true });
+
+  function damuItemFadeIn() {
+    var $damuWorksList = [];
+
+    $damuWorks.find(".damu-works-item").each(function(i) {
+      $damuWorksList[i] = $(this);
+      console.log($damuWorksList);
+    });
+
+    _tl_damuWorksFadeIn
+      .from(
+        [$damuWorksList[0], $damuWorksList[1], $damuWorksList[2]],
+        0.6,
+        { opacity: 0, transform: "translateY(30px)" },
+        0
+      )
+      .addLabel("list-1-show")
+      .from(
+        [$damuWorksList[3], $damuWorksList[4], $damuWorksList[5]],
+        0.6,
+        { opacity: 0, transform: "translateY(30px)" },
+        "list-1-show+=0.2"
+      );
+  }
 
   function itemFadeIn() {
     $fadeInItem.each(function(i) {
@@ -53,6 +41,14 @@ $(function() {
       if (bottom_of_window > bottom_of_object - 150) {
         $(this).addClass("item-show");
         $(".item-hide").addClass("item-show");
+      }
+    });
+    $(".item-fade-early").each(function(i) {
+      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+      var bottom_of_window = scrollTop + windowHeight;
+
+      if (bottom_of_window > bottom_of_object - 500) {
+        $(this).addClass("item-show");
       }
     });
   }
@@ -70,51 +66,11 @@ $(function() {
     });
   }
 
-  // $(window).on("load resize", function() {
-  //   var visualTitleOffsetLeft = $visualTitle.offset().left;
-  //   console.log("visualTitleOffsetLeft", visualTitleOffsetLeft);
-  //   $(".visual-text-grid").css({
-  //     left: visualTitleOffsetLeft - 100
-  //   });
-  // });
-
+  // 스크롤 이벤트 정의
   $(window).on("load scroll", function() {
-    ////////////////////
     scrollTop = $(window).scrollTop();
     windowHeight = $(window).height();
-    ////////////////////
-    // if (scrollTop > 0) {
-    //   $("body").css({
-    //     "overflow-x": "hidden"
-    //   });
-    // }
-
-    // if (scrollTop > 980) {
-    //   $("body").css({
-    //     "overflow-x": "auto"
-    //   });
-    // }
-
     itemFadeIn();
     itemLineUp();
   });
 });
-
-/////삭제예정////
-var scrollFade = new TimelineMax({});
-
-scrollFade.to(".scroll-fade", 0.6, {
-  scaleX: 3,
-  transformOrigin: "50% 50%",
-  ease: Cubic.easeOut
-});
-
-// $(".card").on("mouseenter", function() {
-//   console.log("?");
-//   tl.play();
-// });
-
-// $(".card").on("mouseleave", function() {
-//   console.log("!");
-//   tl.reverse();
-// });

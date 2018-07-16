@@ -37,6 +37,7 @@
     transform: translate(-50%, -50%);
 
     span {
+      //텍스트(3개)
       position: relative;
       display: block;
       font-size: 68px;
@@ -45,29 +46,30 @@
       @include select-none;
       @include pointer-none;
 
-      &:before {
+      i {
+        //밑줄 선
+        display: block;
         position: absolute;
         bottom: 16px;
         left: 6px;
-        display: block;
         height: 10px;
         background-color: #f9fafa;
         content: "";
       }
 
-      &:first-child:before {
+      &:first-child > i {
         width: 374px;
       }
 
-      &:nth-child(2):before {
+      &:nth-child(2) > i {
         width: 201px;
       }
 
-      &:nth-child(3):before {
+      &:nth-child(3) > i {
         width: 374px;
       }
 
-      &:last-child:after {
+      .quote {
         position: absolute;
         display: block;
         bottom: 25px;

@@ -39,6 +39,7 @@ var openPopup = function(target) {
       break;
   }
 
+  $(".popup").show();
   $popup.children(".popup-dim").removeClass("hide");
   _tl_animatePopup.play();
 };
@@ -48,6 +49,7 @@ var closePopup = function() {
   _tl_animatePopup.reverse();
   setTimeout(function() {
     allowScroll();
+    $(".popup").hide();
   }, 400);
 };
 
@@ -80,7 +82,7 @@ _tl_animatePopup
     })
   )
   .add(
-    TweenMax.from(".popup-contents", 0.4, {
+    TweenMax.from(".popup-area", 0.4, {
       css: {
         opacity: 0,
         transform: "translateY(100px)",
@@ -92,7 +94,7 @@ _tl_animatePopup
 
 var popupEvent = function() {
   var $popup = $(".popup");
-  var $popup_contents = $popup.find(".popup-contents");
+  var $popup_area = $popup.find(".popup-area");
   var $popup_dim = $popup.find(".popup-dim");
   var $popup_button_close = $(".popup-button-close");
   var $popup_link = $("a[data-link-popup]");
@@ -117,9 +119,12 @@ var popupEvent = function() {
   });
 
   //[*] 콘텐츠 눌렀을 때 버블링 방지
-  $popup_contents.on("click", function(e) {
+  $popup_area.on("click", function(e) {
     e.stopPropagation();
   });
+
+  //[*] 초기 팝업 숨기기
+  $(".popup").hide();
 };
 
 var damuPopupEvent = function() {

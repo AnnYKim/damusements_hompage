@@ -5,11 +5,13 @@
 
 .popup {
   position: absolute;
-  // display: none;
-  background-color: violet;
 
   &.popup-show {
     display: block;
+  }
+
+  .popup-area {
+    z-index: $z-popup-area;
   }
 
   .popup-contents {
@@ -63,7 +65,8 @@
     // transition: opacity 0.5s;
 
     &.hide {
-      display: none;
+      // display: none;
+      z-index: -1000;
     }
 
     &.popup-show {
