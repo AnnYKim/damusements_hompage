@@ -72,6 +72,11 @@
       margin-top: 10px;
       transform: scale(0.5);
       left: -80px;
+      transition: left 0.58s;
+
+      &.left {
+        left: 80px;
+      }
 
       &.active {
         // width: 340px;
@@ -83,6 +88,8 @@
         // margin-left: 240px !important;
         // margin-right: 120px !important;
         outline: 4px solid red;
+        left: 10px;
+        transition: none;
 
         .img {
           width: 340px;

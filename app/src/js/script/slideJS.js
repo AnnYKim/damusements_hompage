@@ -294,21 +294,39 @@ var dscWorksSwiper = new Swiper(".dsc-slide", {
 });
 
 function dscWorksSlideEvent() {
-  $(".dsc-slide-item").on("click", function() {
-    var idx = $(".dsc-slide-item").index($(this));
-    console.log("DSC아이템 클릭 == ", idx);
+  var idx = 0; //전체 개수의 절반으로 설정
+  // $(".dsc-slide-item")
+  //   .eq(0)
+  //   .addClass("active left");
+  $(".dsc-slide-item")
+    .eq(idx)
+    .addClass("active")
+    .nextAll()
+    .addClass("left");
 
-    $(".dsc-slide-item").removeClass("active");
+  $(".dsc-slide-item").on("click", function() {
+    idx = $(".dsc-slide-item").index($(this));
+
+    $(".dsc-slide-item").removeClass("active left");
 
     setTimeout(function() {
       dscWorksSwiper.slideTo(idx, 800);
+      // dscWorksSwiper.slideToLoop(idx, 800);
+      //TODO: 이거 콜백으로 left넘길것인지
     }, 450);
 
     setTimeout(function() {
       $(".dsc-slide-item")
         .eq(idx)
+        .nextAll()
+        .addClass("left");
+    }, 600);
+
+    setTimeout(function() {
+      $(".dsc-slide-item")
+        .eq(idx)
         .addClass("active");
-    }, 900);
+    }, 800);
   });
 }
 // *****************
