@@ -39,9 +39,18 @@ var openPopup = function(target) {
       break;
   }
 
-  $(".popup").show();
-  $popup.children(".popup-dim").removeClass("hide");
-  _tl_animatePopup.play();
+  // if (target == "dsc") {
+  //   $(".popup").show();
+  //   $popup.children(".popup-dim").removeClass("hide");
+  //   setTimeout(function() {
+  //     _tl_animatePopup.play();
+  //   }, 800);
+  //   return false;
+  // } else {
+  //   $(".popup").show();
+  //   $popup.children(".popup-dim").removeClass("hide");
+  //   _tl_animatePopup.play();
+  // }
 };
 
 // [*] 팝업창 닫는 함수

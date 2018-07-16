@@ -36,27 +36,93 @@
   } //end of dsc-intro
 
   .dsc-works {
+    overflow: hidden;
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 500px;
     width: 100%;
-    height: 400px;
-    overflow: hidden;
+    min-width: 1480px;
+    height: 480px;
+    transform: translateX(-50%);
 
+    .swiper-wrapper {
+      // margin-top: calc(-100% + 5px);
+    }
+
+    //슬라이드 영역
     .dsc-slide {
       position: absolute;
       left: 50%;
       top: 120px;
-      width: 4000px;
+      // width: 4000px;
+      width: 100%;
+      height: 480px;
+      outline: 4px solid red;
       transform: translateX(-50%);
+    }
 
-      &.load {
+    .dsc-slide-item {
+      overflow: hidden;
+      display: block;
+      width: 150px;
+      height: 150px;
+      width: 340px;
+      height: 340px;
+      outline: 2px solid #aaa;
+      margin-top: 10px;
+      transform: scale(0.5);
+      left: -80px;
+
+      &.active {
+        // width: 340px;
+        // height: 340px;
+        transform: scale(1);
+        // margin-right: -10px !important;
+        // margin-left: 70px !important;
+        margin-top: 0 !important;
+        // margin-left: 240px !important;
+        // margin-right: 120px !important;
+        outline: 4px solid red;
+
+        .img {
+          width: 340px;
+          box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+          -webkit-transform: rotate(720deg);
+          -moz-transform: rotate(720deg);
+          -ms-transform: rotate(720deg);
+          -o-transform: rotate(720deg);
+          transform: rotate(720deg);
+          transition: all 0.5s;
+        }
+      }
+
+      &:first-child {
+        &.swiper-slide-active {
+          // margin-left: 40px !important;
+        }
+      }
+
+      a {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .img {
+        display: block;
         position: absolute;
-        float: none;
-        left: 0;
-        top: 0;
-        width: 152px;
-        height: 152px;
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        transition: all 0.5s;
+        // top: 50%;
+        // left: 50%;
+        // width: 200%;
+        // height: auto;
+        // transform: translate(-50%, -50%);
+        // display: block;box-shadow: 0 10px 35px rgba(0,0,0,0.3);
       }
     }
 

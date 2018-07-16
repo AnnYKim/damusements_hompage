@@ -12,7 +12,7 @@ $(function() {
 
     _tl_visualFadeIn
       .staggerFrom(
-        [$visualLines[0], $visualLines[1], $visualLines[2]],
+      [$visualLines[0], $visualLines[1], $visualLines[2]],
         0.6,
         { opacity: 0, width: 0 },
         0.4 //간격

@@ -259,18 +259,58 @@ var aboutSlideEvent = function() {
 // *****************
 
 // *****************
-// *** 팝업 영역 슬라이드
+// *** 팝업 슬라이드 (디어뮤)
 var popupDamuSwiper = new Swiper(".popup-slide-damu-container", {
   // Optional parameters
   loop: true,
   touchRatio: 0,
 
-  // navigation
-  navigation: {
-    nextEl: ".popup-damu-button-next",
-    prevEl: ".popup-damu-button-prev"
+  // autoplay
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false
   }
 });
+// *****************
+
+// *****************
+// *** DSC 슬라이드
+var dscWorksSwiper = new Swiper(".dsc-slide", {
+  // Optional parameters
+  // loop: true,
+  slidesPerView: "auto",
+  // spaceBetween: -90,
+  spaceBetween: -80,
+  // spaceBetween: 50,
+  centeredSlides: true,
+  speed: 800,
+  touchRatio: 0,
+  // slideToClickedSlide: true,
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
+  }
+});
+
+function dscWorksSlideEvent() {
+  $(".dsc-slide-item").on("click", function() {
+    var idx = $(".dsc-slide-item").index($(this));
+    console.log("DSC아이템 클릭 == ", idx);
+
+    $(".dsc-slide-item").removeClass("active");
+
+    setTimeout(function() {
+      dscWorksSwiper.slideTo(idx, 800);
+    }, 450);
+
+    setTimeout(function() {
+      $(".dsc-slide-item")
+        .eq(idx)
+        .addClass("active");
+    }, 900);
+  });
+}
 // *****************
 
 var popupSlideEvent = function() {
@@ -286,5 +326,6 @@ $(window).on("load", function() {
   aboutSlideEvent();
   serviceSlideEvent();
   popupSlideEvent();
+  dscWorksSlideEvent();
 });
 // ------------------
