@@ -22,18 +22,32 @@
     text-transform: uppercase;
     font-size: 59px;
 
-    &:before {
+    .item-line {
       position: absolute;
       bottom: 0;
       left: 0;
       display: block;
-      width: 320px;
       height: 9px;
       background-color: #f9fafa;
       content: "";
+      width: 0;
+      opacity: 0;
+      transition: width 0.6s, opacity 0.6s;
+
+      &.item-show {
+        width: 320px;
+        opacity: 1;
+        transition: width 0.6s, opacity 0.6s;
+
+        & + .quote {
+          opacity: 1;
+          transition: opacity 0.65s;
+          transition-delay: 0.7s;
+        }
+      }
     }
 
-    &:after {
+    .quote {
       position: absolute;
       display: block;
       bottom: 10px;
@@ -42,6 +56,8 @@
       height: 27px;
       @include bgi("icon-quotes");
       content: "";
+      opacity: 0;
+      transition: opacity 0.6s;
     }
   }
 
