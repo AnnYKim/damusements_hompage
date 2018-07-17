@@ -24,7 +24,6 @@ var allowScroll = function() {
 
 // [*] 팝업창 여는 함수
 var openPopup = function(target) {
-  preventScroll();
   switch (target) {
     case "damu":
       var $popup = $(".popup-damu");
@@ -38,19 +37,19 @@ var openPopup = function(target) {
       var $popup = $(".popup-proz");
       break;
   }
+  preventScroll();
+  $(".popup").show();
 
-  // if (target == "dsc") {
-  //   $(".popup").show();
-  //   $popup.children(".popup-dim").removeClass("hide");
-  //   setTimeout(function() {
-  //     _tl_animatePopup.play();
-  //   }, 800);
-  //   return false;
-  // } else {
-  //   $(".popup").show();
-  //   $popup.children(".popup-dim").removeClass("hide");
-  //   _tl_animatePopup.play();
-  // }
+  if (target == "dsc") {
+    setTimeout(function() {
+      $popup.children(".popup-dim").removeClass("hide");
+      _tl_animatePopup.play();
+    }, 800);
+    return false;
+  }
+
+  $popup.children(".popup-dim").removeClass("hide");
+  _tl_animatePopup.play();
 };
 
 // [*] 팝업창 닫는 함수
@@ -71,17 +70,6 @@ var _tl_animatePopup = new TimelineMax({
   paused: true,
   onReverseComplete: invisible
 });
-
-// _tl_animatePopup.from(
-//   ".popup-contents", //대상
-//   0.4, //시간
-//   {
-//     opacity: 0,
-//     transform: "translateY(100px)",
-//     ease: TimelineMax.easeOut
-//   }, //0프레임일 때 사항
-//   0
-// );
 
 _tl_animatePopup
   .add(
@@ -147,6 +135,10 @@ var damuPopupEvent = function() {
     idx = $damuItem.index($(this));
     console.log(idx);
   });
+};
+
+var dscPopupEvent = function() {
+  //닥터심슨 팝업 전용 이벤트
 };
 
 $(window).on("load", function() {

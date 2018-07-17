@@ -21,6 +21,7 @@
   }
 
   .popup-button-close {
+    z-index: 300;
     position: absolute;
     top: 0;
     right: 0;
@@ -81,7 +82,10 @@
   } //end of .popup-dim
 
   .popup-buttons {
+    width: 100%;
+
     [class^="popup-button-"] {
+      z-index: 10;
       position: absolute;
       top: 50%;
       width: 60px;
@@ -108,7 +112,10 @@
         margin: 0 auto;
       }
 
-      &:focus,
+      &:focus {
+        outline: 0;
+      }
+
       &:hover {
         outline: 0;
         background-color: #fff;

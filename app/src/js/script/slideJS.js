@@ -265,16 +265,30 @@ var popupDamuSwiper = new Swiper(".popup-slide-damu-container", {
   loop: true,
   touchRatio: 0,
 
-  // autoplay
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false
+  // navigation
+  navigation: {
+    nextEl: ".popup-damu-button-next",
+    prevEl: ".popup-damu-button-prev"
+  }
+});
+// *****************
+// *****************
+// *** 팝업 슬라이드 (닥터심슨)
+var popupDscSwiper = new Swiper(".popup-slide-dsc-container", {
+  // Optional parameters
+  loop: true,
+  touchRatio: 0,
+
+  // navigation
+  navigation: {
+    nextEl: ".popup-dsc-button-next",
+    prevEl: ".popup-dsc-button-prev"
   }
 });
 // *****************
 
 // *****************
-// *** DSC 슬라이드
+// *** DSC 휘리릭 슬라이드
 var dscWorksSwiper = new Swiper(".dsc-slide", {
   // Optional parameters
   // loop: true,
@@ -294,39 +308,51 @@ var dscWorksSwiper = new Swiper(".dsc-slide", {
 });
 
 function dscWorksSlideEvent() {
-  var idx = 0; //전체 개수의 절반으로 설정
-  // $(".dsc-slide-item")
-  //   .eq(0)
-  //   .addClass("active left");
-  $(".dsc-slide-item")
-    .eq(idx)
-    .addClass("active")
-    .nextAll()
-    .addClass("left");
+  var $dscPopupCloseButton = $(".popup-dsc .popup-button-close");
+  var $dscPopupDim = $(".popup-dsc .popup-dim");
+  var length = $(".dsc-slide-item").length;
+  var idx = Math.ceil(length / 2); //전체 개수의 절반으로 설정
 
-  $(".dsc-slide-item").on("click", function() {
+  var addClassActive = function() {
+    $(".dsc-slide-item")
+      .eq(idx)
+      .addClass("active");
+  };
+
+  var addClassLeft = function() {
+    $(".dsc-slide-item")
+      .eq(idx)
+      .nextAll()
+      .addClass("left");
+  };
+
+  dscWorksSwiper.slideTo(idx, 800); //초기 슬라이드로 이동
+  addClassActive(); //초기 설정
+  addClassLeft(); //초기 설정
+
+  //클릭 시 이벤트
+  $(".dsc-slide-item").on("click", function(e) {
     idx = $(".dsc-slide-item").index($(this));
 
     $(".dsc-slide-item").removeClass("active left");
 
     setTimeout(function() {
-      dscWorksSwiper.slideTo(idx, 800);
-      // dscWorksSwiper.slideToLoop(idx, 800);
-      //TODO: 이거 콜백으로 left넘길것인지
+      dscWorksSwiper.slideTo(idx, 800, addClassLeft());
     }, 450);
 
     setTimeout(function() {
-      $(".dsc-slide-item")
-        .eq(idx)
-        .nextAll()
-        .addClass("left");
-    }, 600);
-
-    setTimeout(function() {
-      $(".dsc-slide-item")
-        .eq(idx)
-        .addClass("active");
+      addClassActive();
     }, 800);
+  });
+
+  $dscPopupCloseButton.add($dscPopupDim).on("click", function() {
+    if (idx !== popupDscSwiper.realIndex) {
+      idx = popupDscSwiper.realIndex;
+      $(".dsc-slide-item").removeClass("active left");
+      dscWorksSwiper.slideTo(idx, 800);
+      addClassActive();
+      addClassLeft();
+    }
   });
 }
 // *****************

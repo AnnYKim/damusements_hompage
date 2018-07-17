@@ -4,7 +4,7 @@
 .section-dsc {
   min-width: $ly-min-width;
   position: relative;
-  padding: 152px 0 640px;
+  padding: 152px 0 570px;
   background-color: #f8f8f8;
   box-sizing: border-box;
 
@@ -39,10 +39,10 @@
     overflow: hidden;
     position: absolute;
     left: 50%;
-    top: 500px;
+    top: 400px;
     width: 100%;
     min-width: 1480px;
-    height: 480px;
+    height: 500px;
     transform: translateX(-50%);
 
     .swiper-wrapper {
@@ -57,18 +57,16 @@
       // width: 4000px;
       width: 100%;
       height: 480px;
-      outline: 4px solid red;
       transform: translateX(-50%);
     }
 
     .dsc-slide-item {
-      overflow: hidden;
+      // overflow: hidden;
       display: block;
       width: 150px;
       height: 150px;
       width: 340px;
       height: 340px;
-      outline: 2px solid #aaa;
       margin-top: 10px;
       transform: scale(0.5);
       left: -80px;
@@ -87,7 +85,6 @@
         margin-top: 0 !important;
         // margin-left: 240px !important;
         // margin-right: 120px !important;
-        outline: 4px solid red;
         left: 10px;
         transition: none;
 
@@ -99,6 +96,7 @@
           -ms-transform: rotate(720deg);
           -o-transform: rotate(720deg);
           transform: rotate(720deg);
+          will-change: transform;
           transition: all 0.5s;
         }
       }
@@ -110,11 +108,15 @@
       }
 
       a {
-        overflow: hidden;
+        // overflow: hidden;
         position: relative;
         display: block;
         width: 100%;
         height: 100%;
+
+        &:active {
+          background: none;
+        }
       }
 
       .img {
@@ -124,6 +126,7 @@
         width: 100%;
         height: 100%;
         transition: all 0.5s;
+        will-change: transform;
         // top: 50%;
         // left: 50%;
         // width: 200%;
