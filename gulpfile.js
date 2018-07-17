@@ -137,6 +137,8 @@ gulp.task("minify-myJS", function() {
   return gulp
     .src(paths.jsMine)
     .pipe(concat("script.js"))
+    .pipe(gulp.dest(dist + "/js"))
+    .pipe(gulp.dest(src + "/js"))
     .pipe(rename({ suffix: ".min" }))
     .pipe(uglify())
     .pipe(header("/* ////// Last Modified: '" + myDate + "'////// */"))

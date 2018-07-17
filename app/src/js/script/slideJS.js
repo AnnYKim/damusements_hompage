@@ -364,12 +364,39 @@ var popupSlideEvent = function() {
   });
 };
 
+var damuPopupSlideEvent = function() {
+  //디어뮤 팝업 전용 이벤트
+
+  var $damuSlide = $(".popup-damu .popup-slide");
+  var $damuItem = $(".damu-works-item a");
+  var slideHTML =
+    '<div class="swiper-slide popup-slide">여기에 정보가 들어갑니다.</div>';
+
+  //아이템 클릭 시
+  $damuItem.on("click", function(e) {
+    e.preventDefault();
+    var idx = 0;
+
+    idx = $damuItem.index($(this));
+    // $damuSlide
+    //   .eq(idx)
+    //   .text(idx + 1 + "번째 아이템 정보가 여기에 들어갑니다ㅏㅏ");
+    // console.log("idx=", idx);
+    // console.log("popupDamuSwiper.activeIndex", popupDamuSwiper.activeIndex);
+  });
+
+  //다음 버튼 클릭 시
+  $(".popup-damu-button-next").on("click", function() {
+    // popupDamuSwiper.prependSlide(slideHTML);
+  });
+};
+
 // ------------------
 // 윈도 로드 시 이벤트 정의
 $(window).on("load", function() {
   aboutSlideEvent();
   serviceSlideEvent();
-  popupSlideEvent();
   dscWorksSlideEvent();
+  damuPopupSlideEvent();
 });
 // ------------------

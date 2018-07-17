@@ -1,3 +1,7 @@
+var $wrap = $(".wrap");
+var $body = $("body");
+var $popup = $(".popup");
+
 //[*] 스크롤바 너비 구하는 함수
 var scrollBarWidth = function() {
   document.body.style.overflow = "hidden";
@@ -11,15 +15,14 @@ var scrollBarWidth = function() {
 
 // [*] 스크롤 막는 함수
 var preventScroll = function() {
-  $(".wrap").css({ "padding-right": scrollBarWidth() });
-
-  $("body").addClass("noScroll");
+  $wrap.css({ "padding-right": scrollBarWidth() });
+  $body.addClass("noScroll");
 };
 
 // [*] 스크롤 허용하는 함수
 var allowScroll = function() {
-  $(".wrap").removeAttr("style");
-  $("body").removeClass("noScroll");
+  $wrap.removeAttr("style");
+  $body.removeClass("noScroll");
 };
 
 // [*] 팝업창 여는 함수
@@ -57,7 +60,7 @@ var closePopup = function() {
   _tl_animatePopup.reverse();
   setTimeout(function() {
     allowScroll();
-    $(".popup").hide();
+    $popup.hide();
   }, 400);
 };
 
@@ -71,23 +74,23 @@ var _tl_animatePopup = new TimelineMax({
   onReverseComplete: invisible
 });
 
-_tl_animatePopup
-  .add(
-    TweenMax.from(".popup-dim", 0.2, {
-      css: { opacity: 0 },
-      ease: TimelineMax.easeOut
-    })
-  )
-  .add(
-    TweenMax.from(".popup-area", 0.4, {
-      css: {
-        opacity: 0,
-        transform: "translateY(100px)",
-        ease: TimelineMax.easeOut
-      },
-      ease: TimelineMax.easeOut
-    })
-  );
+_tl_animatePopup.add(
+  TweenMax.from(".popup-dim", 0.2, {
+    css: { opacity: 0 }
+    // ease: TimelineMax.easeOut
+  })
+);
+// .add(
+//   TweenMax.from(".popup-area", 0.4, {
+//     css: {
+//       opacity: 0
+// transform: "translateY(100px)",
+// ease: TimelineMax.easeOut
+// }
+// ease: TimelineMax.easeOut
+// })
+// );
+// 07-17 14:20 성능저하 문제로 제거
 
 var popupEvent = function() {
   var $popup = $(".popup");
@@ -124,24 +127,32 @@ var popupEvent = function() {
   $(".popup").hide();
 };
 
-var damuPopupEvent = function() {
-  //디어뮤 팝업 전용 이벤트
-
-  var $damuItem = $(".damu-works-item a");
-  $damuItem.on("click", function(e) {
-    e.preventDefault();
-    var idx = 0;
-
-    idx = $damuItem.index($(this));
-    console.log(idx);
-  });
-};
-
 var dscPopupEvent = function() {
   //닥터심슨 팝업 전용 이벤트
 };
 
+// var appendPopupEvent = function() {
+//   //팝업 삽입
+
+//   var $wrap = $(".wrap");
+//   var commonPopupHtml = "";
+//   var popupType = ["damu", "dsc", "proz"];
+
+//   commonPopupHtml += '<div class="popup popup-' + popupType[0] + '">';
+//   commonPopupHtml += '<div class="popup-dim hide">';
+//   commonPopupHtml += '<div class="popup-area">';
+//   commonPopupHtml += '<article class="popup-contents">';
+//   commonPopupHtml +=
+//     '<div class="swiper-container popup-slide-damu-container">';
+//   commonPopupHtml += "</div>";
+//   commonPopupHtml += "</article>";
+//   commonPopupHtml += "</div>";
+//   commonPopupHtml += "</div>";
+//   commonPopupHtml += "</div>";
+//   $wrap.append(commonPopupHtml);
+// };
+
 $(window).on("load", function() {
   popupEvent();
-  damuPopupEvent();
+  // damuPopupEvent();
 });
