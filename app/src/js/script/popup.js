@@ -74,23 +74,30 @@ var _tl_animatePopup = new TimelineMax({
   onReverseComplete: invisible
 });
 
+// _tl_animatePopup
+//   .add(
+//     TweenMax.from(".popup-dim", 0.2, {
+//       css: { opacity: 0 }
+//       // ease: TimelineMax.easeOut
+//     })
+//   )
+//   .add(
+//     TweenMax.from(".popup-area", 0.4, {
+//       css: {
+//         opacity: 0,
+//         transform: "translateY(100px)",
+//         ease: TimelineMax.easeOut
+//       },
+//       ease: TimelineMax.easeOut
+//     })
+//   );
+// 07-17 14:20 성능저하 문제로 막아둠, 성능 확인 후 수정할 예정
+
 _tl_animatePopup.add(
   TweenMax.from(".popup-dim", 0.2, {
     css: { opacity: 0 }
-    // ease: TimelineMax.easeOut
   })
 );
-// .add(
-//   TweenMax.from(".popup-area", 0.4, {
-//     css: {
-//       opacity: 0
-// transform: "translateY(100px)",
-// ease: TimelineMax.easeOut
-// }
-// ease: TimelineMax.easeOut
-// })
-// );
-// 07-17 14:20 성능저하 문제로 제거
 
 var popupEvent = function() {
   var $popup = $(".popup");

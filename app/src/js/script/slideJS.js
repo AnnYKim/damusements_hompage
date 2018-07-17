@@ -310,17 +310,17 @@ var dscWorksSwiper = new Swiper(".dsc-slide", {
 function dscWorksSlideEvent() {
   var $dscPopupCloseButton = $(".popup-dsc .popup-button-close");
   var $dscPopupDim = $(".popup-dsc .popup-dim");
+  var $dscSlideItem = $(".dsc-slide-item");
   var length = $(".dsc-slide-item").length;
   var idx = Math.ceil(length / 2); //전체 개수의 절반으로 설정
+  var isOnGoing = false; //애니메이션 진행중일 때 m클릭 방지
 
   var addClassActive = function() {
-    $(".dsc-slide-item")
-      .eq(idx)
-      .addClass("active");
+    $dscSlideItem.eq(idx).addClass("active");
   };
 
   var addClassLeft = function() {
-    $(".dsc-slide-item")
+    $dscSlideItem
       .eq(idx)
       .nextAll()
       .addClass("left");
@@ -331,10 +331,17 @@ function dscWorksSlideEvent() {
   addClassLeft(); //초기 설정
 
   //클릭 시 이벤트
-  $(".dsc-slide-item").on("click", function(e) {
-    idx = $(".dsc-slide-item").index($(this));
+  $dscSlideItem.on("click", function(e) {
+    if (isOnGoing) {
+      return;
+    }
 
-    $(".dsc-slide-item").removeClass("active left");
+    isOnGoing = true;
+
+    idx = $dscSlideItem.index($(this));
+    // console.log("idx", idx);
+
+    $dscSlideItem.removeClass("active left");
 
     setTimeout(function() {
       dscWorksSwiper.slideTo(idx, 800, addClassLeft());
@@ -342,6 +349,7 @@ function dscWorksSlideEvent() {
 
     setTimeout(function() {
       addClassActive();
+      isOnGoing = false;
     }, 800);
   });
 

@@ -43,14 +43,14 @@ $(function() {
         $(".item-hide").addClass("item-show");
       }
     });
-    $(".item-fade-early").each(function(i) {
-      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-      var bottom_of_window = scrollTop + windowHeight;
+    // $(".item-fade-damu").each(function(i) {
+    //   var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+    //   var bottom_of_window = scrollTop + windowHeight;
 
-      if (bottom_of_window > bottom_of_object - 500) {
-        $(this).addClass("item-show");
-      }
-    });
+    //   if (bottom_of_window > bottom_of_object - 500) {
+    //     $(this).addClass("item-show");
+    //   }
+    // });
   }
 
   function itemLineUp() {
@@ -65,6 +65,20 @@ $(function() {
       }
     });
   }
+  function isInViewPort(elem) {
+    var top_of_element = $(elem).offset().top;
+    var bottom_of_element = $(elem).offset().top + $(elem).outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+    var top_of_screen = $(window).scrollTop();
+
+    if (
+      bottom_of_screen > top_of_element &&
+      top_of_screen < bottom_of_element
+    ) {
+      $(elem).addClass("item-show");
+      return true;
+    }
+  }
 
   // 스크롤 이벤트 정의
   $(window).on("load scroll", function() {
@@ -72,6 +86,7 @@ $(function() {
     windowHeight = $(window).height();
     itemFadeIn();
     itemLineUp();
+    isInViewPort(".item-fade-damu");
   });
 });
 
@@ -345,23 +360,30 @@ var _tl_animatePopup = new TimelineMax({
   onReverseComplete: invisible
 });
 
+// _tl_animatePopup
+//   .add(
+//     TweenMax.from(".popup-dim", 0.2, {
+//       css: { opacity: 0 }
+//       // ease: TimelineMax.easeOut
+//     })
+//   )
+//   .add(
+//     TweenMax.from(".popup-area", 0.4, {
+//       css: {
+//         opacity: 0,
+//         transform: "translateY(100px)",
+//         ease: TimelineMax.easeOut
+//       },
+//       ease: TimelineMax.easeOut
+//     })
+//   );
+// 07-17 14:20 성능저하 문제로 막아둠, 성능 확인 후 수정할 예정
+
 _tl_animatePopup.add(
   TweenMax.from(".popup-dim", 0.2, {
     css: { opacity: 0 }
-    // ease: TimelineMax.easeOut
   })
 );
-// .add(
-//   TweenMax.from(".popup-area", 0.4, {
-//     css: {
-//       opacity: 0
-// transform: "translateY(100px)",
-// ease: TimelineMax.easeOut
-// }
-// ease: TimelineMax.easeOut
-// })
-// );
-// 07-17 14:20 성능저하 문제로 제거
 
 var popupEvent = function() {
   var $popup = $(".popup");
@@ -740,17 +762,17 @@ var dscWorksSwiper = new Swiper(".dsc-slide", {
 function dscWorksSlideEvent() {
   var $dscPopupCloseButton = $(".popup-dsc .popup-button-close");
   var $dscPopupDim = $(".popup-dsc .popup-dim");
+  var $dscSlideItem = $(".dsc-slide-item");
   var length = $(".dsc-slide-item").length;
   var idx = Math.ceil(length / 2); //전체 개수의 절반으로 설정
+  var isOnGoing = false; //애니메이션 진행중일 때 m클릭 방지
 
   var addClassActive = function() {
-    $(".dsc-slide-item")
-      .eq(idx)
-      .addClass("active");
+    $dscSlideItem.eq(idx).addClass("active");
   };
 
   var addClassLeft = function() {
-    $(".dsc-slide-item")
+    $dscSlideItem
       .eq(idx)
       .nextAll()
       .addClass("left");
@@ -761,10 +783,17 @@ function dscWorksSlideEvent() {
   addClassLeft(); //초기 설정
 
   //클릭 시 이벤트
-  $(".dsc-slide-item").on("click", function(e) {
-    idx = $(".dsc-slide-item").index($(this));
+  $dscSlideItem.on("click", function(e) {
+    if (isOnGoing) {
+      return;
+    }
 
-    $(".dsc-slide-item").removeClass("active left");
+    isOnGoing = true;
+
+    idx = $dscSlideItem.index($(this));
+    // console.log("idx", idx);
+
+    $dscSlideItem.removeClass("active left");
 
     setTimeout(function() {
       dscWorksSwiper.slideTo(idx, 800, addClassLeft());
@@ -772,6 +801,7 @@ function dscWorksSlideEvent() {
 
     setTimeout(function() {
       addClassActive();
+      isOnGoing = false;
     }, 800);
   });
 

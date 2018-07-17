@@ -116,5 +116,9 @@
       background-color: #404040;
       border-color: #404040;
     }
+
+    &:focus {
+      outline: 0;
+    }
   } //end of .damu-btn-more
 }

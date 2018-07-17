@@ -2,7 +2,8 @@
 
 **nykim@nykim.net**
 
-_UI developed by nykim_
+*UI developed by nykim*
+_Last Modified: 2018-07-17_
 
 ## Tree Structure
 
@@ -31,12 +32,15 @@ _UI developed by nykim_
 - 팝업의 마크업은 다음과 같습니다.
 - .popup/
   - .popup-dim/
-    - article.popup-contents/
-      - div.popup-slide
-      - a.popup-button-close
-      - div.popup-buttons/
-        - button.popup-button-prev
-        - button.popup-button-next
+    - .popup-area
+      - article.popup-contents/
+        - .swiper-container/
+        - .swiper-wrapper/
+          - swiper-slide
+          - div.popup-buttons/
+            - button.popup-button-prev
+            - button.popup-button-next
+          - a.popup-button-close
 
 ## Style Guide
 
@@ -66,3 +70,14 @@ _UI developed by nykim_
 - 모든 작업은 src/ 폴더 내에서 이뤄지며, gulp 를 통해 dist/로 보냅니다.
 - 배포 시에는 dist/ 폴더 내 파일만 배포합니다.
 - gulp task 는 gulpfile.js 에서 정의하고 있습니다.
+
+## Data Processing Guide
+
+- 데이터 삽입이 필요한 곳은 3 군데 입니다.
+  - .section-damu
+  - .section-dsc
+  - .section-proz
+- 각 섹션에 있는 a 태그를 클릭하면 팝업이 열리는 구조입니다. 팝업은 html 태그 가장 최하단에 하드코딩되어 있고, 기본적으로 hide 처리되어 있습니다.
+- a 태그에는 [data-link-popup]이라는 속성이 있습니다. data-link-popup 에 연결된 값에 따라 각기 다른 팝업이 show 처리됩니다. (예를 들어, &lt;a data-link-popup="dsc"/>는 DSC 팝업을 보여줍니다. 이 이벤트는 popup.js 에서 정의하고 있습니다.)
+- 팝업 내부는 슬라이드로 이루어져 있습니다. 슬라이드는 'Swiper'라는 라이브러리를 사용하고 있습니다. 슬라이드 관련 이벤트는 slideJS.js 에서 정의하고 있습니다.
+  - [Swiper API DOC](http://idangero.us/swiper/api)

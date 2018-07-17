@@ -10,19 +10,27 @@
 
   <!-- TODO: 파비콘 추가 필요 -->
   <!-- TODO: 메타태그 추가 필요 -->
+  <!-- TODO: 타이틀 확정 필요? -->
+
+  <!-- TODO: 배포 전 이미지 압축 필요 -->
+  <!-- TODO: 배포 전 CSS/JS 압축 필요 -->
+
+  <!-- TODO: 페이지 로드 전까지 로딩 이미지로 가려놓기!! -->
 
   <title>D'AMUSEMentS</title>
-  <!-- TODO: 타이틀 변경 필요 -->
   <!--[if lt IE 9]>
   <script type='text/javascript' src='https://studio-jt.co.kr/skin/js/vendors/html5shiv.min.js?ver=3.7.3'></script>
   <![endif]-->
 
+
   <link rel="stylesheet" href="css/style.css?ver=0712">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- TODO: CDN과 서버업로드 비교하기 -->
 </head>
 
 <body>
   <div class="wrap">
+    <!-- TODO: 헤더 메뉴 클릭 시 이동하도록 수정 -->
     <header class="header">
       <div class="header-grid">
         <div class="header-container">
@@ -88,7 +96,7 @@
     </section>
     <!--//end of .section.visual-->
 
-    <!-- TODO: 스크롤 시 오버랩되도록 처리 -->
+    <!-- TODO: 스크롤 시 오버랩되도록 처리 -> 공수문제로 민지 대리님과 상의할 것-->
     <div class="visual-sub">
       <div class="visual-text-container">
         <div class="visual-text-grid">
@@ -399,7 +407,15 @@
             </p>
           </div>
         </div>
-        <ul class="damu-works item-fade-early fade-delay-1">
+
+        <!-- 
+          + + + + + + + + + + + + +
+          [KM] 첫번째 포트폴리오 영역입니다.
+          (확인해본 결과, 14개 들어갈 예정입니다)
+          + + + + + + + + + + + + +
+        -->
+
+        <ul class="damu-works item-fade-damu fade-delay-1">
           <li class="damu-works-item">
             <a href="#" data-link-popup="damu">
               <img src="images/damu/damu-thumb-test.png" alt="D’AMUSEMentS Portfolio">
@@ -417,22 +433,63 @@
           </li>
           <li class="damu-works-item">
             <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-fila.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
               <img src="images/damu/damu-thumb-test.png" alt="D’AMUSEMentS Portfolio">
             </a>
           </li>
           <li class="damu-works-item">
             <a href="#" data-link-popup="damu">
-              <img src="images/damu/damu-thumb-amore.png" alt="D’AMUSEMentS Portfolio">
+              <img src="images/damu/damu-thumb-memebox.png" alt="D’AMUSEMentS Portfolio">
             </a>
           </li>
           <li class="damu-works-item">
             <a href="#" data-link-popup="damu">
               <img src="images/damu/damu-thumb-microsoft.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-heize.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-microsoft.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-fila.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-test.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-memebox.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-microsoft.png" alt="D’AMUSEMentS Portfolio">
+            </a>
+          </li>
+          <li class="damu-works-item">
+            <a href="#" data-link-popup="damu">
+              <img src="images/damu/damu-thumb-heize.png" alt="D’AMUSEMentS Portfolio">
             </a>
           </li>
         </ul>
         <button type="button" class="damu-btn-more item-fade fade-delay-3">More
         </button>
+        <!-- TODO: CSS상으로 가려두고 More 버튼 클릭 시 블록처리 -->
       </section>
       <!-- //end of .section.section-damu -->
 
@@ -450,6 +507,14 @@
           </div>
         </div>
         <!--end of .item-fade -->
+
+
+        <!-- 
+          + + + + + + + + + + + + +
+          [KM] 두번째 포트폴리오 영역입니다.
+          (확인해본 결과, 8개 들어갈 예정입니다)
+          + + + + + + + + + + + + +
+        -->
 
         <div class="dsc-works">
           <div class="dsc-slide swiper-container">
@@ -503,7 +568,6 @@
           </div>
 
         </div>
-
       </section>
 
       <section class="section section-proz">
@@ -531,7 +595,59 @@
           <span class="quote"></span>
         </h2>
         <div class="notice-container">
-          게시판 연결 중입니다 :)
+
+          <!-- TODO: 유코인에서 임시로 가져옴, 추후 수정ㅎ_ㅎ -->
+          <ul class="notice-area">
+            <li class="notice_list">
+              <input type="radio" id="noti_item_04" name="noti_item" />
+              <label for="noti_item_04">[공지사항] 내용 없음</label>
+              <div class="noti_content">
+                <div class="text">
+                  <p>현재 공지사항 내용이 없습니다.</p>
+                </div>
+                <em class="date">2017-12-01 10:00</em>
+              </div>
+            </li>
+            <li class="notice_list">
+              <input type="radio" id="noti_item_03" name="noti_item" />
+              <label for="noti_item_03">[긴급공지] 스마트 벤딩머신 재고 부족 관련 안내</label>
+              <div class="noti_content">
+                <div class="text">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at magna eu ante hendrerit dapibus. Vivamus
+                    condimentum tortor in est condimentum tincidunt. Praesent dapibus ac erat id rhoncus. Cras non lectus
+                    justo.
+                  </p>
+                  <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam gravida,
+                    est ac auctor tristique, sapien nisl molestie purus, sit amet auctor neque arcu vitae erat. Integer commodo
+                    lacus ut justo scelerisque mollis. Pellentesque ut pretium ligula, in tincidunt est.</p>
+                  <p>Donec elementum nunc orci, et sagittis velit iaculis non.</p>
+                </div>
+                <em class="date">2017-11-12 09:00</em>
+              </div>
+            </li>
+            <li class="notice_list">
+              <input type="radio" id="noti_item_02" name="noti_item" />
+              <label for="noti_item_02">[이벤트] 위비코인 행사 (12/7~)</label>
+              <div class="noti_content">
+                <div class="text">
+                  <p>&nbsp;- Andoid v1.01
+                    <br/>&nbsp;- 모바일앱 취약점 시정 조치 적용</p>
+                  <p>Google Playstore에서 앱을 업데이트하시고, 더 편리해진 유코인(U-coin)을 만나보세요!</p>
+                </div>
+                <em class="date">2017-11-12 09:00</em>
+              </div>
+            </li>
+            <li class="notice_list">
+              <input type="radio" id="noti_item_01" name="noti_item" />
+              <label for="noti_item_01">[공지] 유코인(U-coin) 앱 출시</label>
+              <div class="noti_content">
+                <div class="text">
+                  <p>유코인 앱이 드디어 출시되었습니다. (짝짝짝)</p>
+                </div>
+                <em class="date">2017-11-21 11:00</em>
+              </div>
+            </li>
+          </ul>
         </div>
       </section>
       <!-- //end of .section.notice -->
@@ -561,6 +677,11 @@
     </main>
 
 
+    <!-- 
+      + + + + + + + + + + + + +
+      [KM] 첫번째 포트폴리오 클릭 시 나올 팝업 영역입니다~!
+      + + + + + + + + + + + + +
+    -->
     <div class="popup popup-damu">
       <div class="popup-dim hide">
 
@@ -569,16 +690,9 @@
 
             <div class="swiper-container popup-slide-damu-container">
               <div class="swiper-wrapper popup-silde-damu-wrapper">
-                <div class="swiper-slide popup-slide">
-                  여기에 n-1번째 정보가 들어갑니다.
-                </div>
-                <div class="swiper-slide popup-slide">
-                  여기에 n번째 정보가 들어갑니다.
-                </div>
-                <div class="swiper-slide popup-slide">
-                  여기에 n+1번째 정보가 들어갑니다.
-                </div>
-                <!-- <div class="swiper-slide popup-slide slide-jaebumJoo">
+
+                <!-- 여기서부터 슬라이드 태그 시작 -->
+                <div class="swiper-slide popup-slide slide-jaebumJoo">
 
                   <h3 class="popup-damu-title"></h3>
                   <div class="popup-damu-bottom">
@@ -609,7 +723,9 @@
                     </div>
                   </div>
                 </div>
+                <!-- //여기까지 슬라이드 태그 -->
 
+                <!-- 여기서부터 슬라이드 태그 시작 -->
                 <div class="swiper-slide popup-slide">
 
                   <h3 class="popup-damu-title">Microsoft x Wework</h3>
@@ -636,17 +752,20 @@
                     </div>
                   </div>
                 </div>
+                <!-- //여기까지 슬라이드 태그 -->
+
                 <div class="swiper-slide popup-slide">
                   슬라이드333
                 </div>
                 <div class="swiper-slide popup-slide">
                   슬라이드444
-                </div> -->
+                </div>
+
               </div>
             </div>
 
+            <!-- 팝업 네비게이션 -->
             <div class="popup-buttons">
-
               <button type="button" class="popup-button-prev popup-damu-button-prev">
                 <span class="text-alt">이전 작품</span>
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
@@ -675,15 +794,20 @@
                 </svg>
               </button>
             </div>
+            <!-- //팝업 네비게이션 끝 -->
             <a href="#" aria-role="button" class="popup-button-close">팝업 닫기</a>
           </article>
         </div>
       </div>
     </div>
-
     <!-- //end of .popup-damu -->
 
 
+    <!-- 
+      + + + + + + + + + + + + +
+      [KM] 두번째 포트폴리오 클릭 시 나올 팝업 영역입니다~!
+      + + + + + + + + + + + + +
+    -->
     <div class="popup popup-dsc">
       <div class="popup-dim hide">
         <div class="popup-area">
@@ -799,7 +923,6 @@
               </div>
             </div>
             <div class="popup-buttons">
-
               <button type="button" class="popup-button-prev popup-dsc-button-prev">
                 <span class="text-alt">이전 작품</span>
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
@@ -833,22 +956,33 @@
         </div>
       </div>
     </div>
+    <!-- end of .popup-dsc -->
 
+
+    <!-- 
+      + + + + + + + + + + + + +
+      [KM] 세번째 포트폴리오 클릭 시 나올 팝업 영역입니다~!
+      + + + + + + + + + + + + +
+    -->
     <div class="popup popup-proz">
       <div class="popup-dim hide">
         <div class="popup-area">
           <article class="popup-contents">
             <div class="popup-proz-list">
+              <!-- item -->
               <div class="popup-proz-item">
                 <a href="https://youtu.be/nYh-n7EOtMA" target="_blank">
                   <img src="http://img.youtube.com/vi/nYh-n7EOtMA/mqdefault.jpg" alt="PROZETERS 포트폴리오">
                 </a>
               </div>
+              <!-- // item -->
+              <!-- item -->
               <div class="popup-proz-item">
                 <a href="https://youtu.be/k2qgadSvNyU" target="_blank">
                   <img src="http://img.youtube.com/vi/k2qgadSvNyU/mqdefault.jpg" alt="PROZETERS 포트폴리오">
                 </a>
               </div>
+              <!-- // item -->
               <div class="popup-proz-item">
                 <a href="https://youtu.be/PT2_F-1esPk" target="_blank">
                   <img src="http://img.youtube.com/vi/PT2_F-1esPk/mqdefault.jpg" alt="PROZETERS 포트폴리오">
@@ -908,19 +1042,8 @@
     </div>
     <!-- //end of .popup-proz -->
 
-
-
     <script src="js/vendors.js"></script>
     <script src="js/script.js"></script>
-    <!-- <script>
-    var s = skrollr.init({
-      smoothScrolling: false
-    });
-  </script> -->
-    <script>
-
-
-    </script>
 
   </div>
   <!--end of .wrap-->

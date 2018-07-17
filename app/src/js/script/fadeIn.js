@@ -43,14 +43,14 @@ $(function() {
         $(".item-hide").addClass("item-show");
       }
     });
-    $(".item-fade-early").each(function(i) {
-      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-      var bottom_of_window = scrollTop + windowHeight;
+    // $(".item-fade-damu").each(function(i) {
+    //   var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+    //   var bottom_of_window = scrollTop + windowHeight;
 
-      if (bottom_of_window > bottom_of_object - 500) {
-        $(this).addClass("item-show");
-      }
-    });
+    //   if (bottom_of_window > bottom_of_object - 500) {
+    //     $(this).addClass("item-show");
+    //   }
+    // });
   }
 
   function itemLineUp() {
@@ -65,6 +65,20 @@ $(function() {
       }
     });
   }
+  function isInViewPort(elem) {
+    var top_of_element = $(elem).offset().top;
+    var bottom_of_element = $(elem).offset().top + $(elem).outerHeight();
+    var bottom_of_screen = $(window).scrollTop() + window.innerHeight;
+    var top_of_screen = $(window).scrollTop();
+
+    if (
+      bottom_of_screen > top_of_element &&
+      top_of_screen < bottom_of_element
+    ) {
+      $(elem).addClass("item-show");
+      return true;
+    }
+  }
 
   // 스크롤 이벤트 정의
   $(window).on("load scroll", function() {
@@ -72,5 +86,6 @@ $(function() {
     windowHeight = $(window).height();
     itemFadeIn();
     itemLineUp();
+    isInViewPort(".item-fade-damu");
   });
 });
