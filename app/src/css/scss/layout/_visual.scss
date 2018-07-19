@@ -2,10 +2,21 @@
 
 // Visual
 
+.visual-bg {
+  display: none;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+}
+
 .section.visual {
   .visual-container {
-    position: relative;
-    // position: fixed;
+    position: absolute;
+
     @include flexbox;
     @include justify-content(center);
     @include align-items(center);
@@ -13,6 +24,7 @@
     height: 980px;
     overflow: hidden;
     min-width: 1480px;
+    background-color: red;
   }
 
   .visual-title-container {
@@ -149,16 +161,15 @@
 }
 
 .visual-sub {
-  display: none; //TODO 임시
-  // position: absolute;
-  z-index: 100;
-  position: relative;
+  // display: none;
+  z-index: 1;
+  position: absolute;
   width: 100%;
   height: 980px;
-  margin-bottom: 980px;
   overflow: hidden;
   min-width: 1480px;
-  transform: translateY(100%);
+  background-color: #333;
+  transform: translate3d(0, 980px, 0);
 
   .visual-text-container {
     //오버랩되는 텍스트 영역
@@ -200,6 +211,12 @@
 }
 
 .main {
+  will-change: transform;
+  z-index: 100;
   position: relative;
+  width: 100%;
+  min-width: 1480px;
+  height: 3000px;
+  top: 980px;
   background-color: #fff;
 }

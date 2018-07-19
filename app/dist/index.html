@@ -25,11 +25,14 @@
 
   <link rel="stylesheet" href="css/style.css?ver=0712">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
   <!-- TODO: CDN과 서버업로드 비교하기 -->
 </head>
 
 <body>
   <div class="wrap">
+    <div class="visual-bg"></div>
     <!-- TODO: 헤더 메뉴 클릭 시 이동하도록 수정 -->
     <header class="header">
       <div class="header-grid">
@@ -67,7 +70,7 @@
     <!--//end of .header-->
     <section class="section visual">
 
-      <div class="visual-container" data-0="transform:translateY(0%);" data-980="transform:translateY(0%);" data-1960="transform:translateY(-100%)">
+      <div id="visual" class="visual-container" data-0="transform:translateY(0%);" data-980="transform:translateY(0%);" data-1960="transform:translateY(-100%)">
 
         <div class="visual-title-container">
           <h2 class="visual-title">
@@ -96,8 +99,8 @@
     </section>
     <!--//end of .section.visual-->
 
-    <!-- TODO: 스크롤 시 오버랩되도록 처리 -> 공수문제로 민지 대리님과 상의할 것-->
-    <div class="visual-sub">
+    <!-- TODO: 스크롤 시 오버랩되도록 처리  https://codepen.io/nykim_/pen/bjpyBe-->
+    <div id="sub" class="visual-sub">
       <div class="visual-text-container">
         <div class="visual-text-grid">
           <p class="text-kor">
@@ -113,7 +116,7 @@
       </div>
     </div>
 
-    <main class="main">
+    <main id="main" class="main">
       <section class="section about">
         <h2 class="text-hidden">About D'AMUSEMentS</h2>
         <article class="about-story">

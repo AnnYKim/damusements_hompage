@@ -1,5 +1,5 @@
 $(function() {
-  //[*] 비주얼 페이드인 이벤트
+  //[*] 비주얼 페이드인 이벤트 (Diversify~ 문구)
   var visualFadeInEvent = function() {
     var $visualTitle = $(".visual-title");
     var $visualLines = [];
@@ -12,7 +12,7 @@ $(function() {
 
     _tl_visualFadeIn
       .staggerFrom(
-      [$visualLines[0], $visualLines[1], $visualLines[2]],
+        [$visualLines[0], $visualLines[1], $visualLines[2]],
         0.6,
         { opacity: 0, width: 0 },
         0.4 //간격
@@ -24,4 +24,63 @@ $(function() {
   $(window).on("load", function() {
     visualFadeInEvent();
   });
+});
+
+$(function() {
+  $(window).on("scroll", function() {
+    var scrollTop = $(this).scrollTop();
+
+    $("#sub").css({
+      opacity: scrollTop / 980
+    });
+
+    //     $("#main").css({
+    //       transform: "translate3d(0, " + (980 + scrollTop) + "px, 0)",
+    //       "-webkit-transform": "translate3d(0, " + (980 + scrollTop) + "px, 0)"
+    //     });
+
+    if (scrollTop > 980) {
+      //       // $("#visual").css({
+      //       //    "position": "absolute",
+      //       //    "transform": "translate3d(0, "+(980-scrollTop)+"px, 0)",
+      //       // });
+      $("#sub").css({
+        "z-index": 100
+      });
+      //       $("#main").css({
+      //         position: "absolute",
+      //         transform: "translate3d(0, " + (980 * 3 - scrollTop) + "px, 0)"
+      //         // "transform": "translateY("+(scrollTop)+"px)",
+      //       });
+    }
+  });
+});
+
+$(function() {
+  // コントローラー
+  var controller = new ScrollMagic.Controller();
+
+  // シーン
+  var scene1 = new ScrollMagic.Scene({
+    duration: 980, // 500pxまで
+    offset: 0 // スタートは0px
+  })
+    .setPin("#visual") // 要素の指定
+    .addIndicators()
+    .on("ㅎㅎ", callback);
+  function callback(event) {
+    console.log("ㅋㅋㅋㅋ");
+  }
+
+  // var scene2 = new ScrollMagic.Scene({
+  //   duration: 980, // 500pxまで
+  //   offset: 1 // スタートは0px
+  // }).setPin("#sub"); // 要素の指定
+
+  var scene3 = new ScrollMagic.Scene({
+    duration: 980, // 1500pxまで
+    offset: 0 // スタートは900px
+  }).setPin("#main"); // 要素の指定
+
+  controller.addScene([scene1, scene3]);
 });
