@@ -313,7 +313,7 @@ function dscWorksSlideEvent() {
   var $dscSlideItem = $(".dsc-slide-item");
   var length = $(".dsc-slide-item").length;
   var idx = Math.ceil(length / 2); //전체 개수의 절반으로 설정
-  var isOnGoing = false; //애니메이션 진행중일 때 m클릭 방지
+  var isOnGoing = false; //애니메이션 진행중일 때 클릭 방지
 
   var addClassActive = function() {
     $dscSlideItem.eq(idx).addClass("active");
@@ -332,6 +332,7 @@ function dscWorksSlideEvent() {
 
   //클릭 시 이벤트
   $dscSlideItem.on("click", function(e) {
+    e.preventDefault();
     if (isOnGoing) {
       return;
     }
@@ -339,6 +340,13 @@ function dscWorksSlideEvent() {
     isOnGoing = true;
 
     idx = $dscSlideItem.index($(this));
+
+    if (idx == dscWorksSwiper.realIndex) {
+      //active 상태의 아이템 클릭 시 애니메이션 대신 팝업 띄움
+      openPopup("dsc");
+      isOnGoing = false;
+      return false;
+    }
     // console.log("idx", idx);
 
     $dscSlideItem.removeClass("active left");

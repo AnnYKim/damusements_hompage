@@ -164,9 +164,9 @@
 
     li {
       position: relative;
-      @include flex-grow(1);
-      min-width: 200px;
-      margin-left: 60px;
+      // @include flex-grow(1);
+      // min-width: 200px;
+      margin-left: 100px; //기존 60px
 
       &:first-child {
         margin-left: 20px;

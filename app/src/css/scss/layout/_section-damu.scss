@@ -34,6 +34,11 @@
     }
   } //end of .damu-intro
 
+  .damu-works-container {
+    // overflow: hidden;
+    height: 760px; //TODO: 임시.. more 버튼 클릭 시 바뀌도록
+  }
+
   .damu-works {
     ///////////////////
     // 지역변수 선언
@@ -64,6 +69,10 @@
       height: $damu-works-size;
       margin-top: 100px;
       @include flex-grow(0);
+
+      &.hide {
+        display: none;
+      }
 
       &:nth-child(3n + 2) {
         //2, 5, 8, 11, 14...
@@ -109,7 +118,6 @@
     text-transform: uppercase;
     display: block;
     font-size: 20px;
-
     &:hover {
       //버튼 호버 효과
       color: #fff;
@@ -119,6 +127,15 @@
 
     &:focus {
       outline: 0;
+    }
+
+    &.disabled {
+      @include select-none;
+      @include pointer-none;
+      color: #cecece;
+      border-color: #cecece;
+      background-color: #fff;
+      cursor: default;
     }
   } //end of .damu-btn-more
 }

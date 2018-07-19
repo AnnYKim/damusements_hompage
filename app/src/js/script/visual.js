@@ -27,7 +27,7 @@ $(function() {
 });
 
 $(function() {
-  $(window).on("scroll", function() {
+  $(window).on("load scroll", function() {
     var scrollTop = $(this).scrollTop();
 
     console.log("scrollTop: ", scrollTop);
@@ -42,6 +42,13 @@ $(function() {
     if (scrollTop > 980) {
       $("#sub").addClass("on");
     }
+
+    if (scrollTop < 981 - 70) {
+      $("#header").removeClass("sticky");
+    }
+    if (scrollTop > 981 - 70) {
+      $("#header").addClass("sticky");
+    }
   });
 });
 
@@ -53,13 +60,7 @@ $(function() {
   var scene1 = new ScrollMagic.Scene({
     duration: 980, // 500pxまで
     offset: 0 // スタートは0px
-  })
-    .setPin("#visual") // 要素の指定
-    .addIndicators()
-    .on("ㅎㅎ", callback);
-  function callback(event) {
-    console.log("ㅋㅋㅋㅋ");
-  }
+  }).setPin("#visual");
 
   // var scene2 = new ScrollMagic.Scene({
   //   duration: 980, // 500pxまで

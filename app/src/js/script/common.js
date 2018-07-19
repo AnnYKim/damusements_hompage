@@ -1,6 +1,6 @@
 //섹션의 위치값
 // index[2,3,4]의 값은 변경될 수 있음 (MORE 버튼을 쓰는 경우)
-var sectionTop = [1960, 4510, 7506, 8513, 9493];
+var sectionTop = [1960, 4508, 6218, 7219, 8205];
 
 $(function() {
   //header js
@@ -54,8 +54,13 @@ $(function() {
     $navMenu.on("click", function(e) {
       e.preventDefault();
       var idx = $navMenu.index($(this));
-      console.log("menu idx - ", idx);
+
+      if (idx > 2) {
+        getSectionTop();
+      }
+
       var position = sectionTop[idx] - headerHeight;
+
       pageScroll(position);
     });
   };
@@ -65,6 +70,7 @@ $(function() {
     headerHeight = Math.ceil($header.height());
     scrollToSection();
     clickHeaderLogo();
+    getSectionTop();
   };
 
   // 윈도 로드
@@ -72,3 +78,25 @@ $(function() {
     initEvent();
   });
 });
+
+///////////////////
+//임시로 막아놓음!!!
+
+// var $damuMoreButton = $(".damu-btn-more");
+// var $damuWorksItem_hide = $(".damu-works-item.hide");
+
+// $damuMoreButton.on("click", function() {
+//   for (var i = 0; i < 3; i++) {
+//     $damuWorksItem_hide.eq(i).removeClass("hide");
+
+//     // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
+//     //   autoAlpha: 1,
+//     //   display: "block"
+//     // });
+//   }
+//   $damuWorksItem_hide = $(".damu-works-item.hide");
+
+//   if (!$damuWorksItem_hide.length) {
+//     $damuMoreButton.addClass("disabled");
+//   }
+// });

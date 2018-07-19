@@ -146,3 +146,36 @@
     }
   } //end of .notice_list
 }
+
+.notice-pagination {
+  position: relative;
+  margin: 38px auto 30px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    padding: 2px 4px;
+    margin-right: 4px;
+    font-weight: $fw-b;
+    font-size: 16px;
+    color: #393939;
+    &:last-child {
+      margin-right: 0;
+    }
+    &.active {
+      color: #fff;
+    }
+    &.btn_prev {
+      background-image: url(../images/page_ico.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-right: 12px;
+    }
+    &.btn_next {
+      background-image: url(../images/page_2_ico.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      margin-left: 12px;
+    }
+  }
+}

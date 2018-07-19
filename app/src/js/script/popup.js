@@ -41,15 +41,11 @@ var openPopup = function(target) {
       break;
   }
   preventScroll();
-  $(".popup").show();
+  $popup.show();
 
-  if (target == "dsc") {
-    setTimeout(function() {
-      $popup.children(".popup-dim").removeClass("hide");
-      _tl_animatePopup.play();
-    }, 800);
-    return false;
-  }
+  // if (target == "dsc") {
+  //   return false;
+  // }
 
   $popup.children(".popup-dim").removeClass("hide");
   _tl_animatePopup.play();

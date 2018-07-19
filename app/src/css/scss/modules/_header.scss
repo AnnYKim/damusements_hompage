@@ -10,10 +10,11 @@
   width: 100%;
   height: 98px;
   // min-width: $ly-min-width;
-  background-color: #171717;
+  background-color: transparent;
 
   &.sticky {
     top: 0;
+    background-color: #171717;
   }
 
   .header-grid {

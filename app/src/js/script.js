@@ -1,6 +1,6 @@
 //섹션의 위치값
 // index[2,3,4]의 값은 변경될 수 있음 (MORE 버튼을 쓰는 경우)
-var sectionTop = [1960, 4510, 7506, 8513, 9493];
+var sectionTop = [1960, 4508, 6218, 7219, 8205];
 
 $(function() {
   //header js
@@ -54,8 +54,13 @@ $(function() {
     $navMenu.on("click", function(e) {
       e.preventDefault();
       var idx = $navMenu.index($(this));
-      console.log("menu idx - ", idx);
+
+      if (idx > 2) {
+        getSectionTop();
+      }
+
       var position = sectionTop[idx] - headerHeight;
+
       pageScroll(position);
     });
   };
@@ -65,6 +70,7 @@ $(function() {
     headerHeight = Math.ceil($header.height());
     scrollToSection();
     clickHeaderLogo();
+    getSectionTop();
   };
 
   // 윈도 로드
@@ -72,6 +78,28 @@ $(function() {
     initEvent();
   });
 });
+
+///////////////////
+//임시로 막아놓음!!!
+
+// var $damuMoreButton = $(".damu-btn-more");
+// var $damuWorksItem_hide = $(".damu-works-item.hide");
+
+// $damuMoreButton.on("click", function() {
+//   for (var i = 0; i < 3; i++) {
+//     $damuWorksItem_hide.eq(i).removeClass("hide");
+
+//     // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
+//     //   autoAlpha: 1,
+//     //   display: "block"
+//     // });
+//   }
+//   $damuWorksItem_hide = $(".damu-works-item.hide");
+
+//   if (!$damuWorksItem_hide.length) {
+//     $damuMoreButton.addClass("disabled");
+//   }
+// });
 
 $(function() {
   //스크롤 페이드 이벤트는 여기에 정의
@@ -208,15 +236,11 @@ var openPopup = function(target) {
       break;
   }
   preventScroll();
-  $(".popup").show();
+  $popup.show();
 
-  if (target == "dsc") {
-    setTimeout(function() {
-      $popup.children(".popup-dim").removeClass("hide");
-      _tl_animatePopup.play();
-    }, 800);
-    return false;
-  }
+  // if (target == "dsc") {
+  //   return false;
+  // }
 
   $popup.children(".popup-dim").removeClass("hide");
   _tl_animatePopup.play();
@@ -646,7 +670,7 @@ function dscWorksSlideEvent() {
   var $dscSlideItem = $(".dsc-slide-item");
   var length = $(".dsc-slide-item").length;
   var idx = Math.ceil(length / 2); //전체 개수의 절반으로 설정
-  var isOnGoing = false; //애니메이션 진행중일 때 m클릭 방지
+  var isOnGoing = false; //애니메이션 진행중일 때 클릭 방지
 
   var addClassActive = function() {
     $dscSlideItem.eq(idx).addClass("active");
@@ -665,6 +689,7 @@ function dscWorksSlideEvent() {
 
   //클릭 시 이벤트
   $dscSlideItem.on("click", function(e) {
+    e.preventDefault();
     if (isOnGoing) {
       return;
     }
@@ -672,6 +697,13 @@ function dscWorksSlideEvent() {
     isOnGoing = true;
 
     idx = $dscSlideItem.index($(this));
+
+    if (idx == dscWorksSwiper.realIndex) {
+      //active 상태의 아이템 클릭 시 애니메이션 대신 팝업 띄움
+      openPopup("dsc");
+      isOnGoing = false;
+      return false;
+    }
     // console.log("idx", idx);
 
     $dscSlideItem.removeClass("active left");
@@ -771,7 +803,7 @@ $(function() {
 });
 
 $(function() {
-  $(window).on("scroll", function() {
+  $(window).on("load scroll", function() {
     var scrollTop = $(this).scrollTop();
 
     console.log("scrollTop: ", scrollTop);
@@ -786,6 +818,13 @@ $(function() {
     if (scrollTop > 980) {
       $("#sub").addClass("on");
     }
+
+    if (scrollTop < 981 - 70) {
+      $("#header").removeClass("sticky");
+    }
+    if (scrollTop > 981 - 70) {
+      $("#header").addClass("sticky");
+    }
   });
 });
 
@@ -797,13 +836,7 @@ $(function() {
   var scene1 = new ScrollMagic.Scene({
     duration: 980, // 500pxまで
     offset: 0 // スタートは0px
-  })
-    .setPin("#visual") // 要素の指定
-    .addIndicators()
-    .on("ㅎㅎ", callback);
-  function callback(event) {
-    console.log("ㅋㅋㅋㅋ");
-  }
+  }).setPin("#visual");
 
   // var scene2 = new ScrollMagic.Scene({
   //   duration: 980, // 500pxまで
