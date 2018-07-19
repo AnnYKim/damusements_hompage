@@ -30,28 +30,17 @@ $(function() {
   $(window).on("scroll", function() {
     var scrollTop = $(this).scrollTop();
 
+    console.log("scrollTop: ", scrollTop);
+
     $("#sub").css({
       opacity: scrollTop / 980
     });
 
-    //     $("#main").css({
-    //       transform: "translate3d(0, " + (980 + scrollTop) + "px, 0)",
-    //       "-webkit-transform": "translate3d(0, " + (980 + scrollTop) + "px, 0)"
-    //     });
-
+    if (scrollTop < 980) {
+      $("#sub").removeClass("on");
+    }
     if (scrollTop > 980) {
-      //       // $("#visual").css({
-      //       //    "position": "absolute",
-      //       //    "transform": "translate3d(0, "+(980-scrollTop)+"px, 0)",
-      //       // });
-      $("#sub").css({
-        "z-index": 100
-      });
-      //       $("#main").css({
-      //         position: "absolute",
-      //         transform: "translate3d(0, " + (980 * 3 - scrollTop) + "px, 0)"
-      //         // "transform": "translateY("+(scrollTop)+"px)",
-      //       });
+      $("#sub").addClass("on");
     }
   });
 });

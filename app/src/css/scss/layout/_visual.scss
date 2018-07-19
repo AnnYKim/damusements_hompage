@@ -24,7 +24,7 @@
     height: 980px;
     overflow: hidden;
     min-width: 1480px;
-    background-color: red;
+    background-color: #333;
   }
 
   .visual-title-container {
@@ -161,7 +161,6 @@
 }
 
 .visual-sub {
-  // display: none;
   z-index: 1;
   position: absolute;
   width: 100%;
@@ -170,6 +169,10 @@
   min-width: 1480px;
   background-color: #333;
   transform: translate3d(0, 980px, 0);
+
+  &.on {
+    z-index: 10;
+  }
 
   .visual-text-container {
     //오버랩되는 텍스트 영역
