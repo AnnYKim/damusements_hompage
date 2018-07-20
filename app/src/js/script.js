@@ -1,9 +1,5 @@
 //그 외 애니메이션 정의
 
-$(document).ready(function() {
-  // animateDiv($(".deco-icon-collaboration"));
-});
-
 function makeNewPosition($container) {
   // Get viewport dimensions (remove the dimension of the div)
   var h = $container.height() - 0;
@@ -18,7 +14,8 @@ function makeNewPosition($container) {
 function animateDiv($target) {
   var newq = makeNewPosition($target.parent());
   var oldq = $target.offset();
-  var speed = calcSpeed([oldq.top, oldq.left], newq);
+  // var speed = calcSpeed([oldq.top, oldq.left], newq);
+  var speed = 25000;
 
   $target.animate(
     {
@@ -44,6 +41,11 @@ function calcSpeed(prev, next) {
 
   return speed;
 }
+
+$(window).on("load", function() {
+  animateDiv($(".deco-icon-collaboration"));
+  animateDiv($(".deco-icon-diversity"));
+});
 
 /////
 

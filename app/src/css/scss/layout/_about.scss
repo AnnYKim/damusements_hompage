@@ -438,12 +438,23 @@
     }
   } //end of .about-all-pic
 
-  .deco-container {
+  .deco-container-diver {
     position: absolute;
-    top: 86px;
-    left: 770px;
-    width: 500px;
-    height: 500px;
+    top: -30px;
+    left: -443px;
+    width: 300px;
+    height: 400px;
+    // outline: 3px solid navy;
+    @include select-none;
+    @include pointer-none;
+  }
+
+  .deco-container-collabo {
+    position: absolute;
+    top: 70px;
+    left: 750px;
+    width: 300px;
+    height: 400px;
     // outline: 3px solid red;
     @include select-none;
     @include pointer-none;
@@ -451,18 +462,17 @@
 
   .deco-icon-diversity {
     position: absolute;
-    top: -12px;
-    left: -343px;
+    top: 20px;
+    right: -80px;
     width: 251px;
     height: 216px;
     background-image: url(#{$path-image}deco-diversity-big.png);
   }
 
   .deco-icon-collaboration {
-    animation: shape 1s linear infinite;
+    position: absolute;
     width: 291px;
     height: 291px;
-    transition: all 1s;
     background-image: url(#{$path-image}deco-collaboration-big.png);
   }
 
