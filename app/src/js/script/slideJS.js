@@ -374,9 +374,9 @@ function dscWorksSlideEvent() {
 // *****************
 
 var popupSlideEvent = function() {
-  console.log("~");
+  // console.log("~");
   $(".popup-damu-button-next").on("click", function() {
-    console.log("next!");
+    // console.log("next!");
   });
 };
 

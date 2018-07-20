@@ -14,7 +14,6 @@ $(function() {
 
     $damuWorks.find(".damu-works-item").each(function(i) {
       $damuWorksList[i] = $(this);
-      console.log($damuWorksList);
     });
 
     _tl_damuWorksFadeIn

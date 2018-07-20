@@ -32,7 +32,7 @@ $(function() {
   $(window).on("load scroll", function() {
     var scrollTop = $(this).scrollTop();
 
-    console.log("scrollTop: ", scrollTop);
+    // console.log("scrollTop: ", scrollTop);
 
     $("#sub").css({
       opacity: scrollTop / 980

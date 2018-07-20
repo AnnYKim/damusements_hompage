@@ -1,52 +1,53 @@
 //그 외 애니메이션 정의
 
-function makeNewPosition($container) {
-  // Get viewport dimensions (remove the dimension of the div)
-  var h = $container.height() - 0;
-  var w = $container.width() - 0;
+// function makeNewPosition($container) {
+//   // Get viewport dimensions (remove the dimension of the div)
+//   var h = $container.height() - 0;
+//   var w = $container.width() - 0;
 
-  var nh = Math.floor(Math.random() * h);
-  var nw = Math.floor(Math.random() * w);
+//   var nh = Math.floor(Math.random() * h);
+//   var nw = Math.floor(Math.random() * w);
 
-  return [nh, nw];
-}
+//   return [nh, nw];
+// }
 
-function animateDiv($target) {
-  var newq = makeNewPosition($target.parent());
-  var oldq = $target.offset();
-  // var speed = calcSpeed([oldq.top, oldq.left], newq);
-  var speed = 25000;
+// function animateDiv($target) {
+//   var newq = makeNewPosition($target.parent());
+//   var oldq = $target.offset();
+//   // var speed = calcSpeed([oldq.top, oldq.left], newq);
+//   var speed = 25000;
 
-  $target.animate(
-    {
-      top: newq[0],
-      left: newq[1]
-    },
-    speed,
-    function() {
-      animateDiv($target);
-    }
-  );
-}
+//   $target.animate(
+//     {
+//       top: newq[0],
+//       left: newq[1]
+//     },
+//     speed,
+//     function() {
+//       animateDiv($target);
+//     }
+//   );
+// }
 
-function calcSpeed(prev, next) {
-  var x = Math.abs(prev[1] - next[1]);
-  var y = Math.abs(prev[0] - next[0]);
+// function calcSpeed(prev, next) {
+//   var x = Math.abs(prev[1] - next[1]);
+//   var y = Math.abs(prev[0] - next[0]);
 
-  var greatest = x > y ? x : y;
+//   var greatest = x > y ? x : y;
 
-  var speedModifier = 0.1;
+//   var speedModifier = 0.1;
 
-  var speed = Math.ceil(greatest / speedModifier);
+//   var speed = Math.ceil(greatest / speedModifier);
 
-  return speed;
-}
+//   return speed;
+// }
 
-$(window).on("load", function() {
-  animateDiv($(".deco-icon-collaboration"));
-  animateDiv($(".deco-icon-diversity"));
-});
+// $(window).on("load", function() {
+//   animateDiv($(".deco-icon-collaboration"));
+//   animateDiv($(".deco-icon-diversity"));
+// });
 
+//너무 버벅거려서 CSS로 변경
 /////
 
 // These events and people are fictional and any resemblance to person living or dead is purely coincidental.

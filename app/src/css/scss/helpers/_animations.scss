@@ -36,8 +36,25 @@
 //   }
 // }
 
+$randomY_1: random(150);
+$randomX_1: random(70);
+$randomY_2: random(120);
+$randomX_2: random(80);
+
 @include keyframes(loading) {
   100% {
     left: 100%;
+  }
+}
+
+@include keyframes(deco_floating_1) {
+  50% {
+    transform: translateY(-#{$randomY_1}px) translateX(-#{$randomX_1}px);
+  }
+}
+
+@include keyframes(deco_floating_2) {
+  50% {
+    transform: translateY(-#{$randomY_2}px) translateX(-#{$randomX_2}px);
   }
 }

@@ -16,7 +16,7 @@ $(function() {
     $section.each(function(idx) {
       sectionTop[idx] = Math.ceil($(this).offset().top);
     });
-    console.log(sectionTop);
+    // console.log(sectionTop);
   };
 
   // 페이지 스크롤 함수
