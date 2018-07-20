@@ -11,10 +11,12 @@
   height: 98px;
   // min-width: $ly-min-width;
   background-color: transparent;
+  transition: top 0.3s;
 
   &.sticky {
     top: 0;
     background-color: #171717;
+    transition: top 0.3s;
   }
 
   .header-grid {

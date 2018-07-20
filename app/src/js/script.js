@@ -197,7 +197,7 @@ $(function() {
     getSectionTop();
 
     setTimeout(function() {
-      // scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
+      scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
       removeLoading(); //로딩 이미지 제거
     }, 300);
   };
@@ -211,24 +211,24 @@ $(function() {
 ///////////////////
 //임시로 막아놓음!!!
 
-var $damuMoreButton = $(".damu-btn-more");
-var $damuWorksItem_hide = $(".damu-works-item.hide");
+// var $damuMoreButton = $(".damu-btn-more");
+// var $damuWorksItem_hide = $(".damu-works-item.hide");
 
-$damuMoreButton.on("click", function() {
-  for (var i = 0; i < 3; i++) {
-    $damuWorksItem_hide.eq(i).removeClass("hide");
+// $damuMoreButton.on("click", function() {
+//   for (var i = 0; i < 3; i++) {
+//     $damuWorksItem_hide.eq(i).removeClass("hide");
 
-    // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
-    //   autoAlpha: 1,
-    //   display: "block"
-    // });
-  }
-  $damuWorksItem_hide = $(".damu-works-item.hide");
+//     // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
+//     //   autoAlpha: 1,
+//     //   display: "block"
+//     // });
+//   }
+//   $damuWorksItem_hide = $(".damu-works-item.hide");
 
-  if (!$damuWorksItem_hide.length) {
-    $damuMoreButton.addClass("disabled");
-  }
-});
+//   if (!$damuWorksItem_hide.length) {
+//     $damuMoreButton.addClass("disabled");
+//   }
+// });
 
 $(function() {
   //스크롤 페이드 이벤트는 여기에 정의
@@ -915,20 +915,20 @@ $(function() {
     });
 
     _tl_visualFadeIn
-      .staggerFrom(
+      .staggerTo(
         [$visualLines[0], $visualLines[1], $visualLines[2]],
         0.6,
-        { opacity: 0, width: 0 },
+        { opacity: 1, width: "100%" },
         0.4 //간격
       )
       .addLabel("listShow")
-      .from($visualQuote, 0.65, { opacity: 0 }, "listShow+=0.3");
+      .to($visualQuote, 0.65, { opacity: 1 }, "listShow+=0.3");
   };
 
   $(window).on("load", function() {
     setTimeout(function() {
       visualFadeInEvent();
-    }, 800);
+    }, 1000);
   });
 });
 

@@ -11,20 +11,20 @@ $(function() {
     });
 
     _tl_visualFadeIn
-      .staggerFrom(
+      .staggerTo(
         [$visualLines[0], $visualLines[1], $visualLines[2]],
         0.6,
-        { opacity: 0, width: 0 },
+        { opacity: 1, width: "100%" },
         0.4 //간격
       )
       .addLabel("listShow")
-      .from($visualQuote, 0.65, { opacity: 0 }, "listShow+=0.3");
+      .to($visualQuote, 0.65, { opacity: 1 }, "listShow+=0.3");
   };
 
   $(window).on("load", function() {
     setTimeout(function() {
       visualFadeInEvent();
-    }, 800);
+    }, 1000);
   });
 });
 
