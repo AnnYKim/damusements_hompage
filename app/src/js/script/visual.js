@@ -22,7 +22,9 @@ $(function() {
   };
 
   $(window).on("load", function() {
-    visualFadeInEvent();
+    setTimeout(function() {
+      visualFadeInEvent();
+    }, 800);
   });
 });
 

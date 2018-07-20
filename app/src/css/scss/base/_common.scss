@@ -20,6 +20,8 @@ body {
 }
 
 .text-hidden {
+  width: 0px;
+  height: 0px;
   overflow-x: hidden;
   text-indent: -9999px;
 }

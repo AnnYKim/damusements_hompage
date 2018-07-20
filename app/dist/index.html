@@ -31,9 +31,74 @@
   <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
 
   <!-- TODO: CDN과 서버업로드 비교하기 -->
+
+  <style>
+    .loading {
+      z-index: 1500;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f5f5;
+      background: #000;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center
+    }
+
+    .loading>.loading-container {
+      position: relative;
+      display: block;
+      width: 340px;
+      height: 80px;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .loading-image:hover+.line {
+      transform: scaleX(1);
+      left: 0;
+    }
+
+    .loading .line {
+      display: block;
+      margin-top: 10px;
+      height: 10px;
+      width: 340px;
+      position: absolute;
+      left: -100%;
+      background-color: #f9fafa;
+      /* transition: all 0.2s; */
+      animation: loading 1.5s infinite
+    }
+  </style>
 </head>
 
 <body>
+
+  <div class="loading">
+    <div class="loading-container">
+
+      <img class="loading-image" src="../images/logo-damu.png" alt="D'AMUSEMentS">
+      <div class="line"></div>
+    </div>
+  </div>
+
+
   <div class="wrap">
     <div class="visual-bg"></div>
     <!-- TODO: 헤더 메뉴 클릭 시 이동하도록 수정 -->
@@ -66,7 +131,7 @@
           </ul>
         </div>
         <div class="header-download">
-          <a href="#" class="download-introduction">회사소개서 다운로드</a>
+
         </div>
       </div>
     </header>
@@ -251,11 +316,18 @@
               <em class="sign-text">=</em>
             </strong>
             <strong class="title">
-              <em class="title-logo">D'amusements</em>
+              <em class="title-logo">
+                <span class="logo-image fade-logo-damu">D'amusements</span>
+              </em>
             </strong>
           </div>
+          <a href="#" class="download-introduction">회사소개서 다운로드</a>
           <div class="deco-icon-diversity"></div>
-          <div class="deco-icon-collaboration"></div>
+          <div class="deco-container">
+
+            <div class="deco-icon-collaboration"></div>
+          </div>
+
         </article>
       </section>
       <!--//end of .section.about-->
@@ -603,22 +675,27 @@
         </h2>
         <div class="notice-container">
 
-          <!-- TODO: 유코인에서 임시로 가져옴, 추후 수정ㅎ_ㅎ -->
           <ul class="notice-area">
-            <li class="notice_list">
-              <input type="radio" id="noti_item_01" name="noti_item" />
-              <label for="noti_item_01">Don't Panic Seoul 월간지 발행</label>
-              <div class="noti_content">
+            <li class="notice-list">
+              <span class="list-num">01</span>
+              <input class="notice-radio" type="radio" id="noti-item-01" name="noti-item" />
+              <label class="noti-title" for="noti-item-01">Don't Panic Seoul 월간지 발행
+                <em class="date">2018.07.01</em>
+              </label>
+              <div class="noti-content">
                 <div class="text">
-                  <p>- 17년 09월 30호 이후 휴간 중</p>
+                  <p>- 17년 09월 30호 이후 휴간 중
+                    <br/>- 18년 6월 중순 재발행 예정</p>
                 </div>
-                <em class="date">2018-07.01</em>
               </div>
             </li>
-            <li class="notice_list">
-              <input type="radio" id="noti_item_02" name="noti_item" />
-              <label for="noti_item_02">크리스마스 특별 이벤트!</label>
-              <div class="noti_content">
+            <li class="notice-list">
+              <span class="list-num">02</span>
+              <input class="notice-radio" type="radio" id="noti-item-02" name="noti-item" />
+              <label class="noti-title" for="noti-item-02">크리스마스 특별 이벤트!
+                <em class="date">2018.06.01</em>
+              </label>
+              <div class="noti-content">
                 <div class="text">
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at magna eu ante hendrerit dapibus. Vivamus
                     condimentum tortor in est condimentum tincidunt. Praesent dapibus ac erat id rhoncus. Cras non lectus
@@ -629,13 +706,15 @@
                     lacus ut justo scelerisque mollis. Pellentesque ut pretium ligula, in tincidunt est.</p>
                   <p>Donec elementum nunc orci, et sagittis velit iaculis non.</p>
                 </div>
-                <em class="date">2018.06.01</em>
               </div>
             </li>
-            <li class="notice_list">
-              <input type="radio" id="noti_item_03" name="noti_item" />
-              <label for="noti_item_03">그_냥 팬사인회 개최</label>
-              <div class="noti_content">
+            <li class="notice-list">
+              <span class="list-num">03</span>
+              <input class="notice-radio" type="radio" id="noti-item-03" name="noti-item" />
+              <label class="noti-title" for="noti-item-03">그_냥 팬사인회 개최
+                <em class="date">2018.05.01</em>
+              </label>
+              <div class="noti-content">
                 <div class="text">
                   <p>Et dolore eiusmod elit elit quis id proident sint non deserunt reprehenderit nostrud culpa. Minim nostrud
                     ex tempor est nisi non ea ut dolor aliquip amet tempor commodo ipsum. Fugiat ea cupidatat fugiat do.
@@ -648,17 +727,32 @@
                     commodo.
                   </p>
                 </div>
-                <em class="date">2018.05.01</em>
               </div>
             </li>
-            <li class="notice_list">
-              <input type="radio" id="noti_item_04" name="noti_item" />
-              <label for="noti_item_04">공식 홈페이지가 오픈했습니다!</label>
-              <div class="noti_content">
+            <li class="notice-list">
+              <span class="list-num">04</span>
+              <input class="notice-radio" type="radio" id="noti-item-04" name="noti-item" />
+              <label class="noti-title" for="noti-item-04">공식 홈페이지가 오픈했습니다!
+                <em class="date">2018.05.01</em>
+              </label>
+              <div class="noti-content">
                 <div class="text">
                   <p>디어뮤즈먼츠 공식 홈페이지가 오픈했습니다. (짝짝짝)</p>
                 </div>
-                <em class="date">2018.05.01</em>
+              </div>
+            </li>
+            <li class="notice-list">
+              <span class="list-num">05</span>
+              <input class="notice-radio" type="radio" id="noti-item-05" name="noti-item" />
+              <label class="noti-title" for="noti-item-05">닥터심슨 강연 안내
+                <em class="date">2018.04.01</em>
+              </label>
+              <div class="noti-content">
+                <div class="text">
+                  <p>Officia culpa sit sint excepteur incididunt velit aliqua irure nostrud reprehenderit ut consectetur qui.</p>
+                  <p>Nisi et sint dolore quis consectetur pariatur officia laboris do id occaecat ea adipisicing.
+                    <br/> Eiusmod sit aliqua magna adipisicing aute labore labore pariatur proident non sit ullamco officia.</p>
+                </div>
               </div>
             </li>
           </ul>
@@ -670,12 +764,12 @@
             + + + + + + + + + + + + +
           -->
         <div class="notice-pagination">
-          <a href="" class="btn_prev text-indent">이전</a>
+          <a href="" class="btn-prev">이전</a>
           <a href="" class="active">1</a>
           <a href="">2</a>
           <a href="">3</a>
           <a href="">4</a>
-          <a href="" class="btn_next text-indent">다음</a>
+          <a href="" class="btn-next">다음</a>
         </div>
 
       </section>

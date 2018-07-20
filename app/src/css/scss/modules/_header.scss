@@ -110,27 +110,7 @@
   } //end of .header-navigation
 
   .header-download {
-    .download-introduction {
-      padding-bottom: 10px;
-      color: #fff;
-      font-size: 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
-
-      &:visited,
-      &:active {
-        color: #fff;
-      }
-
-      //TODO: 임시 효과
-      &:hover {
-        opacity: 0.6;
-      }
-
-      //TODO: 임시 효과
-      &:focus {
-        outline: 0;
-        opacity: 0.6;
-      }
-    }
+    //회사소개서 다운로드 위치 변경
+    //(어바웃 섹션 내)
   } //end of .header-download
 }

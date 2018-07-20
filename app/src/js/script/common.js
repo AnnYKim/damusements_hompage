@@ -65,12 +65,22 @@ $(function() {
     });
   };
 
+  //로딩 이미지 제거하는 함수
+  var removeLoading = function() {
+    $(".loading").fadeOut(1300);
+  };
+
   // 초기 이벤트 지정
   var initEvent = function() {
     headerHeight = Math.ceil($header.height());
     scrollToSection();
     clickHeaderLogo();
     getSectionTop();
+
+    setTimeout(function() {
+      // scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
+      removeLoading(); //로딩 이미지 제거
+    }, 300);
   };
 
   // 윈도 로드
@@ -82,21 +92,21 @@ $(function() {
 ///////////////////
 //임시로 막아놓음!!!
 
-// var $damuMoreButton = $(".damu-btn-more");
-// var $damuWorksItem_hide = $(".damu-works-item.hide");
+var $damuMoreButton = $(".damu-btn-more");
+var $damuWorksItem_hide = $(".damu-works-item.hide");
 
-// $damuMoreButton.on("click", function() {
-//   for (var i = 0; i < 3; i++) {
-//     $damuWorksItem_hide.eq(i).removeClass("hide");
+$damuMoreButton.on("click", function() {
+  for (var i = 0; i < 3; i++) {
+    $damuWorksItem_hide.eq(i).removeClass("hide");
 
-//     // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
-//     //   autoAlpha: 1,
-//     //   display: "block"
-//     // });
-//   }
-//   $damuWorksItem_hide = $(".damu-works-item.hide");
+    // TweenLite.to($damuWorksItem_hide.eq(i), 2, {
+    //   autoAlpha: 1,
+    //   display: "block"
+    // });
+  }
+  $damuWorksItem_hide = $(".damu-works-item.hide");
 
-//   if (!$damuWorksItem_hide.length) {
-//     $damuMoreButton.addClass("disabled");
-//   }
-// });
+  if (!$damuWorksItem_hide.length) {
+    $damuMoreButton.addClass("disabled");
+  }
+});

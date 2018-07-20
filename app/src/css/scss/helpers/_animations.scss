@@ -29,3 +29,15 @@
   opacity: 0;
   transition: opacity #{$duration} #{$delay};
 }
+
+// @include keyframes(loading) {
+//   50% {
+//     transform: scaleX(1);
+//   }
+// }
+
+@include keyframes(loading) {
+  100% {
+    left: 100%;
+  }
+}

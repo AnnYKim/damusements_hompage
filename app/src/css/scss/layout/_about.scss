@@ -3,6 +3,7 @@
 // About
 
 .section.about {
+  overflow-x: hidden;
   padding-top: 94px;
   min-width: 1480px;
   position: relative;
@@ -227,7 +228,7 @@
   @include flex-direction(column);
   @include align-items(center);
   margin-top: 240px;
-  padding-bottom: 214px;
+  padding-bottom: 280px;
 
   .text-container {
     width: 100%;
@@ -384,7 +385,7 @@
         overflow: hidden;
         width: 200px;
 
-        &:after {
+        .logo-image {
           position: absolute;
           top: -76px;
           left: 24px;
@@ -395,6 +396,9 @@
           background-image: url(#{$path-image}logo-damu.png);
           background-size: 100%;
           background-repeat: no-repeat;
+        }
+
+        &:after {
         }
       } //end of .title-logo
     } //end of .title
@@ -434,6 +438,17 @@
     }
   } //end of .about-all-pic
 
+  .deco-container {
+    position: absolute;
+    top: 86px;
+    left: 770px;
+    width: 500px;
+    height: 500px;
+    // outline: 3px solid red;
+    @include select-none;
+    @include pointer-none;
+  }
+
   .deco-icon-diversity {
     position: absolute;
     top: -12px;
@@ -444,11 +459,39 @@
   }
 
   .deco-icon-collaboration {
-    position: absolute;
-    top: 86px;
-    left: 770px;
+    animation: shape 1s linear infinite;
     width: 291px;
     height: 291px;
+    transition: all 1s;
     background-image: url(#{$path-image}deco-collaboration-big.png);
+  }
+
+  .download-introduction {
+    display: block;
+    position: absolute;
+    bottom: 96px;
+    left: 50%;
+    width: 240px;
+    height: 60px;
+    margin-left: 14px;
+    color: #000;
+    font-size: 18px;
+    font-weight: $fw-b;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 40px;
+    border: 2px solid #7f7f7f;
+    transform: translateX(-50%);
+
+    &:hover {
+      //버튼 호버 효과
+      color: #fff;
+      background-color: #404040;
+      border-color: #404040;
+    }
+
+    &:focus {
+      outline: 0;
+    }
   }
 } //end of .about-all
