@@ -343,7 +343,9 @@ function dscWorksSlideEvent() {
 
     if (idx == dscWorksSwiper.realIndex) {
       //active 상태의 아이템 클릭 시 애니메이션 대신 팝업 띄움
-      openPopup("dsc");
+      // console.log("idx는,", idx);
+      popupDscSwiper.slideToLoop(idx, 0, openPopup("dsc"));
+      // openPopup("dsc");
       isOnGoing = false;
       return false;
     }
@@ -373,20 +375,10 @@ function dscWorksSlideEvent() {
 }
 // *****************
 
-var popupSlideEvent = function() {
-  // console.log("~");
-  $(".popup-damu-button-next").on("click", function() {
-    // console.log("next!");
-  });
-};
-
 var damuPopupSlideEvent = function() {
   //디어뮤 팝업 전용 이벤트
 
-  var $damuSlide = $(".popup-damu .popup-slide");
   var $damuItem = $(".damu-works-item a");
-  var slideHTML =
-    '<div class="swiper-slide popup-slide">여기에 정보가 들어갑니다.</div>';
 
   //아이템 클릭 시
   $damuItem.on("click", function(e) {
@@ -399,11 +391,8 @@ var damuPopupSlideEvent = function() {
     //   .text(idx + 1 + "번째 아이템 정보가 여기에 들어갑니다ㅏㅏ");
     // console.log("idx=", idx);
     // console.log("popupDamuSwiper.activeIndex", popupDamuSwiper.activeIndex);
-  });
-
-  //다음 버튼 클릭 시
-  $(".popup-damu-button-next").on("click", function() {
-    // popupDamuSwiper.prependSlide(slideHTML);
+    //선택한 아이템으로 팝업 슬라이드 이동시킴
+    popupDamuSwiper.slideToLoop(idx, 0);
   });
 };
 
