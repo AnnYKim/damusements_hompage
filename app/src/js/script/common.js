@@ -1,6 +1,6 @@
 //섹션의 위치값
 // index[2,3,4]의 값은 변경될 수 있음 (MORE 버튼을 쓰는 경우)
-var sectionTop = [1960, 4508, 6218, 7219, 8205];
+var sectionTop = [1960, 4576, 6282, 7289, 8269];
 
 $(function() {
   //header js
@@ -55,7 +55,7 @@ $(function() {
       e.preventDefault();
       var idx = $navMenu.index($(this));
 
-      if (idx > 2) {
+      if (idx >= 2) {
         getSectionTop();
       }
 
@@ -127,6 +127,19 @@ $(function() {
     popupDamuSwiper.update();
   };
 
+
+  //회사소개서 다운로드 함수
+  var downloadLink = function(link){
+    var newWindow = window.open("about:blank");
+    newWindow.location.href = link;
+  }
+
+  var $downloadButton = $(".download-introduction")
+  $downloadButton.on("click",function(e){
+    e.preventDefault();
+    downloadLink('files/damusements_introduction.pdf');
+  });
+
   // 초기 이벤트 지정
   var initEvent = function() {
     headerHeight = Math.ceil($header.height());
@@ -136,7 +149,7 @@ $(function() {
     appendDamuPopupSlide(6);
 
     setTimeout(function() {
-      // scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
+      scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
       removeLoading(); //로딩 이미지 제거
     }, 300);
   };

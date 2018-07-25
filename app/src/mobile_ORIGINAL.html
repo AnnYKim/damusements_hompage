@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="D'AMUSEMentS" />
+  <meta name="keywords" content="D'AMUSEMentS, 디어뮤즈먼츠, DSC, Dr.Simpson, 닥터심슨, 닥터심슨컴퍼니, PROZETERS, 프로제터스, 아트컨설팅, 아티스트 에이전시"
+  />
+  <meta name="title" content="D'AMUSEMentS" />
+  <meta name="author" content="D'AMUSEMentS" />
+  <meta name="Reply-To" content="chairman.damusements@d-amusements.com">
+  <meta name="Location" content="14F, Seoul Square, 416, Hangang-daero, Jung-gu, Seoul">
+
+<meta property="og:title" content="D'AMUSEMentS" />
+<meta property="og:description" content="DIVERSIFY YOUR TASTE" />
+<!-- <meta property="og:image" content="images/ogImage.png" /> -->
+
+<meta name="theme-color" content="#323232" />
+<meta name="msapplication-navbutton-color" content="#323232" />
+<meta name="apple-mobile-web-app-status-bar-style" content="#323232" />
+
+  <!-- TODO: 파비콘 추가 필요 -->
+  <!-- TODO: 메타태그 추가 필요 -->
+  <!-- TODO: 타이틀 확정 필요? -->
+
+  <!-- TODO: 배포 전 이미지 압축 필요 -->
+  <!-- TODO: 배포 전 CSS/JS 압축 필요 -->
+
+  <!-- TODO: 페이지 로드 전까지 로딩 이미지로 가려놓기!! -->
+
+  <title>D'AMUSEMentS</title>
+  <!--[if lt IE 9]>
+  <script type='text/javascript' src='https://studio-jt.co.kr/skin/js/vendors/html5shiv.min.js?ver=3.7.3'></script>
+  <![endif]-->
+
+
+  <link rel="stylesheet" href="css/style-mobile.css?ver=0724">
+
+  <style>
+    .loading {
+      z-index: 1500;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f5f5;
+      background: #000;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center
+    }
+
+    .loading>.loading-container {
+      position: relative;
+      display: block;
+      width: 300px;
+      height: 80px;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .loading-image {
+      display: block;
+      width: 100%;
+    }
+
+    .loading-image:hover+.line {
+      transform: scaleX(1);
+      left: 0;
+    }
+
+    .loading .line {
+      display: block;
+      margin-top: 10px;
+      height: 10px;
+      width: 320px;
+      position: absolute;
+      left: -100%;
+      background-color: #f9fafa;
+      /* transition: all 0.2s; */
+      animation: loading 1.5s infinite
+    }
+
+    .loading.fadeOut {
+      opacity: 0;
+      transition: opacity 1s 0.3s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="loading">
+    <div class="loading-container">
+
+      <img class="loading-image" src="images/logo-damu.png" alt="D'AMUSEMentS">
+      <div class="line"></div>
+    </div>
+  </div>
+
+  <header class="hide">
+    <h1>D'AMUSEMentS</h1>
+    <strong>이 웹페이지는 PC 버전에 최적화되어 있습니다. PC 화면에서 접속해 주세요.</strong>
+  </header>
+  <div class="wrap-mobile">
+    <div class="visual-mobile">
+      <div class="visual-title-container">
+        <div class="visual-title">
+          <span class="title-text">Diversify
+            <i class="title-text-line"></i>
+          </span>
+          <span class="title-text">your
+            <i class="title-text-line"></i>
+          </span>
+          <span class="title-text">taste
+            <i class="title-text-line"></i>
+            <div class="quote"></div>
+          </span>
+          <a href="http://d-amusements.com" class="link-pc">PC 화면 보기</a>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="link-download">회사 소개서 다운로드</a>
+  </div>
+ 
+  <script>
+      var downloadLink = function(){
+        var link = document.getElementsByClassName("link-download")[0];
+  
+        link.onclick = function(e){
+        e.preventDefault();
+        location.href = "files/damusements_introduction.pdf"
+        };
+      };
+      window.onload = function () {
+        var loadingImage = document.getElementsByClassName("loading")[0];
+        loadingImage.className += ' fadeOut';
+        setTimeout(function () {
+          loadingImage.style.display = 'none';
+        }, 1150);
+        downloadLink();
+      }
+    </script>
+</body>
+
+</html>

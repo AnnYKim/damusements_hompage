@@ -174,13 +174,14 @@ gulp.task("watch", function() {
 // =============================
 // default 정의
 gulp.task("default", [
-  // "minify-html",
+  "minify-html",
   "copy-html",
   "copy-image",
   "compile-scss",
   "copy-font",
   "copy-vendorJS",
   "minify-myJS",
+  // "minify-image",
   "browserSync",
   "watch"
 ]);

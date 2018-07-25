@@ -4,6 +4,7 @@ var visualSwiper = new Swiper(".visual-slide", {
   // Optional parameters
   loop: true,
   touchRatio: 0,
+  speed: 800,
 
   // pagination
   pagination: {
@@ -26,6 +27,7 @@ var serviceSwiper = new Swiper(".service-slide", {
   // Optional parameters
   loop: true,
   touchRatio: 0,
+  speed: 800,
   // navigation
   navigation: {
     nextEl: ".service-button-next",
@@ -386,11 +388,6 @@ var damuPopupSlideEvent = function() {
     var idx = 0;
 
     idx = $damuItem.index($(this));
-    // $damuSlide
-    //   .eq(idx)
-    //   .text(idx + 1 + "번째 아이템 정보가 여기에 들어갑니다ㅏㅏ");
-    // console.log("idx=", idx);
-    // console.log("popupDamuSwiper.activeIndex", popupDamuSwiper.activeIndex);
     //선택한 아이템으로 팝업 슬라이드 이동시킴
     popupDamuSwiper.slideToLoop(idx, 0);
   });
