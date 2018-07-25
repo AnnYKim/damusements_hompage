@@ -1,6 +1,7 @@
 //섹션의 위치값
-var sectionTop = [];
+var sectionTop = [1960, 4571, 6277, 7283, 8263];
 var $section = $(".has-menu");
+var currentScroll = 0;
 
 $(function() {
   //header js
@@ -15,7 +16,7 @@ $(function() {
     $section.each(function(idx) {
       sectionTop[idx] = Math.ceil($(this).offset().top);
     });
-    // console.log(sectionTop);
+    console.log(sectionTop);
   };
 
   // 페이지 스크롤 함수
@@ -52,10 +53,15 @@ $(function() {
   var scrollToSection = function() {
     $navMenu.on("click", function(e) {
       e.preventDefault();
-      var idx = $navMenu.index($(this));
-      getSectionTop();
-      var position = sectionTop[idx] - headerHeight;
 
+      var idx = $navMenu.index($(this));
+      //만약 스크롤이 980미만이라면 새로 구하지 않고 사용
+      if (currentScroll <= 980) {
+        sectionTop = [1960, 4571, 6277, 7283, 8263];
+      } else {
+        getSectionTop();
+      }
+      var position = sectionTop[idx] - headerHeight;
       pageScroll(position);
     });
   };
@@ -125,7 +131,6 @@ $(function() {
     headerHeight = Math.ceil($header.height());
     scrollToSection();
     clickHeaderLogo();
-    getSectionTop();
     appendDamuPopupSlide(6);
 
     setTimeout(function() {
@@ -137,5 +142,10 @@ $(function() {
   // 윈도 로드
   $(window).on("load", function() {
     initEvent();
+    console.log(currentScroll);
+  });
+
+  $(window).scroll(function() {
+    currentScroll = $(window).scrollTop();
   });
 });
