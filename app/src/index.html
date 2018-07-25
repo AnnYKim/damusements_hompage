@@ -17,7 +17,7 @@
   <meta name="title" content="D'AMUSEMentS" />
   <meta name="author" content="D'AMUSEMentS" />
   <meta name="Reply-To" content="chairman.damusements@d-amusements.com">
-	<meta name="Location" content="14F, Seoul Square, 416, Hangang-daero, Jung-gu, Seoul">
+  <meta name="Location" content="14F, Seoul Square, 416, Hangang-daero, Jung-gu, Seoul">
 
   <meta property="og:title" content="D'AMUSEMentS" />
   <meta property="og:description" content="DIVERSIFY YOUR TASTE" />
@@ -30,9 +30,9 @@
   <!--[if lt IE 9]>
   <script type='text/javascript' src='https://studio-jt.co.kr/skin/js/vendors/html5shiv.min.js?ver=3.7.3'></script>
   <![endif]-->
-  
+
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
-  <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/android-icon-192x192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
@@ -42,7 +42,57 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
 
   <style>
-   .loading{z-index: 1500; position: fixed; top: 0; width: 100%; height: 100%; background-color: #f5f5f5; background: #000; display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex; -webkit-flex-direction: column; -moz-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-justify-content: center; -moz-justify-content: center; -ms-justify-content: center; justify-content: center; -webkit-align-items: center; -moz-align-items: center; -ms-align-items: center; align-items: center}.loading>.loading-container{position: relative; display: block; width: 340px; height: 80px; overflow: hidden; user-select: none;}.loading-image:hover+.line{transform: scaleX(1); left: 0;}.loading .line{display: block; margin-top: 10px; height: 10px; width: 340px; position: absolute; left: -100%; background-color: #f9fafa; animation: loading 1.5s infinite}
+    .loading {
+      z-index: 1500;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #f5f5f5;
+      background: #000;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      justify-content: center;
+      -webkit-align-items: center;
+      -moz-align-items: center;
+      -ms-align-items: center;
+      align-items: center
+    }
+
+    .loading>.loading-container {
+      position: relative;
+      display: block;
+      width: 340px;
+      height: 80px;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .loading-image:hover+.line {
+      transform: scaleX(1);
+      left: 0;
+    }
+
+    .loading .line {
+      display: block;
+      margin-top: 10px;
+      height: 10px;
+      width: 340px;
+      position: absolute;
+      left: -100%;
+      background-color: #f9fafa;
+      animation: loading 1.5s infinite
+    }
   </style>
 </head>
 
@@ -59,7 +109,6 @@
 
   <div class="wrap">
     <div class="visual-bg"></div>
-    <!-- TODO: 헤더 메뉴 클릭 시 이동하도록 수정 -->
     <header id="header" class="header">
       <div class="header-grid">
         <div class="header-container">
@@ -125,7 +174,6 @@
     </section>
     <!--//end of .section.visual-->
 
-    <!-- TODO: 스크롤 시 오버랩되도록 처리  https://codepen.io/nykim_/pen/bjpyBe-->
     <div id="sub" class="visual-sub">
       <div class="visual-text-container">
         <div class="visual-text-grid">
@@ -152,7 +200,9 @@
               <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
                 <defs>
                   <style>
-                    .cls-1 {fill: #f7f7f7;}
+                    .cls-1 {
+                      fill: #f7f7f7;
+                    }
                   </style>
                 </defs>
                 <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"
@@ -540,7 +590,6 @@
         </div>
         <button type="button" class="damu-btn-more item-fade fade-delay-3">More
         </button>
-        <!-- TODO: CSS상으로 가려두고 More 버튼 클릭 시 블록처리 -->
       </section>
       <!-- //end of .section.section-damu -->
 
@@ -787,6 +836,11 @@
               <div class="swiper-wrapper popup-silde-damu-wrapper">
 
 
+                <!-- 
+                  + + + + + + + + + + + + +
+                  [KM] 내용이 동적으로 append 되도록 바뀌었습니다!
+                  + + + + + + + + + + + + +
+                -->
 
               </div>
             </div>
@@ -798,7 +852,9 @@
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
                   <defs>
                     <style>
-                      .cls-1 {fill: #f7f7f7;}
+                      .cls-1 {
+                        fill: #f7f7f7;
+                      }
                     </style>
                   </defs>
                   <path class="cls-1" d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z" />
@@ -809,7 +865,9 @@
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
                   <defs>
                     <style>
-                      .cls-1 {fill: #f7f7f7;}
+                      .cls-1 {
+                        fill: #f7f7f7;
+                      }
                     </style>
                   </defs>
                   <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"
@@ -824,6 +882,12 @@
       </div>
     </div>
     <!-- //end of .popup-damu -->
+
+    <!-- 
+      + + + + + + + + + + + + +
+      [KM] 첫번째 포트폴리오의 내용을 담고 있는(?) 곳입니다.
+      + + + + + + + + + + + + +
+    -->
 
     <div class="additional-damu-popup">
       <!-- 여기서부터 슬라이드 태그 시작 -->
@@ -1086,7 +1150,9 @@
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
                   <defs>
                     <style>
-                      .cls-1 {fill: #f7f7f7;}
+                      .cls-1 {
+                        fill: #f7f7f7;
+                      }
                     </style>
                   </defs>
                   <path class="cls-1" d="M50,8.9H10.5V5.1H50V8.9z M0,7l10.5-7l0,14L0,7z" />
@@ -1097,7 +1163,9 @@
                 <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="50" height="14" viewBox="0 0 50 14">
                   <defs>
                     <style>
-                      .cls-1 {fill: #f7f7f7;}
+                      .cls-1 {
+                        fill: #f7f7f7;
+                      }
                     </style>
                   </defs>
                   <path class="cls-1" d="M253,1133.09h39.469v3.82H253v-3.82Zm50,1.92L292.473,1142l0.012-14Z" transform="translate(-253 -1128)"

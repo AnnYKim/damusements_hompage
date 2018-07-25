@@ -118,14 +118,13 @@
 // }
 
 //섹션의 위치값
-// index[2,3,4]의 값은 변경될 수 있음 (MORE 버튼을 쓰는 경우)
-var sectionTop = [1960, 4576, 6282, 7289, 8269];
+var sectionTop = [];
+var $section = $(".has-menu");
 
 $(function() {
   //header js
 
   var $header = $("#header");
-  var $section = $(".has-menu");
   var $navMenu = $header.find(".nav-menu");
 
   var headerHeight = 0; //header의 높이
@@ -173,11 +172,7 @@ $(function() {
     $navMenu.on("click", function(e) {
       e.preventDefault();
       var idx = $navMenu.index($(this));
-
-      if (idx >= 2) {
-        getSectionTop();
-      }
-
+      getSectionTop();
       var position = sectionTop[idx] - headerHeight;
 
       pageScroll(position);
@@ -216,20 +211,6 @@ $(function() {
     }
   });
 
-  //숨겨져있는 아이템의 팝업 슬라이드는 보이지 않게(최초 로드시)
-  var hideDamuPopupSlide_init = function() {
-    // var target = $damuWorksItem_show.length;
-    // console.log("슬라이드에다 보여줄 수는...", target);
-    // console.log(
-    //   $(".additional-damu-popup")
-    //     .children()
-    //     .slice(target)
-    // );
-    // var slides = $(".additional-damu-popup").children(":lt(" + target + ")");
-    // popupDamuSwiper.appendSlide(slides);
-    // popupDamuSwiper.update();
-  };
-
   var appendDamuPopupSlide = function(num) {
     //팝업 슬라이드를 추가하는 함수
     var $popupLists = $(".additional-damu-popup"); //팝업 슬라이드를 가져올 리스트
@@ -246,17 +227,16 @@ $(function() {
     popupDamuSwiper.update();
   };
 
-
   //회사소개서 다운로드 함수
-  var downloadLink = function(link){
+  var downloadLink = function(link) {
     var newWindow = window.open("about:blank");
     newWindow.location.href = link;
-  }
+  };
 
-  var $downloadButton = $(".download-introduction")
-  $downloadButton.on("click",function(e){
+  var $downloadButton = $(".download-introduction");
+  $downloadButton.on("click", function(e) {
     e.preventDefault();
-    downloadLink('files/damusements_introduction.pdf');
+    downloadLink("files/damusements_introduction.pdf");
   });
 
   // 초기 이벤트 지정

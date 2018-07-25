@@ -45,7 +45,6 @@ _Last Modified: 2018-07-17_
 ## Style Guide
 
 - 기본 폰트는 '나눔스퀘어체'를 사용하며, /\_font.scss 에서 정의합니다.
-  - 300: Light
   - 400: Regular
   - 600: Bold
   - 800: ExtraBold
@@ -81,3 +80,7 @@ _Last Modified: 2018-07-17_
 - a 태그에는 [data-link-popup]이라는 속성이 있습니다. data-link-popup 에 연결된 값에 따라 각기 다른 팝업이 show 처리됩니다. (예를 들어, &lt;a data-link-popup="dsc"/>는 DSC 팝업을 보여줍니다. 이 이벤트는 popup.js 에서 정의하고 있습니다.)
 - 팝업 내부는 슬라이드로 이루어져 있습니다. 슬라이드는 'Swiper'라는 라이브러리를 사용하고 있습니다. 슬라이드 관련 이벤트는 slideJS.js 에서 정의하고 있습니다.
   - [Swiper API DOC](http://idangero.us/swiper/api)
+
+## Mobile Page
+
+- 모바일에 접속 시 서브도메인으로 리다이렉트 되도록 합니다.
