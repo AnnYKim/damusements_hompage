@@ -2,6 +2,7 @@
 
 // Section for DSC
 .section-dsc {
+  overflow: hidden;
   min-width: $ly-min-width;
   position: relative;
   padding: 152px 0 570px;

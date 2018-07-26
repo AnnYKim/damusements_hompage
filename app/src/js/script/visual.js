@@ -55,24 +55,40 @@ $(function() {
 });
 
 $(function() {
-  // コントローラー
-  var controller = new ScrollMagic.Controller();
+  //IE 판단
+  function msieversion() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
 
-  // シーン
-  var scene1 = new ScrollMagic.Scene({
-    duration: 980, // 500pxまで
-    offset: 0 // スタートは0px
-  }).setPin("#visual");
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {
+      return true;
+    }
+  }
 
-  // var scene2 = new ScrollMagic.Scene({
-  //   duration: 980, // 500pxまで
-  //   offset: 1 // スタートは0px
-  // }).setPin("#sub"); // 要素の指定
+  if (msieversion()) {
+    var sub = document.getElementById("sub");
+    sub.style.display = "none";
+    return false;
+  } else {
+    // コントローラー
+    var controller = new ScrollMagic.Controller();
 
-  var scene3 = new ScrollMagic.Scene({
-    duration: 980, // 1500pxまで
-    offset: 0 // スタートは900px
-  }).setPin("#main"); // 要素の指定
+    // シーン
+    var scene1 = new ScrollMagic.Scene({
+      duration: 980, // 500pxまで
+      offset: 0 // スタートは0px
+    }).setPin("#visual");
 
-  controller.addScene([scene1, scene3]);
+    // var scene2 = new ScrollMagic.Scene({
+    //   duration: 980, // 500pxまで
+    //   offset: 1 // スタートは0px
+    // }).setPin("#sub"); // 要素の指定
+
+    var scene3 = new ScrollMagic.Scene({
+      duration: 980, // 1500pxまで
+      offset: 0 // スタートは900px
+    }).setPin("#main"); // 要素の指定
+
+    controller.addScene([scene1, scene3]);
+  }
 });
