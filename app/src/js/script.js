@@ -994,8 +994,10 @@ $(function() {
   }
 
   if (msieversion()) {
+    var loading = document.getElementsByClassName("loading")[0];
     var sub = document.getElementById("sub");
     sub.style.display = "none";
+    loading.style.display = "none";
   } else {
     // コントローラー
     var controller = new ScrollMagic.Controller();
