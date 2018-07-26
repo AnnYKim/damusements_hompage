@@ -68,7 +68,6 @@ $(function() {
   if (msieversion()) {
     var sub = document.getElementById("sub");
     sub.style.display = "none";
-    return false;
   } else {
     // コントローラー
     var controller = new ScrollMagic.Controller();

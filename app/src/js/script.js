@@ -253,7 +253,7 @@ $(function() {
     appendDamuPopupSlide(6);
 
     setTimeout(function() {
-      pageScroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
+      scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
       removeLoading(); //로딩 이미지 제거
     }, 300);
   };
@@ -996,7 +996,6 @@ $(function() {
   if (msieversion()) {
     var sub = document.getElementById("sub");
     sub.style.display = "none";
-    return false;
   } else {
     // コントローラー
     var controller = new ScrollMagic.Controller();
