@@ -49,6 +49,7 @@
     position: absolute;
     bottom: 80px;
     left: 70px;
+    height: 420px;
     overflow: hidden;
 
     .image-container {
@@ -60,7 +61,7 @@
         position: absolute;
         left: 0px;
         bottom: 0px;
-        width: 3500px;
+        width: auto;
         height: 414px;
       }
 
