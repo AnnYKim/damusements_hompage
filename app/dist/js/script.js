@@ -245,16 +245,52 @@ $(function() {
     downloadLink("files/damusements_introduction.pdf");
   });
 
+  //작은 화면 판단
+  var breakPoint = 1480;
+  var isSmallScreen = function() {
+    if ($(window).width() < breakPoint) {
+      $("body").addClass("screen-small");
+    } else {
+      $("body").removeClass("screen-small");
+    }
+  };
+
+  var noticePopupEvent = function() {
+    //해상도 조절 안내 팝업 등장
+    var $noticePopup = $(".notice-popup");
+    var _tl_noticePopupFadeInOut = new TimelineMax({ paused: true });
+    _tl_noticePopupFadeInOut
+      .addLabel("noti-popup-show")
+      .to(
+        $noticePopup,
+        1.2,
+        { opacity: 1, transform: "translateX(-30px)" },
+        "noti-popup-show+=1.4"
+      )
+      .addLabel("noti-popup-ongoing")
+      .to(
+        $noticePopup,
+        1.2,
+        { opacity: 0, transform: "translateX(0px)" },
+        "noti-popup-ongoing+=15"
+      );
+    $("body").hasClass("screen-small")
+      ? _tl_noticePopupFadeInOut.play()
+      : _tl_noticePopupFadeInOut.stop();
+  };
+
   // 초기 이벤트 지정
   var initEvent = function() {
     headerHeight = Math.ceil($header.height());
+    isSmallScreen();
     scrollToSection();
     clickHeaderLogo();
     appendDamuPopupSlide(6);
 
     setTimeout(function() {
-      // scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
+      scroll(0, "noTransition"); //로드 시 최상단으로 자동 스크롤
       removeLoading(); //로딩 이미지 제거
+      noticePopupEvent();
     }, 300);
   };
 
@@ -266,6 +302,12 @@ $(function() {
   $(window).scroll(function() {
     currentScroll = $(window).scrollTop();
   });
+
+  // $(window).on("resize", function() {
+  //   isSmallScreen();
+  //   noticePopupEvent();
+  // });
+  //로드시에만 판단
 });
 
 $(function() {
